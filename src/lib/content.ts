@@ -2,6 +2,11 @@ import contentData from "./content-data.json"
 
 export type Lang = "es" | "en"
 
+export type CvPayload = {
+  es: { portfolio: unknown; resume?: unknown }
+  en: { portfolio: unknown; resume?: unknown }
+}
+
 export const ACCENTS = {
   blue: { 400: "#4299E1", 600: "#2B6CB0", 800: "#2C5282" },
   orange: { 400: "#ED8936", 600: "#C05621", 800: "#7B341E" },
@@ -108,7 +113,12 @@ function toContent(data: {
  *  and as a fallback if the runtime fetch fails. */
 export const CONTENT = toContent(contentData)
 
-const API_URL = import.meta.env.VITE_API_URL || "https://emelcdbackend.vercel.app"
+export const API_URL = import.meta.env.VITE_API_URL || "https://emelcdbackend.vercel.app"
+
+function isValidCvPayload(data: unknown): data is CvPayload {
+  const payload = data as CvPayload
+  return Boolean(payload?.es?.portfolio && payload?.en?.portfolio)
+}
 
 /**
  * Fetch the latest content from the backend at runtime so edits to the
@@ -117,17 +127,33 @@ const API_URL = import.meta.env.VITE_API_URL || "https://emelcdbackend.vercel.ap
  */
 export async function fetchContent(): Promise<Record<Lang, Content> | null> {
   try {
-    const res = await fetch(`${API_URL}/api/cv`, {
-      headers: { Accept: "application/json" },
-    })
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    const data = await res.json()
-    if (!data?.es?.portfolio || !data?.en?.portfolio) {
-      throw new Error("Malformed payload: missing es/en portfolio")
-    }
+    const data = await fetchCvPayload()
     return toContent(data)
   } catch (err) {
     console.warn("[content] runtime fetch failed, using baked data:", err)
     return null
   }
+}
+
+export async function fetchCvPayload(): Promise<CvPayload> {
+  const res = await fetch(`${API_URL}/api/cv`, {
+    headers: { Accept: "application/json" },
+  })
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const data = await res.json()
+  if (!isValidCvPayload(data)) {
+    throw new Error("Malformed payload: missing es/en portfolio")
+  }
+  return data
+}
+
+export async function saveCvPayload(password: string, data: CvPayload) {
+  const res = await fetch(`${API_URL}/api/admin`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ password, data }),
+  })
+  const out = (await res.json()) as { error?: string; commit?: string; url?: string }
+  if (!res.ok) throw new Error(out.error || `HTTP ${res.status}`)
+  return out
 }

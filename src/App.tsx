@@ -1,3 +1,4 @@
+import { AdminPage } from "@/components/admin/AdminPage"
 import { PreferencesProvider } from "@/context/preferences"
 import { Navbar } from "@/components/Navbar"
 import { Hero } from "@/components/sections/Hero"
@@ -10,6 +11,10 @@ import { Contact } from "@/components/sections/Contact"
 import { Footer } from "@/components/sections/Footer"
 
 function App() {
+  if (window.location.pathname.replace(/\/$/, "") === "/admin") {
+    return <AdminPage />
+  }
+
   return (
     <PreferencesProvider>
       <div className="min-h-svh bg-background text-foreground">

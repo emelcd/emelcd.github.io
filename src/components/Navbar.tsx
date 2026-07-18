@@ -1,20 +1,10 @@
+import { ThemeMenu } from "@/components/ThemeMenu"
 import { usePreferences } from "@/context/preferences"
-import { FONTS } from "@/lib/content"
 
 export function Navbar() {
-  const {
-    t,
-    palette,
-    font,
-    dark,
-    toggleLang,
-    toggleTheme,
-    cycleAccent,
-    cycleFont,
-  } = usePreferences()
+  const { t, palette, toggleLang, toggleTheme, dark } = usePreferences()
 
   const initials = `${t.name[0]}${t.surname[0]}`
-  const fontLabel = FONTS[font].label
   const links = [
     { href: "#about", label: t.nav.about },
     { href: "#work", label: t.nav.work },
@@ -71,29 +61,7 @@ export function Navbar() {
           >
             {dark ? "🌙" : "☀️"}
           </button>
-          <button
-            type="button"
-            onClick={cycleFont}
-            className="rounded-md px-2 py-1.5 font-mono text-[10px] font-semibold tracking-wide text-muted-foreground transition hover:bg-muted hover:text-foreground"
-            aria-label={`Cycle font (current: ${fontLabel})`}
-            title={fontLabel}
-          >
-            Aa
-          </button>
-          <button
-            type="button"
-            onClick={cycleAccent}
-            className="rounded-md p-2 transition hover:bg-muted"
-            aria-label="Cycle accent color"
-          >
-            <span
-              className="block h-4 w-4 rounded-full ring-2 ring-offset-2 ring-offset-background"
-              style={{
-                backgroundColor: palette[400],
-                boxShadow: `0 0 0 2px ${palette[400]}`,
-              }}
-            />
-          </button>
+          <ThemeMenu />
         </div>
       </nav>
     </header>

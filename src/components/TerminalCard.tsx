@@ -8,6 +8,19 @@ import {
 } from "react"
 import { usePreferences } from "@/context/preferences"
 import {
+  answerQuiz,
+  createGuessGame,
+  createQuizGame,
+  createSnakeGame,
+  gameCopy,
+  guessNumber,
+  renderSnake,
+  setSnakeDir,
+  snakeDirFromKey,
+  tickSnake,
+  type ActiveGame,
+} from "@/lib/terminal-games"
+import {
   bootLines,
   executeCommand,
   type TerminalEffect,
@@ -19,6 +32,16 @@ function lineColor(kind: TerminalLine["kind"]) {
   if (kind === "boot") return "text-white/50"
   return "text-white/70"
 }
+
+function asOutput(text: string): TerminalLine {
+  return { kind: "output", text }
+}
+
+function asInput(command: string): TerminalLine {
+  return { kind: "input", command, text: command }
+}
+
+const QUIT_CMDS = new Set(["quit", "exit", "stop"])
 
 export function TerminalCard() {
   const {
@@ -40,15 +63,29 @@ export function TerminalCard() {
   const [input, setInput] = useState("")
   const [cmdHistory, setCmdHistory] = useState<string[]>([])
   const [cmdIndex, setCmdIndex] = useState(-1)
+  const [activeGame, setActiveGame] = useState<ActiveGame | null>(null)
+  const [gameLines, setGameLines] = useState<string[]>([])
 
   const scrollRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
-  const cardRef = useRef<HTMLDivElement>(null)
+  const gameOverShown = useRef(false)
 
   useEffect(() => {
     const el = scrollRef.current
     if (el) el.scrollTop = el.scrollHeight
-  }, [history])
+  }, [history, gameLines])
+
+  const stopGame = useCallback(
+    (lines: TerminalLine[] = []) => {
+      setActiveGame(null)
+      setGameLines([])
+      gameOverShown.current = false
+      if (lines.length > 0) {
+        setHistory((prev) => [...prev, ...lines])
+      }
+    },
+    [],
+  )
 
   const applyEffects = useCallback(
     (effects: TerminalEffect[]) => {
@@ -81,7 +118,25 @@ export function TerminalCard() {
             window.open(resumeHref, "_blank", "noopener,noreferrer")
             break
           case "clear":
+            stopGame()
             setHistory(bootLines(lang))
+            break
+          case "startGame":
+            gameOverShown.current = false
+            if (effect.game === "snake") {
+              const game = createSnakeGame()
+              setActiveGame(game)
+              setGameLines(renderSnake(game))
+            } else if (effect.game === "guess") {
+              setActiveGame(createGuessGame())
+              setGameLines([])
+            } else {
+              setActiveGame(createQuizGame(lang))
+              setGameLines([])
+            }
+            break
+          case "stopGame":
+            stopGame()
             break
         }
       }
@@ -95,30 +150,138 @@ export function TerminalCard() {
       toggleLang,
       toggleTheme,
       cycleAccent,
+      stopGame,
     ],
   )
+
+  useEffect(() => {
+    if (!activeGame || activeGame.type !== "snake" || activeGame.gameOver) return
+
+    const id = window.setInterval(() => {
+      setActiveGame((prev) => {
+        if (!prev || prev.type !== "snake" || prev.gameOver) return prev
+        const next = tickSnake(prev)
+        setGameLines(renderSnake(next))
+        if (next.gameOver && !gameOverShown.current) {
+          gameOverShown.current = true
+          const c = gameCopy(lang)
+          setGameLines((lines) => [...lines, c.snakeOver(next.score)])
+        }
+        return next
+      })
+    }, 140)
+
+    return () => window.clearInterval(id)
+  }, [activeGame, lang])
+
+  const appendHistory = useCallback((lines: TerminalLine[]) => {
+    if (lines.length > 0) setHistory((prev) => [...prev, ...lines])
+  }, [])
+
+  const finishInput = useCallback((trimmed: string) => {
+    setCmdHistory((prev) => [...prev, trimmed])
+    setCmdIndex(-1)
+    setInput("")
+  }, [])
 
   const runCommand = useCallback(
     (raw: string) => {
       const trimmed = raw.trim()
       if (!trimmed) return
 
+      const lower = trimmed.toLowerCase()
+
+      if (activeGame && QUIT_CMDS.has(lower)) {
+        appendHistory([
+          asInput(trimmed),
+          asOutput(gameCopy(lang).quit),
+        ])
+        stopGame()
+        finishInput(trimmed)
+        return
+      }
+
+      if (activeGame?.type === "guess") {
+        const result = guessNumber(lang, activeGame, trimmed)
+        appendHistory([
+          asInput(trimmed),
+          ...result.lines.map(asOutput),
+        ])
+        setActiveGame(result.game)
+        finishInput(trimmed)
+        return
+      }
+
+      if (activeGame?.type === "quiz") {
+        const result = answerQuiz(lang, activeGame, trimmed)
+        appendHistory([
+          asInput(trimmed),
+          ...result.lines.map(asOutput),
+        ])
+        setActiveGame(result.game)
+        finishInput(trimmed)
+        return
+      }
+
+      if (activeGame?.type === "snake") {
+        appendHistory([
+          asInput(trimmed),
+          asOutput(
+            lang === "es"
+              ? "snake activo — usa flechas o 'quit' para salir"
+              : "snake running — use arrows or 'quit' to exit",
+          ),
+        ])
+        finishInput(trimmed)
+        return
+      }
+
       const result = executeCommand(trimmed, { lang, dark, accent, t })
       const hasClear = result.effects.some((e) => e.type === "clear")
 
       if (hasClear) {
+        stopGame()
         setHistory(bootLines(lang))
       } else if (result.lines.length > 0) {
-        setHistory((prev) => [...prev, ...result.lines])
+        appendHistory(result.lines)
       }
 
       applyEffects(result.effects.filter((e) => e.type !== "clear"))
-
-      setCmdHistory((prev) => [...prev, trimmed])
-      setCmdIndex(-1)
-      setInput("")
+      finishInput(trimmed)
     },
-    [lang, dark, accent, t, applyEffects],
+    [
+      activeGame,
+      lang,
+      dark,
+      accent,
+      t,
+      applyEffects,
+      appendHistory,
+      finishInput,
+      stopGame,
+    ],
+  )
+
+  const handleSnakeKey = useCallback(
+    (key: string) => {
+      if (activeGame?.type !== "snake") return false
+
+      if (key === "q" || key === "Q") {
+        appendHistory([asOutput(gameCopy(lang).quit)])
+        stopGame()
+        return true
+      }
+
+      const dir = snakeDirFromKey(key)
+      if (!dir) return false
+
+      setActiveGame((prev) => {
+        if (!prev || prev.type !== "snake") return prev
+        return setSnakeDir(prev, dir)
+      })
+      return true
+    },
+    [activeGame, lang, appendHistory, stopGame],
   )
 
   const onSubmit = (e: FormEvent) => {
@@ -127,12 +290,23 @@ export function TerminalCard() {
   }
 
   const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Escape") {
-      setInput("")
-      setCmdIndex(-1)
+    if (handleSnakeKey(e.key)) {
+      e.preventDefault()
       return
     }
-    if (e.key === "ArrowUp") {
+
+    if (e.key === "Escape") {
+      if (activeGame) {
+        appendHistory([asOutput(gameCopy(lang).quit)])
+        stopGame()
+      } else {
+        setInput("")
+        setCmdIndex(-1)
+      }
+      return
+    }
+
+    if (e.key === "ArrowUp" && !activeGame) {
       e.preventDefault()
       if (cmdHistory.length === 0) return
       const next =
@@ -141,7 +315,8 @@ export function TerminalCard() {
       setInput(cmdHistory[next] ?? "")
       return
     }
-    if (e.key === "ArrowDown") {
+
+    if (e.key === "ArrowDown" && !activeGame) {
       e.preventDefault()
       if (cmdIndex < 0) return
       const next = cmdIndex + 1
@@ -166,7 +341,6 @@ export function TerminalCard() {
         }}
       />
       <div
-        ref={cardRef}
         role="region"
         aria-label="Terminal interactiva"
         className="relative overflow-hidden rounded-xl border border-border bg-[oklch(0.16_0_0)] shadow-2xl"
@@ -178,6 +352,7 @@ export function TerminalCard() {
           <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
           <span className="ml-2 font-mono text-xs text-white/40">
             miguel@dev — zsh
+            {activeGame ? ` · ${activeGame.type}` : ""}
           </span>
         </div>
 
@@ -197,6 +372,19 @@ export function TerminalCard() {
               )}
             </div>
           ))}
+
+          {gameLines.length > 0 && (
+            <div
+              className="rounded border border-white/10 bg-black/30 p-3 text-xs leading-tight text-white/80"
+              aria-live="polite"
+            >
+              {gameLines.map((line, i) => (
+                <div key={`game-${i}-${line.slice(0, 12)}`} className="whitespace-pre">
+                  {line}
+                </div>
+              ))}
+            </div>
+          )}
 
           <form onSubmit={onSubmit} className="text-white/90">
             <label className="flex items-baseline gap-0">

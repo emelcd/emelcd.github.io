@@ -5,6 +5,7 @@ import {
   type Content,
   type Lang,
 } from "@/lib/content"
+import { gameCopy, isGameId, startGameLines, type GameId } from "@/lib/terminal-games"
 
 export type TerminalLineKind = "input" | "output" | "error" | "boot"
 
@@ -25,6 +26,8 @@ export type TerminalEffect =
   | { type: "scrollTo"; sectionId: string }
   | { type: "openResume" }
   | { type: "clear" }
+  | { type: "startGame"; game: GameId }
+  | { type: "stopGame" }
 
 export type CommandResult = {
   lines: TerminalLine[]
@@ -66,6 +69,8 @@ const COPY = {
       "  goto <sección>    — ir a una sección",
       "  cd <sección>      — alias de goto",
       "  open resume | cv  — abrir CV",
+      "  games             — minijuegos",
+      "  play <juego>      — snake | guess | quiz",
     ],
     sectionsTitle: "Secciones: top, about, work, projects, contact",
     accentsTitle: "Acentos: blue, teal, violet, orange",
@@ -84,7 +89,7 @@ const COPY = {
     gotoOk: (s: string) => `navegando → #${s}`,
     resumeOpen: "abriendo CV…",
     bootWelcome: "terminal interactiva — escribe 'help' para empezar",
-    bootHint: "tip: prueba 'goto projects' o 'lang en'",
+    bootHint: "tip: prueba 'goto projects' o 'play snake'",
   },
   en: {
     helpTitle: "Available commands:",
@@ -100,6 +105,8 @@ const COPY = {
       "  goto <section>    — scroll to section",
       "  cd <section>      — goto alias",
       "  open resume | cv  — open résumé",
+      "  games             — mini-games",
+      "  play <game>       — snake | guess | quiz",
     ],
     sectionsTitle: "Sections: top, about, work, projects, contact",
     accentsTitle: "Accents: blue, teal, violet, orange",
@@ -117,7 +124,7 @@ const COPY = {
     gotoOk: (s: string) => `navigating → #${s}`,
     resumeOpen: "opening résumé…",
     bootWelcome: "interactive terminal — type 'help' to start",
-    bootHint: "tip: try 'goto projects' or 'lang en'",
+    bootHint: "tip: try 'goto projects' or 'play snake'",
   },
 } as const
 
@@ -292,6 +299,44 @@ export function executeCommand(
         lines: [inputLine, output(c.resumeOpen)],
         effects: [{ type: "openResume" }],
       }
+
+    case "games": {
+      const g = gameCopy(ctx.lang)
+      return {
+        lines: [
+          inputLine,
+          output(g.listTitle),
+          ...g.listLines.map(output),
+        ],
+        effects: [],
+      }
+    }
+
+    case "play": {
+      if (args.length === 0) {
+        const g = gameCopy(ctx.lang)
+        return {
+          lines: [
+            inputLine,
+            error(ctx.lang === "es" ? "uso: play <juego>" : "usage: play <game>"),
+            output(g.listTitle),
+            ...g.listLines.map(output),
+          ],
+          effects: [],
+        }
+      }
+      const id = args[0].toLowerCase()
+      if (!isGameId(id)) {
+        return {
+          lines: [inputLine, error(gameCopy(ctx.lang).unknownGame(args[0]))],
+          effects: [],
+        }
+      }
+      return {
+        lines: [inputLine, ...startGameLines(ctx.lang, id).map(output)],
+        effects: [{ type: "startGame", game: id }],
+      }
+    }
 
     default:
       return {

@@ -3,7 +3,7 @@ import { resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url))
-const API_URL = process.env.VITE_API_URL || process.env.BACKEND_API_URL || "https://emelcd-backend.vercel.app"
+const API_URL = process.env.VITE_API_URL || process.env.BACKEND_API_URL || "https://emelcdbackend.vercel.app"
 const OUT_FILE = resolve(__dirname, "../src/lib/content-data.json")
 
 console.log(`Fetching latest CV data from ${API_URL}/api/cv ...`)

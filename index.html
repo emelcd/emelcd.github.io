@@ -5,6 +5,48 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emel Portfolio</title>
+    <script>
+      // Apply stored theme before paint to avoid a flash of the defaults.
+      ;(function () {
+        try {
+          var raw = localStorage.getItem("emelcd-prefs")
+          if (!raw) return
+          var p = JSON.parse(raw)
+          var root = document.documentElement
+          if (p.dark === false) root.classList.remove("dark")
+          else root.classList.add("dark")
+          var accents = {
+            blue: ["#4299E1", "#2B6CB0", "#2C5282"],
+            teal: ["#38B2AC", "#2C7A7B", "#234E52"],
+            violet: ["#9F7AEA", "#6B46C1", "#44337A"],
+            orange: ["#ED8936", "#C05621", "#7B341E"],
+            rose: ["#F472B6", "#DB2777", "#9D174D"],
+            green: ["#4ADE80", "#16A34A", "#166534"],
+            amber: ["#FBBF24", "#D97706", "#92400E"],
+            cyan: ["#22D3EE", "#0891B2", "#155E75"],
+          }
+          var a = accents[p.accent]
+          if (a) {
+            root.style.setProperty("--accent-400", a[0])
+            root.style.setProperty("--accent-600", a[1])
+            root.style.setProperty("--accent-800", a[2])
+          }
+          var fonts = {
+            geist: "'Geist Variable', sans-serif",
+            inter: "'Inter Variable', sans-serif",
+            "space-grotesk": "'Space Grotesk Variable', sans-serif",
+            "dm-sans": "'DM Sans Variable', sans-serif",
+            "ibm-plex": "'IBM Plex Sans Variable', sans-serif",
+            serif: "'Source Serif 4 Variable', Georgia, serif",
+          }
+          var f = fonts[p.font]
+          if (f) {
+            root.style.setProperty("--font-sans", f)
+            root.style.setProperty("--font-heading", f)
+          }
+        } catch (_) {}
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

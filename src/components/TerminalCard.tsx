@@ -49,14 +49,17 @@ export function TerminalCard() {
     lang,
     dark,
     accent,
+    font,
     t,
     resumeHref,
     setLang,
     setDark,
     setAccent,
+    setFont,
     toggleLang,
     toggleTheme,
     cycleAccent,
+    cycleFont,
   } = usePreferences()
 
   const [history, setHistory] = useState<TerminalLine[]>(() => bootLines(lang))
@@ -109,6 +112,12 @@ export function TerminalCard() {
           case "cycleAccent":
             cycleAccent()
             break
+          case "setFont":
+            setFont(effect.font)
+            break
+          case "cycleFont":
+            cycleFont()
+            break
           case "scrollTo":
             document
               .querySelector(`#${effect.sectionId}`)
@@ -147,9 +156,11 @@ export function TerminalCard() {
       setLang,
       setDark,
       setAccent,
+      setFont,
       toggleLang,
       toggleTheme,
       cycleAccent,
+      cycleFont,
       stopGame,
     ],
   )
@@ -236,7 +247,7 @@ export function TerminalCard() {
         return
       }
 
-      const result = executeCommand(trimmed, { lang, dark, accent, t })
+      const result = executeCommand(trimmed, { lang, dark, accent, font, t })
       const hasClear = result.effects.some((e) => e.type === "clear")
 
       if (hasClear) {
@@ -254,6 +265,7 @@ export function TerminalCard() {
       lang,
       dark,
       accent,
+      font,
       t,
       applyEffects,
       appendHistory,

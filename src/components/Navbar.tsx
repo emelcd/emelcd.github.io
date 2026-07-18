@@ -1,10 +1,20 @@
 import { usePreferences } from "@/context/preferences"
+import { FONTS } from "@/lib/content"
 
 export function Navbar() {
-  const { t, palette, toggleLang, toggleTheme, cycleAccent, dark } =
-    usePreferences()
+  const {
+    t,
+    palette,
+    font,
+    dark,
+    toggleLang,
+    toggleTheme,
+    cycleAccent,
+    cycleFont,
+  } = usePreferences()
 
   const initials = `${t.name[0]}${t.surname[0]}`
+  const fontLabel = FONTS[font].label
   const links = [
     { href: "#about", label: t.nav.about },
     { href: "#work", label: t.nav.work },
@@ -60,6 +70,15 @@ export function Navbar() {
             aria-label="Toggle theme"
           >
             {dark ? "🌙" : "☀️"}
+          </button>
+          <button
+            type="button"
+            onClick={cycleFont}
+            className="rounded-md px-2 py-1.5 font-mono text-[10px] font-semibold tracking-wide text-muted-foreground transition hover:bg-muted hover:text-foreground"
+            aria-label={`Cycle font (current: ${fontLabel})`}
+            title={fontLabel}
+          >
+            Aa
           </button>
           <button
             type="button"

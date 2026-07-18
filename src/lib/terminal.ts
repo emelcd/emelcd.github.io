@@ -1,8 +1,11 @@
 import {
   ACCENT_ORDER,
   ACCENTS,
+  FONT_ORDER,
+  FONTS,
   type Accent,
   type Content,
+  type FontId,
   type Lang,
 } from "@/lib/content"
 import { gameCopy, isGameId, startGameLines, type GameId } from "@/lib/terminal-games"
@@ -23,6 +26,8 @@ export type TerminalEffect =
   | { type: "toggleTheme" }
   | { type: "setAccent"; accent: Accent }
   | { type: "cycleAccent" }
+  | { type: "setFont"; font: FontId }
+  | { type: "cycleFont" }
   | { type: "scrollTo"; sectionId: string }
   | { type: "openResume" }
   | { type: "clear" }
@@ -38,9 +43,12 @@ export type TerminalContext = {
   lang: Lang
   dark: boolean
   accent: Accent
+  font: FontId
   t: Content
 }
 
+const ACCENT_LIST = ACCENT_ORDER.join(", ")
+const FONT_LIST = FONT_ORDER.join(", ")
 const SECTIONS: Record<string, string> = {
   top: "top",
   home: "top",
@@ -54,6 +62,7 @@ const SECTIONS: Record<string, string> = {
 }
 
 const ACCENTS_SET = new Set<string>(Object.keys(ACCENTS))
+const FONTS_SET = new Set<string>(Object.keys(FONTS))
 
 const COPY = {
   es: {
@@ -67,6 +76,7 @@ const COPY = {
       "  lang [es|en]      — idioma (sin args: alternar)",
       "  theme [dark|light]— tema (sin args: alternar)",
       "  accent [color]    — acento (sin args: ciclar)",
+      "  font [nombre]     — fuente (sin args: ciclar)",
       "  goto <sección>    — ir a una sección",
       "  cd <sección>      — alias de goto",
       "  open resume | cv  — abrir CV",
@@ -74,14 +84,18 @@ const COPY = {
       "  play <juego>      — snake | guess | quiz",
     ],
     sectionsTitle: "Secciones: top, about, work, projects, activity, contact",
-    accentsTitle: "Acentos: blue, teal, violet, orange",
+    accentsTitle: `Acentos: ${ACCENT_LIST}`,
+    fontsTitle: `Fuentes: ${FONT_LIST}`,
     unknown: (cmd: string) =>
       `comando no encontrado: ${cmd}. Prueba 'help'.`,
     langSet: (l: Lang) => `idioma → ${l}`,
     themeSet: (mode: string) => `tema → ${mode}`,
     accentSet: (a: Accent) => `acento → ${a}`,
+    fontSet: (f: FontId) => `fuente → ${f} (${FONTS[f].label})`,
     accentInvalid: (a: string) =>
-      `acento inválido: ${a}. Opciones: blue, teal, violet, orange`,
+      `acento inválido: ${a}. Opciones: ${ACCENT_LIST}`,
+    fontInvalid: (f: string) =>
+      `fuente inválida: ${f}. Opciones: ${FONT_LIST}`,
     langInvalid: (l: string) => `idioma inválido: ${l}. Opciones: es, en`,
     themeInvalid: (t: string) => `tema inválido: ${t}. Opciones: dark, light`,
     gotoMissing: "uso: goto <sección>",
@@ -103,6 +117,7 @@ const COPY = {
       "  lang [es|en]      — language (no args: toggle)",
       "  theme [dark|light]— theme (no args: toggle)",
       "  accent [color]    — accent (no args: cycle)",
+      "  font [name]       — font (no args: cycle)",
       "  goto <section>    — scroll to section",
       "  cd <section>      — goto alias",
       "  open resume | cv  — open résumé",
@@ -110,13 +125,17 @@ const COPY = {
       "  play <game>       — snake | guess | quiz",
     ],
     sectionsTitle: "Sections: top, about, work, projects, activity, contact",
-    accentsTitle: "Accents: blue, teal, violet, orange",
+    accentsTitle: `Accents: ${ACCENT_LIST}`,
+    fontsTitle: `Fonts: ${FONT_LIST}`,
     unknown: (cmd: string) => `command not found: ${cmd}. Try 'help'.`,
     langSet: (l: Lang) => `language → ${l}`,
     themeSet: (mode: string) => `theme → ${mode}`,
     accentSet: (a: Accent) => `accent → ${a}`,
+    fontSet: (f: FontId) => `font → ${f} (${FONTS[f].label})`,
     accentInvalid: (a: string) =>
-      `invalid accent: ${a}. Options: blue, teal, violet, orange`,
+      `invalid accent: ${a}. Options: ${ACCENT_LIST}`,
+    fontInvalid: (f: string) =>
+      `invalid font: ${f}. Options: ${FONT_LIST}`,
     langInvalid: (l: string) => `invalid language: ${l}. Options: es, en`,
     themeInvalid: (t: string) => `invalid theme: ${t}. Options: dark, light`,
     gotoMissing: "usage: goto <section>",
@@ -128,7 +147,6 @@ const COPY = {
     bootHint: "tip: try 'goto projects' or 'play snake'",
   },
 } as const
-
 function output(text: string): TerminalLine {
   return { kind: "output", text }
 }
@@ -173,10 +191,10 @@ export function executeCommand(
           ...c.helpLines.map(output),
           output(c.sectionsTitle),
           output(c.accentsTitle),
+          output(c.fontsTitle),
         ],
         effects: [],
       }
-
     case "clear":
       return { lines: [inputLine], effects: [{ type: "clear" }] }
 
@@ -264,6 +282,28 @@ export function executeCommand(
       return {
         lines: [inputLine, output(c.accentSet(next as Accent))],
         effects: [{ type: "setAccent", accent: next as Accent }],
+      }
+    }
+
+    case "font": {
+      if (args.length === 0) {
+        const idx = FONT_ORDER.indexOf(ctx.font)
+        const next = FONT_ORDER[(idx + 1) % FONT_ORDER.length]
+        return {
+          lines: [inputLine, output(c.fontSet(next))],
+          effects: [{ type: "cycleFont" }],
+        }
+      }
+      const next = args[0].toLowerCase()
+      if (!FONTS_SET.has(next)) {
+        return {
+          lines: [inputLine, error(c.fontInvalid(args[0]))],
+          effects: [],
+        }
+      }
+      return {
+        lines: [inputLine, output(c.fontSet(next as FontId))],
+        effects: [{ type: "setFont", font: next as FontId }],
       }
     }
 

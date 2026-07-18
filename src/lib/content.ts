@@ -9,15 +9,68 @@ export type CvPayload = {
 
 export const ACCENTS = {
   blue: { 400: "#4299E1", 600: "#2B6CB0", 800: "#2C5282" },
-  orange: { 400: "#ED8936", 600: "#C05621", 800: "#7B341E" },
   teal: { 400: "#38B2AC", 600: "#2C7A7B", 800: "#234E52" },
   violet: { 400: "#9F7AEA", 600: "#6B46C1", 800: "#44337A" },
+  orange: { 400: "#ED8936", 600: "#C05621", 800: "#7B341E" },
+  rose: { 400: "#F472B6", 600: "#DB2777", 800: "#9D174D" },
+  green: { 400: "#4ADE80", 600: "#16A34A", 800: "#166534" },
+  amber: { 400: "#FBBF24", 600: "#D97706", 800: "#92400E" },
+  cyan: { 400: "#22D3EE", 600: "#0891B2", 800: "#155E75" },
 } as const
 
 export type Accent = keyof typeof ACCENTS
 export type Palette = (typeof ACCENTS)[Accent]
 
-export const ACCENT_ORDER: Accent[] = ["blue", "teal", "violet", "orange"]
+export const ACCENT_ORDER: Accent[] = [
+  "blue",
+  "teal",
+  "violet",
+  "orange",
+  "rose",
+  "green",
+  "amber",
+  "cyan",
+]
+
+/** UI font stacks the visitor can cycle through. */
+export const FONTS = {
+  geist: {
+    label: "Geist",
+    family: "'Geist Variable', sans-serif",
+  },
+  inter: {
+    label: "Inter",
+    family: "'Inter Variable', sans-serif",
+  },
+  "space-grotesk": {
+    label: "Space Grotesk",
+    family: "'Space Grotesk Variable', sans-serif",
+  },
+  "dm-sans": {
+    label: "DM Sans",
+    family: "'DM Sans Variable', sans-serif",
+  },
+  "ibm-plex": {
+    label: "IBM Plex",
+    family: "'IBM Plex Sans Variable', sans-serif",
+  },
+  serif: {
+    label: "Source Serif",
+    family: "'Source Serif 4 Variable', Georgia, serif",
+  },
+} as const
+
+export type FontId = keyof typeof FONTS
+export type FontOption = (typeof FONTS)[FontId]
+
+export const FONT_ORDER: FontId[] = [
+  "geist",
+  "inter",
+  "space-grotesk",
+  "dm-sans",
+  "ibm-plex",
+  "serif",
+]
 
 type ExperienceEntry = {
   title: string

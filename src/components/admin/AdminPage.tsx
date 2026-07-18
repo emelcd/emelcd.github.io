@@ -27,6 +27,12 @@ type Status = {
   tone: "muted" | "ok" | "err"
 }
 
+type Toast = {
+  id: number
+  message: string
+  tone: "ok" | "err"
+}
+
 const SECTIONS: AdminSection[] = [
   { label: "ES · Portfolio", path: ["es", "portfolio"] },
   { label: "ES · Resume", path: ["es", "resume"] },
@@ -92,6 +98,7 @@ export function AdminPage() {
   const [active, setActive] = useState(0)
   const [jsonDraft, setJsonDraft] = useState("")
   const [saving, setSaving] = useState(false)
+  const [toast, setToast] = useState<Toast | null>(null)
   const [status, setStatus] = useState<Status>({
     message:
       "Editas y pulsas Guardar: se commitea data/cv.json y la web se actualiza tras el redeploy.",
@@ -123,6 +130,16 @@ export function AdminPage() {
   useEffect(() => {
     void load()
   }, [])
+
+  useEffect(() => {
+    if (!toast) return
+    const timeout = window.setTimeout(() => setToast(null), 4500)
+    return () => window.clearTimeout(timeout)
+  }, [toast])
+
+  function showToast(message: string, tone: Toast["tone"]) {
+    setToast({ id: Date.now(), message, tone })
+  }
 
   function updateData(path: FormPath, value: JsonValue) {
     setData((current) => {
@@ -308,7 +325,9 @@ export function AdminPage() {
 
   async function save() {
     if (!password) {
-      setStatus({ message: "Introduce la contraseña.", tone: "err" })
+      const message = "Introduce la contraseña."
+      setStatus({ message, tone: "err" })
+      showToast(message, "err")
       return
     }
 
@@ -319,10 +338,12 @@ export function AdminPage() {
         throw new Error("Falta es.portfolio o en.portfolio.")
       }
     } catch (err) {
+      const message = err instanceof Error ? err.message : String(err)
       setStatus({
-        message: err instanceof Error ? err.message : String(err),
+        message,
         tone: "err",
       })
+      showToast(message, "err")
       return
     }
 
@@ -331,15 +352,19 @@ export function AdminPage() {
     try {
       const out = await saveCvPayload(password, payload)
       setData(payload)
+      const message = `Guardado. Commit ${(out.commit || "").slice(0, 7)}. Redesplegando (~20s)...`
       setStatus({
-        message: `Guardado. Commit ${(out.commit || "").slice(0, 7)}. Redesplegando (~20s)...`,
+        message,
         tone: "ok",
       })
+      showToast(message, "ok")
     } catch (err) {
+      const message = err instanceof Error ? err.message : String(err)
       setStatus({
-        message: err instanceof Error ? err.message : String(err),
+        message,
         tone: "err",
       })
+      showToast(message, "err")
     } finally {
       setSaving(false)
     }
@@ -347,6 +372,40 @@ export function AdminPage() {
 
   return (
     <div className="min-h-svh bg-background text-foreground">
+      {toast && (
+        <div
+          aria-live="polite"
+          className={cn(
+            "fixed right-4 top-4 z-50 flex max-w-sm items-start gap-3 rounded-xl border bg-card p-4 text-sm shadow-2xl ring-1 ring-foreground/10",
+            toast.tone === "ok" && "border-teal-500/40",
+            toast.tone === "err" && "border-destructive/50",
+          )}
+          key={toast.id}
+          role="status"
+        >
+          <span
+            className={cn(
+              "mt-1 size-2.5 shrink-0 rounded-full",
+              toast.tone === "ok" && "bg-teal-500",
+              toast.tone === "err" && "bg-destructive",
+            )}
+          />
+          <div className="min-w-0 flex-1">
+            <p className="font-medium">
+              {toast.tone === "ok" ? "Guardado correctamente" : "No se pudo guardar"}
+            </p>
+            <p className="mt-1 wrap-break-word text-muted-foreground">{toast.message}</p>
+          </div>
+          <button
+            aria-label="Cerrar notificación"
+            className="rounded-md px-1.5 text-muted-foreground transition hover:bg-muted hover:text-foreground"
+            type="button"
+            onClick={() => setToast(null)}
+          >
+            x
+          </button>
+        </div>
+      )}
       <header className="border-b bg-card">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-4">
           <span className="size-2.5 rounded-full bg-(--accent-400)" />

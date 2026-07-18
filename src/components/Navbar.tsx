@@ -2,7 +2,7 @@ import { ThemeMenu } from "@/components/ThemeMenu"
 import { usePreferences } from "@/context/preferences"
 
 export function Navbar() {
-  const { t, palette, toggleLang, toggleTheme, dark } = usePreferences()
+  const { t, palette } = usePreferences()
 
   const initials = `${t.name[0]}${t.surname[0]}`
   const links = [
@@ -43,24 +43,7 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-1">
-          <button
-            type="button"
-            onClick={toggleLang}
-            className="flex items-center gap-1.5 rounded-md px-2.5 py-1.5 font-mono text-xs font-semibold transition hover:bg-muted"
-            aria-label="Toggle language"
-          >
-            <span className="text-sm">{t.flag}</span>
-            {t.langLabel}
-          </button>
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="rounded-md p-2 text-base transition hover:bg-muted"
-            aria-label="Toggle theme"
-          >
-            {dark ? "🌙" : "☀️"}
-          </button>
+        <div className="flex items-center">
           <ThemeMenu />
         </div>
       </nav>

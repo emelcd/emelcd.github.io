@@ -130,13 +130,15 @@
   * {
     @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "cv11", "ss01";
-    }
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+    overflow-x: clip;
+    }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv11", "ss01";
+    overflow-x: clip;
     }
   ::selection {
     background: color-mix(in oklch, var(--accent-400) 35%, transparent);

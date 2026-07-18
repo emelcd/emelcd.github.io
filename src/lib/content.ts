@@ -122,7 +122,13 @@ export type Content = {
   stackPreview: string[]
   status: { available: string; location: string; focus: string }
   cta: { primary: string; secondary: string }
-  nav: { about: string; work: string; projects: string; activity: string; contact: string }
+  nav: {
+    about: string
+    work: string
+    projects: string
+    activity: string
+    contact: string
+  }
   headings: {
     about: string
     aboutLead: string

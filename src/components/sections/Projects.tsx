@@ -22,12 +22,12 @@ export function Projects() {
             <Reveal
               key={p.name}
               delay={i * 70}
-              className="surface group flex flex-col rounded-2xl border border-border/80 p-6"
+              className="surface group flex min-w-0 flex-col rounded-2xl border border-border/80 p-5 sm:p-6"
             >
-              <div className="mb-3 flex items-start justify-between gap-4">
-                <h3 className="text-lg font-semibold">{p.name}</h3>
+              <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                <h3 className="min-w-0 text-lg font-semibold break-words">{p.name}</h3>
                 <span
-                  className="shrink-0 rounded-full px-2.5 py-0.5 font-mono text-[11px]"
+                  className="w-fit shrink-0 rounded-full px-2.5 py-0.5 font-mono text-[11px]"
                   style={{
                     backgroundColor: `color-mix(in oklch, ${palette[400]} 14%, transparent)`,
                     color: "var(--accent-400)",
@@ -39,21 +39,23 @@ export function Projects() {
               <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {p.blurb}
               </p>
-              <div className="flex flex-wrap items-center gap-1.5">
-                {p.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-md border border-border bg-background px-2 py-0.5 font-mono text-[11px] text-muted-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {p.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-md border border-border bg-background px-2 py-0.5 font-mono text-[11px] text-muted-foreground"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
                 {p.link && (
                   <a
                     href={p.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="ml-auto inline-flex items-center gap-1 font-mono text-xs font-semibold transition hover:gap-1.5"
+                    className="inline-flex w-fit items-center gap-1 font-mono text-xs font-semibold transition hover:gap-1.5"
                     style={{ color: "var(--accent-400)" }}
                   >
                     {p.linkLabel}

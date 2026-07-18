@@ -11,24 +11,24 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="grid-backdrop pointer-events-none absolute inset-0" />
-      <div className="accent-glow pointer-events-none absolute top-[-18%] left-1/2 h-[560px] w-[900px] -translate-x-1/2 blur-sm" />
+      <div className="accent-glow pointer-events-none absolute top-[-18%] left-1/2 h-[min(560px,70vw)] w-[min(900px,160vw)] -translate-x-1/2 blur-sm" />
       <div
-        className="pointer-events-none absolute top-[35%] right-[-8%] h-[320px] w-[320px] rounded-full opacity-50 blur-3xl"
+        className="pointer-events-none absolute top-[35%] right-[-8%] size-[min(320px,55vw)] rounded-full opacity-50 blur-3xl"
         style={{
           background: `radial-gradient(circle, ${palette[600]}33, transparent 70%)`,
         }}
       />
       <div
-        className="pointer-events-none absolute bottom-[5%] left-[-6%] h-[260px] w-[260px] rounded-full opacity-40 blur-3xl"
+        className="pointer-events-none absolute bottom-[5%] left-[-6%] size-[min(260px,50vw)] rounded-full opacity-40 blur-3xl"
         style={{
           background: `radial-gradient(circle, ${palette[400]}22, transparent 70%)`,
         }}
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="flex flex-col gap-6">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border/80 bg-card/70 px-3 py-1 font-mono text-xs text-muted-foreground shadow-sm backdrop-blur-md">
-            <span className="relative flex h-2 w-2">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 sm:gap-12 sm:py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="flex min-w-0 flex-col gap-5 sm:gap-6">
+          <span className="inline-flex w-fit max-w-full items-center gap-2 rounded-full border border-border/80 bg-card/70 px-3 py-1 font-mono text-xs text-muted-foreground shadow-sm backdrop-blur-md">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span
                 className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-70"
                 style={{ backgroundColor: palette[400] }}
@@ -38,10 +38,10 @@ export function Hero() {
                 style={{ backgroundColor: palette[400] }}
               />
             </span>
-            {t.status.available}
+            <span className="truncate">{t.status.available}</span>
           </span>
 
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-bold tracking-tight break-words sm:text-5xl md:text-6xl lg:text-7xl">
             {t.name}{" "}
             <span
               className="bg-gradient-to-br bg-clip-text text-transparent"
@@ -57,27 +57,27 @@ export function Hero() {
             {t.role}
           </p>
 
-          <p className="font-mono text-lg text-muted-foreground sm:text-xl">
+          <p className="font-mono text-base text-muted-foreground sm:text-lg md:text-xl">
             <span className="text-foreground">I </span>
             <span style={{ color: "var(--accent-400)" }}>{typed}</span>
             <span className="cursor-blink ml-0.5" />
           </p>
 
-          <p className="max-w-lg text-base leading-relaxed text-muted-foreground">
+          <p className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
             {t.bio}
           </p>
 
           {(t.highlights?.length ?? 0) > 0 && (
-          <div className="flex flex-wrap divide-x divide-border/60 border-y border-border/60 py-4">
+          <div className="grid grid-cols-3 gap-3 border-y border-border/60 py-4 sm:gap-4">
             {t.highlights.map((item) => (
-              <div key={item.label} className="px-5 first:pl-0 last:pr-0">
+              <div key={item.label} className="min-w-0">
                 <p
-                  className="text-lg font-semibold tracking-tight"
+                  className="text-base font-semibold tracking-tight sm:text-lg"
                   style={{ color: palette[400] }}
                 >
                   {item.value}
                 </p>
-                <p className="font-mono text-xs text-muted-foreground">
+                <p className="font-mono text-[10px] leading-snug text-muted-foreground sm:text-xs">
                   {item.label}
                 </p>
               </div>
@@ -85,10 +85,10 @@ export function Hero() {
           </div>
           )}
 
-          <div className="flex flex-wrap items-center gap-3 pt-1">
+          <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:flex-wrap sm:items-center">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+              className="inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
               style={{
                 background: `linear-gradient(135deg, ${palette[400]}, ${palette[600]})`,
               }}
@@ -100,7 +100,7 @@ export function Hero() {
               href={resumeHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-muted"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-muted"
             >
               <ResumeIcon className="h-4 w-4" />
               {t.cta.secondary}

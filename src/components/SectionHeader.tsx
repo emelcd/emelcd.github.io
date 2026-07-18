@@ -12,14 +12,16 @@ export function SectionHeader({
   lead,
 }: SectionHeaderProps) {
   return (
-    <div className="flex flex-col gap-3">
-      <span className="font-mono text-xs tracking-[0.25em] text-muted-foreground uppercase">
+    <div className="flex min-w-0 flex-col gap-3">
+      <span className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase sm:text-xs sm:tracking-[0.25em]">
         <span style={{ color: "var(--accent-400)" }}>{index}</span> — {eyebrow}
       </span>
-      <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+      <h2 className="max-w-2xl text-2xl font-bold tracking-tight break-words sm:text-3xl md:text-4xl">
         {title}
       </h2>
-      {lead && <p className="max-w-xl text-base text-muted-foreground">{lead}</p>}
+      {lead && (
+        <p className="max-w-xl text-sm text-muted-foreground sm:text-base">{lead}</p>
+      )}
     </div>
   )
 }

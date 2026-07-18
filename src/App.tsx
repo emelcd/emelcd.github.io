@@ -19,13 +19,13 @@ function App() {
 
   return (
     <PreferencesProvider>
-      <div className="relative min-h-svh bg-background text-foreground">
+      <div className="relative min-h-svh overflow-x-clip bg-background text-foreground">
         <div className="page-atmosphere" aria-hidden>
           <div className="page-atmosphere__wash" />
           <div className="page-atmosphere__noise" />
           <div className="page-atmosphere__vignette" />
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 min-w-0">
           <LoadingScreen />
           <Navbar />
           <main>

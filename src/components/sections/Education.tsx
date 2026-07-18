@@ -15,16 +15,16 @@ export function Education() {
           <Reveal
             key={entry.degree}
             delay={i * 50}
-            className="surface flex items-center justify-between gap-4 rounded-xl border border-border/80 px-5 py-4 hover:border-transparent"
+            className="surface flex flex-col gap-2 rounded-xl border border-border/80 px-4 py-4 hover:border-transparent sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5"
           >
-            <div className="flex items-center gap-4">
-              <span className="font-mono text-sm font-semibold text-muted-foreground">
+            <div className="flex min-w-0 items-start gap-3 sm:items-center sm:gap-4">
+              <span className="shrink-0 font-mono text-sm font-semibold text-muted-foreground">
                 {entry.year}
               </span>
-              <span className="hidden h-8 w-px bg-border sm:block" />
-              <p className="font-medium">{entry.degree}</p>
+              <span className="hidden h-8 w-px shrink-0 bg-border sm:block" />
+              <p className="min-w-0 font-medium break-words">{entry.degree}</p>
             </div>
-            <span className="shrink-0 font-mono text-xs text-muted-foreground">
+            <span className="pl-10 font-mono text-xs text-muted-foreground sm:shrink-0 sm:pl-0 sm:text-right">
               {entry.institution}
             </span>
           </Reveal>

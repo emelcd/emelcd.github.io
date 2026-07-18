@@ -345,9 +345,9 @@ export function TerminalCard() {
   const focusInput = () => inputRef.current?.focus()
 
   return (
-    <div className="relative">
+    <div className="relative min-w-0 overflow-hidden">
       <div
-        className="absolute -inset-4 rounded-3xl opacity-50 blur-3xl"
+        className="absolute -inset-2 rounded-3xl opacity-50 blur-3xl sm:-inset-4"
         style={{
           background: `linear-gradient(135deg, ${palette[400]}99, ${palette[600]}40 40%, transparent 72%)`,
         }}
@@ -364,11 +364,11 @@ export function TerminalCard() {
         className="relative overflow-hidden rounded-xl border border-white/10 bg-[oklch(0.16_0_0)] shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_24px_48px_-12px_rgba(0,0,0,0.55),0_12px_24px_-8px_rgba(0,0,0,0.4)]"
         onClick={focusInput}
       >
-        <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-          <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
-          <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
-          <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
-          <span className="ml-2 font-mono text-xs text-white/40">
+        <div className="flex min-w-0 items-center gap-2 border-b border-white/10 px-3 py-3 sm:px-4">
+          <span className="h-3 w-3 shrink-0 rounded-full bg-[#ff5f56]" />
+          <span className="h-3 w-3 shrink-0 rounded-full bg-[#ffbd2e]" />
+          <span className="h-3 w-3 shrink-0 rounded-full bg-[#27c93f]" />
+          <span className="ml-2 truncate font-mono text-xs text-white/40">
             miguel@dev — zsh
             {activeGame ? ` · ${activeGame.type}` : ""}
           </span>
@@ -376,24 +376,24 @@ export function TerminalCard() {
 
         <div
           ref={scrollRef}
-          className="flex max-h-80 flex-col gap-2 overflow-y-auto p-5 font-mono text-sm leading-relaxed"
+          className="flex max-h-80 min-w-0 flex-col gap-2 overflow-x-auto overflow-y-auto p-3 font-mono text-sm leading-relaxed sm:p-5"
         >
           {history.map((line, i) => (
-            <div key={`${line.kind}-${i}-${line.text.slice(0, 24)}`}>
+            <div key={`${line.kind}-${i}-${line.text.slice(0, 24)}`} className="min-w-0">
               {line.kind === "input" ? (
-                <p className="text-white/90">
+                <p className="break-words text-white/90">
                   <span style={{ color: palette[400] }}>➜</span>{" "}
                   <span className="text-white/50">~</span> {line.command}
                 </p>
               ) : (
-                <p className={lineColor(line.kind)}>{line.text}</p>
+                <p className={`${lineColor(line.kind)} break-words`}>{line.text}</p>
               )}
             </div>
           ))}
 
           {gameLines.length > 0 && (
             <div
-              className="rounded border border-white/10 bg-black/30 p-3 text-xs leading-tight text-white/80"
+              className="overflow-x-auto rounded border border-white/10 bg-black/30 p-2 text-[10px] leading-tight text-white/80 sm:p-3 sm:text-xs"
               aria-live="polite"
             >
               {gameLines.map((line, i) => (
@@ -404,10 +404,10 @@ export function TerminalCard() {
             </div>
           )}
 
-          <form onSubmit={onSubmit} className="text-white/90">
-            <label className="flex items-baseline gap-0">
-              <span style={{ color: palette[400] }}>➜</span>
-              <span className="mx-1 text-white/50">~</span>
+          <form onSubmit={onSubmit} className="min-w-0 text-white/90">
+            <label className="flex min-w-0 items-baseline gap-0">
+              <span className="shrink-0" style={{ color: palette[400] }}>➜</span>
+              <span className="mx-1 shrink-0 text-white/50">~</span>
               <input
                 ref={inputRef}
                 type="text"

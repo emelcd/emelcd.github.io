@@ -66,7 +66,7 @@ export function ThemeMenu() {
           sideOffset={8}
           className="z-[70]"
         >
-          <Popover.Popup className="w-72 origin-(--transform-origin) rounded-xl border border-border/80 bg-card/95 p-3 shadow-xl outline-none backdrop-blur-xl transition data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0">
+          <Popover.Popup className="max-h-[min(70dvh,32rem)] w-[min(18rem,calc(100vw-1.5rem))] origin-(--transform-origin) overflow-y-auto rounded-xl border border-border/80 bg-card/95 p-3 shadow-xl outline-none backdrop-blur-xl transition data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0">
             <Popover.Title className="mb-3 font-mono text-[11px] font-semibold tracking-wide text-muted-foreground uppercase">
               {copy.title}
             </Popover.Title>

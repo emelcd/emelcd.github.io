@@ -60,24 +60,25 @@ function EventRow({
   palette: { 400: string }
 }) {
   return (
-    <li className="relative py-1.5 pl-5 font-mono text-[11px] text-muted-foreground">
+    <li className="relative min-w-0 py-1.5 pl-5 font-mono text-[11px] break-words text-muted-foreground">
       <span
         className="absolute top-2.5 left-0 h-1.5 w-1.5 rounded-full"
         style={{ backgroundColor: palette[400] }}
       />
-      <span style={{ color: "var(--accent-400)" }}>{eventLabel(event.type, lang)}</span>
-      <span className="px-1 text-border">·</span>
-      <span className="text-foreground/80">{repoShortName(event.repo)}</span>
-      {event.private && (
-        <>
-          <span className="px-1 text-border">·</span>
-          <span>{lang === "es" ? "priv" : "priv"}</span>
-        </>
-      )}
-      <span className="px-1 text-border">·</span>
-      <span className="text-foreground/70">{event.summary}</span>
-      <span className="px-1 text-border">·</span>
-      <span>{formatDate(event.createdAt, lang)}</span>
+      <div className="flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5">
+        <span style={{ color: "var(--accent-400)" }}>{eventLabel(event.type, lang)}</span>
+        <span className="text-border">·</span>
+        <span className="text-foreground/80">{repoShortName(event.repo)}</span>
+        {event.private && (
+          <>
+            <span className="text-border">·</span>
+            <span>priv</span>
+          </>
+        )}
+        <span className="text-border">·</span>
+        <span>{formatDate(event.createdAt, lang)}</span>
+      </div>
+      <p className="mt-0.5 text-foreground/70">{event.summary}</p>
     </li>
   )
 }
@@ -168,23 +169,23 @@ export function Activity() {
         ) : (
           <Reveal delay={60}>
             <div className="surface mt-6 overflow-hidden rounded-xl border border-border/80">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-border/60 px-3 py-2.5">
+              <div className="flex flex-col gap-2 border-b border-border/60 px-3 py-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-3">
                 <a
                   href={github.profile.htmlUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 transition hover:opacity-90"
+                  className="inline-flex min-w-0 items-center gap-2 transition hover:opacity-90"
                 >
                   <img
                     src={github.profile.avatarUrl}
                     alt=""
-                    className="h-7 w-7 rounded-md border border-border/80 object-cover"
+                    className="h-7 w-7 shrink-0 rounded-md border border-border/80 object-cover"
                   />
-                  <span className="font-mono text-xs font-semibold" style={{ color: "var(--accent-400)" }}>
+                  <span className="truncate font-mono text-xs font-semibold" style={{ color: "var(--accent-400)" }}>
                     @{github.profile.login}
                   </span>
                 </a>
-                <span className="font-mono text-[10px] text-muted-foreground">
+                <span className="font-mono text-[10px] leading-relaxed break-words text-muted-foreground">
                   {github.profile.totalRepos} repos · {github.profile.privateRepos}{" "}
                   {lang === "es" ? "priv" : "priv"} · {github.profile.publicRepos}{" "}
                   {lang === "es" ? "publ" : "pub"}
@@ -194,7 +195,7 @@ export function Activity() {
                   href={github.profile.htmlUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="ml-auto inline-flex items-center gap-1 font-mono text-[10px] transition hover:text-foreground"
+                  className="inline-flex w-fit items-center gap-1 font-mono text-[10px] transition hover:text-foreground sm:ml-auto"
                   style={{ color: "var(--accent-400)" }}
                 >
                   {copy.viewAll}

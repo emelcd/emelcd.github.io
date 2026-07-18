@@ -20,16 +20,16 @@ export function Skills() {
           <Reveal
             key={entry.category}
             delay={i * 70}
-            className="surface rounded-2xl border border-border/80 p-6"
+            className="surface min-w-0 rounded-2xl border border-border/80 p-5 sm:p-6"
           >
-            <div className="mb-3 flex items-center gap-2">
+            <div className="mb-3 flex min-w-0 items-center gap-2">
               <span
-                className="font-mono text-sm"
+                className="shrink-0 font-mono text-sm"
                 style={{ color: "var(--accent-400)" }}
               >
                 ./
               </span>
-              <h3 className="text-lg font-semibold">{entry.category}</h3>
+              <h3 className="min-w-0 text-base font-semibold break-words sm:text-lg">{entry.category}</h3>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
               {entry.description}

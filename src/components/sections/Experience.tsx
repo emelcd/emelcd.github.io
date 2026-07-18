@@ -29,15 +29,15 @@ export function Experience() {
             <Reveal
               key={entry.title}
               delay={i * 60}
-              className="group relative grid gap-4 pb-10 pl-8 last:pb-0 sm:grid-cols-[1fr_auto] sm:gap-6"
+              className="group relative grid min-w-0 gap-3 pb-10 pl-7 last:pb-0 sm:grid-cols-[1fr_auto] sm:gap-6 sm:pl-8"
             >
               <span
-                className="absolute top-1 left-0 h-4 w-4 rounded-full border-4 border-background shadow-[0_0_0_3px_color-mix(in_oklch,var(--accent-400)_25%,transparent)] transition group-hover:scale-125"
+                className="absolute top-1 left-0 h-3.5 w-3.5 rounded-full border-4 border-background shadow-[0_0_0_3px_color-mix(in_oklch,var(--accent-400)_25%,transparent)] transition group-hover:scale-125 sm:h-4 sm:w-4"
                 style={{ backgroundColor: palette[400] }}
               />
-              <div className="flex flex-col gap-2 rounded-xl border border-transparent p-3 -m-3 transition group-hover:border-border/60 group-hover:bg-card/50 group-hover:shadow-sm">
-                <div>
-                  <h3 className="text-lg font-semibold">{entry.title}</h3>
+              <div className="flex min-w-0 flex-col gap-2 rounded-xl border border-transparent p-2 -m-2 transition group-hover:border-border/60 group-hover:bg-card/50 group-hover:shadow-sm sm:p-3 sm:-m-3">
+                <div className="min-w-0">
+                  <h3 className="text-base font-semibold break-words sm:text-lg">{entry.title}</h3>
                   <p
                     className="font-mono text-sm"
                     style={{ color: "var(--accent-400)" }}

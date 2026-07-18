@@ -39,13 +39,13 @@ export function LoadingScreen() {
       aria-hidden={phase === "exit"}
       aria-live="polite"
       aria-busy={phase === "loading"}
-      className={`fixed inset-0 z-[100] grid place-items-center transition-opacity duration-500 ease-out ${
+      className={`fixed inset-0 z-[100] grid place-items-center overflow-hidden transition-opacity duration-500 ease-out ${
         phase === "exit" ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
     >
       <div className="absolute inset-0 bg-background/92 backdrop-blur-md" />
       <div className="grid-backdrop pointer-events-none absolute inset-0 opacity-60" />
-      <div className="accent-glow pointer-events-none absolute top-1/2 left-1/2 h-[420px] w-[640px] -translate-x-1/2 -translate-y-1/2 blur-sm" />
+      <div className="accent-glow pointer-events-none absolute top-1/2 left-1/2 h-[min(420px,60vw)] w-[min(640px,140vw)] -translate-x-1/2 -translate-y-1/2 blur-sm" />
 
       <div className="relative w-[min(92vw,26rem)] overflow-hidden rounded-2xl border border-border/80 bg-[#0d1117] shadow-2xl">
         <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">

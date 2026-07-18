@@ -67,6 +67,7 @@ export function Hero() {
             {t.bio}
           </p>
 
+          {(t.highlights?.length ?? 0) > 0 && (
           <div className="flex flex-wrap divide-x divide-border/60 border-y border-border/60 py-4">
             {t.highlights.map((item) => (
               <div key={item.label} className="px-5 first:pl-0 last:pr-0">
@@ -82,6 +83,7 @@ export function Hero() {
               </div>
             ))}
           </div>
+          )}
 
           <div className="flex flex-wrap items-center gap-3 pt-1">
             <a
@@ -136,6 +138,7 @@ export function Hero() {
             </span>
           </div>
 
+          {(t.stackPreview?.length ?? 0) > 0 && (
           <div className="flex flex-wrap gap-2 pt-1">
             {t.stackPreview.map((tag) => (
               <span
@@ -146,6 +149,7 @@ export function Hero() {
               </span>
             ))}
           </div>
+          )}
         </div>
 
         <TerminalCard />

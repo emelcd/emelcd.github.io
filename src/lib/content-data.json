@@ -5,26 +5,45 @@
       "langLabel": "ES",
       "name": "Miguel",
       "surname": "López",
-      "role": "Ingeniero Full Stack · Backend-focused",
+      "role": "Arquitecto de Software · Backend & Cloud",
       "roles": [
-        "diseño APIs REST limpias",
-        "levanto arquitecturas DDD + CQRS",
-        "integro sistemas distribuidos",
+        "diseño arquitecturas backend",
+        "modelo dominios DDD + CQRS",
+        "orquesto sistemas distribuidos",
         "automatizo Linux y la nube"
       ],
-      "bio": "Desarrollador full stack centrado en backend. Construyo servicios en Python (FastAPI/Flask) y Node con Clean Architecture, DDD y CQRS, integro sistemas de mensajería y datos, y despliego sobre Linux y nube (GCP/AWS).",
+      "bio": "Arquitecto de software con base full stack y foco en backend. Diseño plataformas mantenibles en Python (FastAPI/Flask) y Node aplicando Clean Architecture, DDD y CQRS, integro mensajería y datos, y llevo las decisiones técnicas hasta producción sobre Linux y nube (GCP/AWS).",
       "highlights": [
-        { "value": "7+", "label": "años de experiencia" },
-        { "value": "Backend", "label": "arquitectura & APIs" },
-        { "value": "Cloud", "label": "GCP · AWS · Linux" }
+        {
+          "value": "7+",
+          "label": "años de experiencia"
+        },
+        {
+          "value": "Backend",
+          "label": "arquitectura & APIs"
+        },
+        {
+          "value": "Cloud",
+          "label": "GCP · AWS · Linux"
+        }
       ],
-      "stackPreview": ["Python", "FastAPI", "Node", "Kafka", "GCP", "Docker"],
+      "stackPreview": [
+        "Python",
+        "FastAPI",
+        "Node",
+        "Kafka",
+        "GCP",
+        "Docker"
+      ],
       "status": {
         "available": "Abierto a proyectos",
         "location": "Valencia, ES",
-        "focus": "Backend & Cloud"
+        "focus": "Architect"
       },
-      "cta": { "primary": "Hablemos", "secondary": "Ver CV" },
+      "cta": {
+        "primary": "Hablemos",
+        "secondary": "Ver CV"
+      },
       "nav": {
         "about": "Perfil",
         "work": "Trayectoria",
@@ -33,13 +52,13 @@
       },
       "headings": {
         "about": "Lo que hago",
-        "aboutLead": "De la arquitectura al despliegue: diseño el backend, lo conecto con datos y mensajería, y lo dejo corriendo en producción.",
+        "aboutLead": "De la estrategia técnica al despliegue: diseño arquitecturas backend, modelo dominios, conecto datos y mensajería, y dejo plataformas sostenibles en producción.",
         "experience": "Trayectoria",
-        "experienceLead": "Siete años entre backend, cloud y sistemas — de la administración de infraestructura al desarrollo de plataformas.",
+        "experienceLead": "Siete años entre backend, cloud y sistemas — pasando del desarrollo de producto a la arquitectura de plataformas.",
         "skills": "Stack técnico",
-        "skillsLead": "Las herramientas con las que trabajo a diario.",
+        "skillsLead": "Herramientas y criterios para diseñar sistemas robustos, observables y mantenibles.",
         "projects": "Trabajo seleccionado",
-        "projectsLead": "Una muestra de plataformas y herramientas que he construido y mantengo.",
+        "projectsLead": "Una muestra de plataformas, integraciones y decisiones de arquitectura que he diseñado, construido y mantenido.",
         "education": "Formación",
         "contact": "Construyamos algo",
         "contactLead": "¿Tienes un backend que diseñar, una integración que resolver o una plataforma que escalar? Escríbeme."
@@ -48,51 +67,67 @@
         {
           "icon": "server",
           "title": "Arquitectura backend",
-          "description": "APIs REST con Clean Architecture, DDD y CQRS en Python (FastAPI/Flask) y Node (Express). Seguridad con JWT y OAuth2.0."
+          "description": "Diseño de APIs REST, límites de dominio y servicioss mantenibles con Clean Architecture, DDD y CQRS en Python (FastAPI/Flask) y Node (Express). Seguridad con JWT y OAuth2.0."
         },
         {
           "icon": "layout",
-          "title": "Frontend moderno",
-          "description": "Interfaces con Vue 3, Nuxt, React y Angular. Estilos con Tailwind, shadcn, Chakra/MUI. Integración de APIs seguras."
+          "title": "Frontend orientado a producto",
+          "description": "Interfaces con Vue 3, Nuxt, React y Angular, integradas con contratos de API claros y flujos seguros."
         },
         {
           "icon": "database",
           "title": "Datos & mensajería",
-          "description": "Persistencia y streaming con Kafka, MongoDB, Redis y Elasticsearch. Modelado de datos SQL y NoSQL."
+          "description": "Arquitecturas de persistencia, streaming e integración con Kafka, MongoDB, Redis y Elasticsearch. Modelado SQL y NoSQL."
         },
         {
           "icon": "terminal",
-          "title": "Linux, cloud & DevOps",
-          "description": "Despliegue con Docker y GitLab CI sobre GCP/AWS. Scripting en Bash, ZX y Python. Automatización y mantenimiento."
+          "title": "Cloud, Linux & DevOps",
+          "description": "Diseño operativo, despliegue y automatización con Docker y GitLab CI sobre GCP/AWS. Scripting en Bash, ZX y Python."
         }
       ],
       "experience": [
         {
           "title": "Ingeniero de Desarrollo e Investigación",
           "company": "ITI — Instituto Tecnológico de Informática",
-          "description": "Desarrollo backend de la plataforma interna iti-moar en Python (FastAPI) con Clean Architecture, DDD y CQRS. Integración de Kafka, MongoDB, Redis y Elasticsearch. Frontends con Vue 3 y Nuxt. Mantenimiento de módulos Odoo a medida (CRM, nóminas, analítica).",
+          "description": "Diseño y evolución del backend de la plataforma interna iti-moar en Python (FastAPI), aplicando Clean Architecture, DDD y CQRS. Integración de Kafka, MongoDB, Redis y Elasticsearch. Frontends con Vue 3 y Nuxt. Mantenimiento de módulos Odoo a medida (CRM, nóminas, analítica).",
           "location": "Valencia",
           "duration": "32 meses",
           "period": "2023 — actualidad",
-          "stack": ["FastAPI", "DDD", "CQRS", "Kafka", "Vue 3", "Odoo"]
+          "stack": [
+            "FastAPI",
+            "DDD",
+            "CQRS",
+            "Kafka",
+            "Vue 3",
+            "Odoo"
+          ]
         },
         {
           "title": "Desarrollador de Software Junior / TSR",
           "company": "Webhelp · Proyecto Google",
-          "description": "Desarrollo de aplicaciones y herramientas internas. Soporte de Google Cloud y Google Workspace. Especialista en arquitectura GCloud, integración de datos y APIs de Google. Scripting, análisis de código e informes de errores.",
+          "description": "Diseño y soporte de aplicaciones y herramientas internas. Soporte de Google Cloud y Google Workspace. Especialista en arquitectura GCloud, integración de datos y APIs de Google. Scripting, análisis de código e informes de errores.",
           "location": "Barcelona",
           "duration": "27 meses",
           "period": "2020 — 2023",
-          "stack": ["GCP", "Apigee", "APIs", "Scripting"]
+          "stack": [
+            "GCP",
+            "Apigee",
+            "APIs",
+            "Scripting"
+          ]
         },
         {
           "title": "Desarrollador Web",
           "company": "SNIK Comunicaciones",
-          "description": "Responsable del diseño, desarrollo y mantenimiento de una variedad de sitios y aplicaciones web para clientes.",
+          "description": "Responsable del diseño técnico, desarrollo y mantenimiento de sitios y aplicaciones web para clientes.",
           "location": "Remoto",
           "duration": "6 meses",
           "period": "2020",
-          "stack": ["JavaScript", "PHP", "Web"]
+          "stack": [
+            "JavaScript",
+            "PHP",
+            "Web"
+          ]
         },
         {
           "title": "Posición de IT",
@@ -101,77 +136,144 @@
           "location": "Altura",
           "duration": "9 meses",
           "period": "2019 — 2020",
-          "stack": ["AWS", "Active Directory", "IT"]
+          "stack": [
+            "AWS",
+            "Active Directory",
+            "IT"
+          ]
         },
         {
           "title": "Desarrollador Web Freelance",
           "company": "Autónomo",
-          "description": "Diseño, desarrollo y despliegue de aplicaciones de principio a fin: Figma/Photoshop, React/Vanilla, FastAPI/Express, Mongo/SQL sobre GCP/AWS.",
+          "description": "Diseño de arquitectura, desarrollo y despliegue de aplicaciones de principio a fin: Figma/Photoshop, React/Vanilla, FastAPI/Express, Mongo/SQL sobre GCP/AWS.",
           "location": "Remoto",
           "duration": "11 meses",
           "period": "2018 — 2019",
-          "stack": ["React", "FastAPI", "MongoDB", "GCP"]
+          "stack": [
+            "React",
+            "FastAPI",
+            "MongoDB",
+            "GCP"
+          ]
         }
       ],
       "skills": [
         {
-          "category": "Backend",
-          "description": "APIs REST y arquitecturas limpias (Clean Architecture, DDD, CQRS) en Python y Node. Seguridad con JWT y OAuth2.0.",
-          "tags": ["Python", "FastAPI", "Flask", "Node", "Express", "OAuth2"]
+          "category": "Arquitectura Backend",
+          "description": "Diseño de APIs REST, límites de dominio y arquitecturas limpias (Clean Architecture, DDD, CQRS) en Python y Node. Seguridad con JWT y OAuth2.0.",
+          "tags": [
+            "Python",
+            "FastAPI",
+            "Flask",
+            "Node",
+            "Express",
+            "OAuth2"
+          ]
         },
         {
           "category": "Frontend",
-          "description": "Desarrollo con Vue 3, Nuxt, React, Angular y Vanilla JS. Estilos con Tailwind, shadcn y SCSS.",
-          "tags": ["Vue 3", "Nuxt", "React", "Angular", "Tailwind", "TypeScript"]
+          "description": "Diseño de interfaces con Vue 3, Nuxt, React, Angular y Vanilla JS, conectadas a APIs seguras y contratos claros.",
+          "tags": [
+            "Vue 3",
+            "Nuxt",
+            "React",
+            "Angular",
+            "Tailwind",
+            "TypeScript"
+          ]
         },
         {
           "category": "Datos e Infraestructura",
-          "description": "Mensajería y persistencia con Kafka, MongoDB, Redis y Elasticsearch. Despliegue con Docker y GitLab CI.",
-          "tags": ["Kafka", "MongoDB", "Redis", "Elasticsearch", "Docker", "SQL"]
+          "description": "Arquitectura de mensajería y persistencia con Kafka, MongoDB, Redis y Elasticsearch. Despliegue con Docker y GitLab CI.",
+          "tags": [
+            "Kafka",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch",
+            "Docker",
+            "SQL"
+          ]
         },
         {
           "category": "Linux & Cloud",
-          "description": "Experto en Linux local y cloud (GCP/AWS). Scripting en Bash, ZX y Python. Automatización y mantenimiento.",
-          "tags": ["Linux", "GCP", "AWS", "Bash", "GitLab CI", "Apigee"]
+          "description": "Diseño operativo en Linux local y cloud (GCP/AWS). Scripting en Bash, ZX y Python. Automatización y mantenimiento.",
+          "tags": [
+            "Linux",
+            "GCP",
+            "AWS",
+            "Bash",
+            "GitLab CI",
+            "Apigee"
+          ]
         }
       ],
       "projects": [
         {
           "name": "Plataforma iti-moar",
-          "blurb": "Plataforma interna de investigación construida sobre FastAPI con Clean Architecture, DDD y CQRS. Mensajería con Kafka y persistencia poliglota (Mongo, Redis, Elasticsearch).",
-          "tags": ["FastAPI", "DDD", "CQRS", "Kafka"],
+          "blurb": "Plataforma interna de investigación diseñada sobre FastAPI con Clean Architecture, DDD y CQRS. Mensajería con Kafka y persistencia poliglota (Mongo, Redis, Elasticsearch).",
+          "tags": [
+            "FastAPI",
+            "DDD",
+            "CQRS",
+            "Kafka"
+          ],
           "status": "En producción"
         },
         {
           "name": "Módulos Odoo a medida",
           "blurb": "Módulos personalizados de CRM, nóminas y analítica para ERP Odoo, integrados con los flujos internos del instituto.",
-          "tags": ["Odoo", "Python", "PostgreSQL"],
+          "tags": [
+            "Odoo",
+            "Python",
+            "PostgreSQL"
+          ],
           "status": "Mantenimiento"
         },
         {
           "name": "Herramientas internas GCloud",
-          "blurb": "Aplicaciones y automatizaciones sobre Google Cloud y Apigee: integración de APIs, scripting y arquitectura de datos para el proyecto Google.",
-          "tags": ["GCP", "Apigee", "Automatización"],
+          "blurb": "Aplicaciones y automatizaciones sobre Google Cloud y Apigee: arquitectura de servicios, integración de APIs, scripting y datos para el proyecto Google.",
+          "tags": [
+            "GCP",
+            "Apigee",
+            "Automatización"
+          ],
           "status": "Entregado"
         },
         {
           "name": "Este portfolio",
           "blurb": "Sitio personal en React + Vite + TypeScript con Tailwind y shadcn/ui. Bilingüe, con temas y acentos personalizables. Desplegado en GitHub Pages.",
-          "tags": ["React", "Vite", "TypeScript", "Tailwind"],
+          "tags": [
+            "React",
+            "Vite",
+            "TypeScript",
+            "Tailwind"
+          ],
           "status": "Open source",
           "link": "https://github.com/emelcd/emelcd.github.io",
           "linkLabel": "Ver código"
         }
       ],
       "education": [
-        { "degree": "Desarrollo de APIs en GCP Apigee", "institution": "Google", "year": "2026" },
-        { "degree": "Google IT Automation with Python", "institution": "Google", "year": "2022" },
+        {
+          "degree": "Desarrollo de APIs en GCP Apigee",
+          "institution": "Google",
+          "year": "2026"
+        },
+        {
+          "degree": "Google IT Automation with Python",
+          "institution": "Google",
+          "year": "2022"
+        },
         {
           "degree": "Ciclo Superior en Administración de Sistemas",
           "institution": "UNED · Buitrago",
           "year": "2021"
         },
-        { "degree": "Grado en Psicología", "institution": "Universidad de Valencia", "year": "2016" }
+        {
+          "degree": "Grado en Psicología",
+          "institution": "Universidad de Valencia",
+          "year": "2016"
+        }
       ],
       "contact": {
         "line": "Respondo rápido. Cuéntame qué tienes en mente.",
@@ -183,7 +285,7 @@
       "lang": "es",
       "name": "Miguel",
       "surname": "López",
-      "role": "Ingeniero de Software Full Stack · Backend-focused",
+      "role": "Arquitecto de Software · Backend & Cloud",
       "contact": {
         "email": "mick.altura@gmail.com",
         "github": "github.com/emelcd",
@@ -203,7 +305,7 @@
         "interests": "Intereses",
         "present": "actualidad"
       },
-      "summary": "Ingeniero de software full stack con más de 7 años de experiencia, especializado en el diseño de backends robustos y mantenibles. Diseño APIs REST siguiendo Clean Architecture, DDD y CQRS, integro sistemas distribuidos de mensajería y datos, y automatizo despliegues sobre Linux y nube (GCP/AWS). Combino una base sólida en administración de sistemas con el desarrollo de producto de principio a fin.",
+      "summary": "Arquitecto de software con más de 7 años de experiencia entre backend, cloud y sistemas. Diseño plataformas robustas y mantenibles, defino límites de dominio, modelo APIs REST con Clean Architecture, DDD y CQRS, e integro mensajería, datos y automatización sobre Linux y nube (GCP/AWS). Combino criterio de arquitectura, visión de producto y capacidad hands-on para llevar decisiones técnicas a producción.",
       "experience": [
         {
           "title": "Ingeniero de Desarrollo e Investigación",
@@ -211,12 +313,19 @@
           "location": "Valencia",
           "period": "2023 — actualidad",
           "bullets": [
-            "Desarrollo del backend de la plataforma interna iti-moar en Python (FastAPI) aplicando Clean Architecture, DDD y CQRS.",
+            "Diseño y evolución del backend de la plataforma interna iti-moar en Python (FastAPI), aplicando Clean Architecture, DDD y CQRS.",
             "Integración de mensajería y persistencia poliglota con Kafka, MongoDB, Redis y Elasticsearch.",
-            "Desarrollo de frontends con Vue 3 y Nuxt, consumiendo APIs seguras con JWT/OAuth2.0.",
+            "Diseño de contratos entre frontend y backend; frontends con Vue 3 y Nuxt consumiendo APIs seguras con JWT/OAuth2.0.",
             "Mantenimiento y evolución de módulos Odoo a medida (CRM, nóminas y analítica)."
           ],
-          "stack": ["FastAPI", "DDD", "CQRS", "Kafka", "Vue 3", "Odoo"]
+          "stack": [
+            "FastAPI",
+            "DDD",
+            "CQRS",
+            "Kafka",
+            "Vue 3",
+            "Odoo"
+          ]
         },
         {
           "title": "Desarrollador de Software Junior / TSR",
@@ -224,12 +333,17 @@
           "location": "Barcelona",
           "period": "2020 — 2023",
           "bullets": [
-            "Desarrollo y soporte de aplicaciones y herramientas internas sobre Google Cloud y Google Workspace.",
-            "Integración de datos y APIs de Google; arquitectura de servicios sobre GCloud y Apigee.",
+            "Diseño y soporte de aplicaciones y herramientas internas sobre Google Cloud y Google Workspace.",
+            "Arquitectura de servicios, integración de datos y APIs de Google sobre GCloud y Apigee.",
             "Scripting de automatización, análisis de código e informes de errores.",
             "Comunicación técnica directa con el cliente."
           ],
-          "stack": ["GCP", "Apigee", "APIs", "Bash"]
+          "stack": [
+            "GCP",
+            "Apigee",
+            "APIs",
+            "Bash"
+          ]
         },
         {
           "title": "Desarrollador Web",
@@ -237,9 +351,13 @@
           "location": "Remoto",
           "period": "2020",
           "bullets": [
-            "Diseño, desarrollo y mantenimiento de sitios y aplicaciones web para una variedad de clientes."
+            "Diseño técnico, desarrollo y mantenimiento de sitios y aplicaciones web para una variedad de clientes."
           ],
-          "stack": ["JavaScript", "PHP", "Web"]
+          "stack": [
+            "JavaScript",
+            "PHP",
+            "Web"
+          ]
         },
         {
           "title": "Técnico de IT",
@@ -250,7 +368,11 @@
             "Gestión de usuarios en Active Directory e infraestructura cloud en AWS.",
             "Implementación de herramientas web internas: gestión de vacaciones y sistema de ticketing."
           ],
-          "stack": ["AWS", "Active Directory", "IT"]
+          "stack": [
+            "AWS",
+            "Active Directory",
+            "IT"
+          ]
         },
         {
           "title": "Desarrollador Web Freelance",
@@ -258,52 +380,144 @@
           "location": "Remoto",
           "period": "2018 — 2019",
           "bullets": [
-            "Diseño, desarrollo y despliegue de aplicaciones de principio a fin.",
+            "Diseño de arquitectura, desarrollo y despliegue de aplicaciones de principio a fin.",
             "UI en Figma/Photoshop, front en React/Vanilla, back en FastAPI/Express y datos en Mongo/SQL sobre GCP/AWS."
           ],
-          "stack": ["React", "FastAPI", "MongoDB", "GCP"]
+          "stack": [
+            "React",
+            "FastAPI",
+            "MongoDB",
+            "GCP"
+          ]
         }
       ],
       "projects": [
         {
           "name": "Plataforma iti-moar",
-          "desc": "Plataforma interna de investigación sobre FastAPI con Clean Architecture, DDD y CQRS; mensajería con Kafka y persistencia poliglota (Mongo, Redis, Elasticsearch).",
-          "tags": ["FastAPI", "DDD", "Kafka"]
+          "desc": "Plataforma interna de investigación diseñada sobre FastAPI con Clean Architecture, DDD y CQRS; mensajería con Kafka y persistencia poliglota (Mongo, Redis, Elasticsearch).",
+          "tags": [
+            "FastAPI",
+            "DDD",
+            "Kafka"
+          ]
         },
         {
           "name": "Módulos Odoo a medida",
           "desc": "Módulos de CRM, nóminas y analítica integrados con los flujos internos del instituto.",
-          "tags": ["Odoo", "Python", "PostgreSQL"]
+          "tags": [
+            "Odoo",
+            "Python",
+            "PostgreSQL"
+          ]
         },
         {
           "name": "Herramientas internas GCloud",
-          "desc": "Integración de APIs, scripting y arquitectura de datos sobre Google Cloud y Apigee.",
-          "tags": ["GCP", "Apigee", "Automatización"]
+          "desc": "Arquitectura de servicios, integración de APIs, scripting y datos sobre Google Cloud y Apigee.",
+          "tags": [
+            "GCP",
+            "Apigee",
+            "Automatización"
+          ]
         },
         {
           "name": "Portfolio personal — emelcd.github.io",
           "desc": "Sitio en React + Vite + TypeScript con Tailwind y shadcn/ui; bilingüe, con temas y acentos. Open source.",
-          "tags": ["React", "Vite", "TypeScript"]
+          "tags": [
+            "React",
+            "Vite",
+            "TypeScript"
+          ]
         }
       ],
       "skills": [
-        { "cat": "Backend", "tags": ["Python", "FastAPI", "Flask", "Node", "Express", "OAuth2"] },
-        { "cat": "Frontend", "tags": ["Vue 3", "Nuxt", "React", "Angular", "Tailwind", "TypeScript"] },
-        { "cat": "Datos e Infra", "tags": ["Kafka", "MongoDB", "Redis", "Elasticsearch", "Docker", "SQL"] },
-        { "cat": "Linux & Cloud", "tags": ["Linux", "GCP", "AWS", "Bash", "GitLab CI", "Apigee"] }
+        {
+          "cat": "Arquitectura Backend",
+          "tags": [
+            "Python",
+            "FastAPI",
+            "Flask",
+            "Node",
+            "Express",
+            "OAuth2"
+          ]
+        },
+        {
+          "cat": "Frontend",
+          "tags": [
+            "Vue 3",
+            "Nuxt",
+            "React",
+            "Angular",
+            "Tailwind",
+            "TypeScript"
+          ]
+        },
+        {
+          "cat": "Datos e Infra",
+          "tags": [
+            "Kafka",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch",
+            "Docker",
+            "SQL"
+          ]
+        },
+        {
+          "cat": "Linux & Cloud",
+          "tags": [
+            "Linux",
+            "GCP",
+            "AWS",
+            "Bash",
+            "GitLab CI",
+            "Apigee"
+          ]
+        }
       ],
-      "methods": ["Clean Architecture", "DDD", "CQRS", "REST", "TDD", "CI/CD", "Agile / Scrum", "Code Review"],
+      "methods": [
+        "Clean Architecture",
+        "DDD",
+        "CQRS",
+        "REST",
+        "TDD",
+        "CI/CD",
+        "Agile / Scrum",
+        "Code Review"
+      ],
       "certs": [
-        { "name": "Desarrollo de APIs en GCP Apigee", "org": "Google", "year": "2026" },
-        { "name": "Google IT Automation with Python", "org": "Google", "year": "2022" }
+        {
+          "name": "Desarrollo de APIs en GCP Apigee",
+          "org": "Google",
+          "year": "2026"
+        },
+        {
+          "name": "Google IT Automation with Python",
+          "org": "Google",
+          "year": "2022"
+        }
       ],
       "education": [
-        { "deg": "Ciclo Superior en Administración de Sistemas", "inst": "UNED · Buitrago", "year": "2021" },
-        { "deg": "Grado en Psicología", "inst": "Universidad de Valencia", "year": "2016" }
+        {
+          "deg": "Ciclo Superior en Administración de Sistemas",
+          "inst": "UNED · Buitrago",
+          "year": "2021"
+        },
+        {
+          "deg": "Grado en Psicología",
+          "inst": "Universidad de Valencia",
+          "year": "2016"
+        }
       ],
       "languages": [
-        { "name": "Español", "level": "Nativo" },
-        { "name": "Inglés", "level": "Profesional" }
+        {
+          "name": "Español",
+          "level": "Nativo"
+        },
+        {
+          "name": "Inglés",
+          "level": "Profesional"
+        }
       ],
       "strengths": [
         "Comunicación técnica",
@@ -312,7 +526,12 @@
         "Trabajo en equipo",
         "Aprendizaje continuo"
       ],
-      "interests": ["Open source", "Automatización", "Self-hosting", "Linux"]
+      "interests": [
+        "Open source",
+        "Automatización",
+        "Self-hosting",
+        "Linux"
+      ]
     }
   },
   "en": {
@@ -321,26 +540,45 @@
       "langLabel": "EN",
       "name": "Miguel",
       "surname": "López",
-      "role": "Full Stack Engineer · Backend-focused",
+      "role": "Software Architect · Backend & Cloud",
       "roles": [
-        "design clean REST APIs",
-        "build DDD + CQRS architectures",
-        "wire up distributed systems",
-        "automate Linux and the cloud"
+        "design backend architectures",
+        "model DDD + CQRS domains",
+        "orchestrate distributed systems",
+        "automate Linux and cloud"
       ],
-      "bio": "Backend-focused full stack developer. I build services in Python (FastAPI/Flask) and Node with Clean Architecture, DDD and CQRS, integrate messaging and data systems, and ship them on Linux and cloud (GCP/AWS).",
+      "bio": "Software architect with a full stack background and a backend focus. I design maintainable platforms in Python (FastAPI/Flask) and Node using Clean Architecture, DDD and CQRS, integrate messaging and data systems, and carry technical decisions into production on Linux and cloud (GCP/AWS).",
       "highlights": [
-        { "value": "7+", "label": "years of experience" },
-        { "value": "Backend", "label": "architecture & APIs" },
-        { "value": "Cloud", "label": "GCP · AWS · Linux" }
+        {
+          "value": "7+",
+          "label": "years of experience"
+        },
+        {
+          "value": "Backend",
+          "label": "architecture & APIs"
+        },
+        {
+          "value": "Cloud",
+          "label": "GCP · AWS · Linux"
+        }
       ],
-      "stackPreview": ["Python", "FastAPI", "Node", "Kafka", "GCP", "Docker"],
+      "stackPreview": [
+        "Python",
+        "FastAPI",
+        "Node",
+        "Kafka",
+        "GCP",
+        "Docker"
+      ],
       "status": {
         "available": "Open to work",
         "location": "Valencia, ES",
-        "focus": "Backend & Cloud"
+        "focus": "Architecture"
       },
-      "cta": { "primary": "Get in touch", "secondary": "View résumé" },
+      "cta": {
+        "primary": "Get in touch",
+        "secondary": "View résumé"
+      },
       "nav": {
         "about": "About",
         "work": "Journey",
@@ -349,13 +587,13 @@
       },
       "headings": {
         "about": "What I do",
-        "aboutLead": "From architecture to deployment: I design the backend, wire it to data and messaging, and keep it running in production.",
+        "aboutLead": "From technical strategy to deployment: I design backend architectures, model domains, wire data and messaging, and keep sustainable platforms running in production.",
         "experience": "Journey",
-        "experienceLead": "Seven years across backend, cloud and systems — from infrastructure administration to platform engineering.",
+        "experienceLead": "Seven years across backend, cloud and systems — from product development to platform architecture.",
         "skills": "Tech stack",
-        "skillsLead": "The tools I reach for every day.",
+        "skillsLead": "Tools and principles for designing robust, observable and maintainable systems.",
         "projects": "Selected work",
-        "projectsLead": "A sample of the platforms and tools I've built and maintain.",
+        "projectsLead": "A sample of platforms, integrations and architecture decisions I've designed, built and maintained.",
         "education": "Education",
         "contact": "Let's build something",
         "contactLead": "Got a backend to design, an integration to solve, or a platform to scale? Drop me a line."
@@ -364,42 +602,54 @@
         {
           "icon": "server",
           "title": "Backend architecture",
-          "description": "REST APIs with Clean Architecture, DDD and CQRS in Python (FastAPI/Flask) and Node (Express). Security with JWT and OAuth2.0."
+          "description": "REST API design, domain boundaries and maintainable services with Clean Architecture, DDD and CQRS in Python (FastAPI/Flask) and Node (Express). Security with JWT and OAuth2.0."
         },
         {
           "icon": "layout",
-          "title": "Modern frontend",
-          "description": "Interfaces with Vue 3, Nuxt, React and Angular. Styling with Tailwind, shadcn, Chakra/MUI. Secure API integration."
+          "title": "Product-oriented frontend",
+          "description": "Interfaces with Vue 3, Nuxt, React and Angular, integrated through clear API contracts and secure flows."
         },
         {
           "icon": "database",
           "title": "Data & messaging",
-          "description": "Persistence and streaming with Kafka, MongoDB, Redis and Elasticsearch. SQL and NoSQL data modeling."
+          "description": "Persistence, streaming and integration architectures with Kafka, MongoDB, Redis and Elasticsearch. SQL and NoSQL data modeling."
         },
         {
           "icon": "terminal",
-          "title": "Linux, cloud & DevOps",
-          "description": "Deployment with Docker and GitLab CI on GCP/AWS. Scripting in Bash, ZX and Python. Automation and maintenance."
+          "title": "Cloud, Linux & DevOps",
+          "description": "Operational design, deployment and automation with Docker and GitLab CI on GCP/AWS. Scripting in Bash, ZX and Python."
         }
       ],
       "experience": [
         {
           "title": "Research & Development Engineer",
           "company": "ITI — Instituto Tecnológico de Informática",
-          "description": "Backend development of the internal iti-moar platform in Python (FastAPI) using Clean Architecture, DDD and CQRS. Integration of Kafka, MongoDB, Redis and Elasticsearch. Frontends with Vue 3 and Nuxt. Maintenance of custom Odoo modules (CRM, payroll, analytics).",
+          "description": "Design and evolution of the internal iti-moar backend in Python (FastAPI), using Clean Architecture, DDD and CQRS. Integration of Kafka, MongoDB, Redis and Elasticsearch. Frontends with Vue 3 and Nuxt. Maintenance of custom Odoo modules (CRM, payroll, analytics).",
           "location": "Valencia",
           "duration": "32 mo",
           "period": "2023 — present",
-          "stack": ["FastAPI", "DDD", "CQRS", "Kafka", "Vue 3", "Odoo"]
+          "stack": [
+            "FastAPI",
+            "DDD",
+            "CQRS",
+            "Kafka",
+            "Vue 3",
+            "Odoo"
+          ]
         },
         {
           "title": "Junior Software Developer / TSR",
           "company": "Webhelp · Google Project",
-          "description": "Development of internal applications and tools. Google Cloud and Google Workspace support. Specialist in GCloud architecture, data integration and Google APIs. Scripting, code analysis and bug reporting.",
+          "description": "Design and support of internal applications and tools. Google Cloud and Google Workspace support. Specialist in GCloud architecture, data integration and Google APIs. Scripting, code analysis and bug reporting.",
           "location": "Barcelona",
           "duration": "27 mo",
           "period": "2020 — 2023",
-          "stack": ["GCP", "Apigee", "APIs", "Scripting"]
+          "stack": [
+            "GCP",
+            "Apigee",
+            "APIs",
+            "Scripting"
+          ]
         },
         {
           "title": "Web Developer",
@@ -408,7 +658,11 @@
           "location": "Remote",
           "duration": "6 mo",
           "period": "2020",
-          "stack": ["JavaScript", "PHP", "Web"]
+          "stack": [
+            "JavaScript",
+            "PHP",
+            "Web"
+          ]
         },
         {
           "title": "IT Position",
@@ -417,75 +671,142 @@
           "location": "Altura",
           "duration": "9 mo",
           "period": "2019 — 2020",
-          "stack": ["AWS", "Active Directory", "IT"]
+          "stack": [
+            "AWS",
+            "Active Directory",
+            "IT"
+          ]
         },
         {
           "title": "Freelance Web Developer",
           "company": "Self-employed",
           "location": "Remote",
           "period": "2018 — 2019",
-          "stack": ["React", "FastAPI", "MongoDB", "GCP"]
+          "stack": [
+            "React",
+            "FastAPI",
+            "MongoDB",
+            "GCP"
+          ]
         }
       ],
       "skills": [
         {
-          "category": "Backend",
-          "description": "REST APIs and clean architectures (Clean Architecture, DDD, CQRS) in Python and Node. Security with JWT and OAuth2.0.",
-          "tags": ["Python", "FastAPI", "Flask", "Node", "Express", "OAuth2"]
+          "category": "Backend Architecture",
+          "description": "REST API design, domain boundaries and clean architectures (Clean Architecture, DDD, CQRS) in Python and Node. Security with JWT and OAuth2.0.",
+          "tags": [
+            "Python",
+            "FastAPI",
+            "Flask",
+            "Node",
+            "Express",
+            "OAuth2"
+          ]
         },
         {
           "category": "Frontend",
-          "description": "Development with Vue 3, Nuxt, React, Angular and Vanilla JS. Styling with Tailwind, shadcn and SCSS.",
-          "tags": ["Vue 3", "Nuxt", "React", "Angular", "Tailwind", "TypeScript"]
+          "description": "Interface design with Vue 3, Nuxt, React, Angular and Vanilla JS, connected to secure APIs and clear contracts.",
+          "tags": [
+            "Vue 3",
+            "Nuxt",
+            "React",
+            "Angular",
+            "Tailwind",
+            "TypeScript"
+          ]
         },
         {
           "category": "Data & Infrastructure",
-          "description": "Messaging and persistence with Kafka, MongoDB, Redis and Elasticsearch. Deployment with Docker and GitLab CI.",
-          "tags": ["Kafka", "MongoDB", "Redis", "Elasticsearch", "Docker", "SQL"]
+          "description": "Messaging and persistence architecture with Kafka, MongoDB, Redis and Elasticsearch. Deployment with Docker and GitLab CI.",
+          "tags": [
+            "Kafka",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch",
+            "Docker",
+            "SQL"
+          ]
         },
         {
           "category": "Linux & Cloud",
-          "description": "Expert in local and cloud Linux (GCP/AWS). Scripting in Bash, ZX and Python. Automation and maintenance.",
-          "tags": ["Linux", "GCP", "AWS", "Bash", "GitLab CI", "Apigee"]
+          "description": "Operational design on local and cloud Linux (GCP/AWS). Scripting in Bash, ZX and Python. Automation and maintenance.",
+          "tags": [
+            "Linux",
+            "GCP",
+            "AWS",
+            "Bash",
+            "GitLab CI",
+            "Apigee"
+          ]
         }
       ],
       "projects": [
         {
           "name": "iti-moar Platform",
-          "blurb": "Internal research platform built on FastAPI with Clean Architecture, DDD and CQRS. Kafka messaging and polyglot persistence (Mongo, Redis, Elasticsearch).",
-          "tags": ["FastAPI", "DDD", "CQRS", "Kafka"],
+          "blurb": "Internal research platform designed on FastAPI with Clean Architecture, DDD and CQRS. Kafka messaging and polyglot persistence (Mongo, Redis, Elasticsearch).",
+          "tags": [
+            "FastAPI",
+            "DDD",
+            "CQRS",
+            "Kafka"
+          ],
           "status": "In production"
         },
         {
           "name": "Custom Odoo Modules",
           "blurb": "Custom CRM, payroll and analytics modules for the Odoo ERP, integrated with the institute's internal workflows.",
-          "tags": ["Odoo", "Python", "PostgreSQL"],
+          "tags": [
+            "Odoo",
+            "Python",
+            "PostgreSQL"
+          ],
           "status": "Maintained"
         },
         {
           "name": "GCloud Internal Tools",
-          "blurb": "Applications and automations on Google Cloud and Apigee: API integration, scripting and data architecture for the Google project.",
-          "tags": ["GCP", "Apigee", "Automation"],
+          "blurb": "Applications and automations on Google Cloud and Apigee: service architecture, API integration, scripting and data for the Google project.",
+          "tags": [
+            "GCP",
+            "Apigee",
+            "Automation"
+          ],
           "status": "Delivered"
         },
         {
           "name": "This portfolio",
           "blurb": "Personal site in React + Vite + TypeScript with Tailwind and shadcn/ui. Bilingual, with customizable themes and accents. Deployed on GitHub Pages.",
-          "tags": ["React", "Vite", "TypeScript", "Tailwind"],
+          "tags": [
+            "React",
+            "Vite",
+            "TypeScript",
+            "Tailwind"
+          ],
           "status": "Open source",
           "link": "https://github.com/emelcd/emelcd.github.io",
           "linkLabel": "View source"
         }
       ],
       "education": [
-        { "degree": "Developing APIs in GCP Apigee", "institution": "Google", "year": "2026" },
-        { "degree": "Google IT Automation with Python", "institution": "Google", "year": "2022" },
+        {
+          "degree": "Developing APIs in GCP Apigee",
+          "institution": "Google",
+          "year": "2026"
+        },
+        {
+          "degree": "Google IT Automation with Python",
+          "institution": "Google",
+          "year": "2022"
+        },
         {
           "degree": "Higher Certificate in Systems Administration",
           "institution": "UNED · Buitrago",
           "year": "2021"
         },
-        { "degree": "Bachelor's in Psychology", "institution": "University of Valencia", "year": "2016" }
+        {
+          "degree": "Bachelor's in Psychology",
+          "institution": "University of Valencia",
+          "year": "2016"
+        }
       ],
       "contact": {
         "line": "I reply fast. Tell me what you have in mind.",
@@ -497,7 +818,7 @@
       "lang": "en",
       "name": "Miguel",
       "surname": "López",
-      "role": "Full Stack Software Engineer · Backend-focused",
+      "role": "Software Architect · Backend & Cloud",
       "contact": {
         "email": "mick.altura@gmail.com",
         "github": "github.com/emelcd",
@@ -517,7 +838,7 @@
         "interests": "Interests",
         "present": "present"
       },
-      "summary": "Full stack software engineer with 7+ years of experience, specialised in designing robust, maintainable backends. I build REST APIs following Clean Architecture, DDD and CQRS, integrate distributed messaging and data systems, and automate deployments on Linux and cloud (GCP/AWS). I pair a solid systems-administration background with end-to-end product development.",
+      "summary": "Software architect with 7+ years of experience across backend, cloud and systems. I design robust, maintainable platforms, define domain boundaries, model REST APIs with Clean Architecture, DDD and CQRS, and integrate messaging, data and automation on Linux and cloud (GCP/AWS). I combine architectural judgement, product thinking and hands-on delivery to carry technical decisions into production.",
       "experience": [
         {
           "title": "Research & Development Engineer",
@@ -525,12 +846,19 @@
           "location": "Valencia",
           "period": "2023 — present",
           "bullets": [
-            "Backend development of the internal iti-moar platform in Python (FastAPI) applying Clean Architecture, DDD and CQRS.",
+            "Design and evolution of the internal iti-moar backend in Python (FastAPI), applying Clean Architecture, DDD and CQRS.",
             "Integration of messaging and polyglot persistence with Kafka, MongoDB, Redis and Elasticsearch.",
-            "Frontend development with Vue 3 and Nuxt, consuming secure APIs with JWT/OAuth2.0.",
+            "Design of frontend/backend contracts; frontends with Vue 3 and Nuxt consuming secure APIs with JWT/OAuth2.0.",
             "Maintenance and evolution of custom Odoo modules (CRM, payroll and analytics)."
           ],
-          "stack": ["FastAPI", "DDD", "CQRS", "Kafka", "Vue 3", "Odoo"]
+          "stack": [
+            "FastAPI",
+            "DDD",
+            "CQRS",
+            "Kafka",
+            "Vue 3",
+            "Odoo"
+          ]
         },
         {
           "title": "Junior Software Developer / TSR",
@@ -538,12 +866,17 @@
           "location": "Barcelona",
           "period": "2020 — 2023",
           "bullets": [
-            "Development and support of internal applications and tools on Google Cloud and Google Workspace.",
-            "Data and Google API integration; service architecture on GCloud and Apigee.",
+            "Design and support of internal applications and tools on Google Cloud and Google Workspace.",
+            "Service architecture, data integration and Google APIs on GCloud and Apigee.",
             "Automation scripting, code analysis and bug reporting.",
             "Direct technical communication with the client."
           ],
-          "stack": ["GCP", "Apigee", "APIs", "Bash"]
+          "stack": [
+            "GCP",
+            "Apigee",
+            "APIs",
+            "Bash"
+          ]
         },
         {
           "title": "Web Developer",
@@ -551,9 +884,13 @@
           "location": "Remote",
           "period": "2020",
           "bullets": [
-            "Design, development and maintenance of websites and web applications for a range of clients."
+            "Technical design, development and maintenance of websites and web applications for a range of clients."
           ],
-          "stack": ["JavaScript", "PHP", "Web"]
+          "stack": [
+            "JavaScript",
+            "PHP",
+            "Web"
+          ]
         },
         {
           "title": "IT Technician",
@@ -564,7 +901,11 @@
             "User management in Active Directory and cloud infrastructure on AWS.",
             "Implementation of internal web tools: vacation management and ticketing system."
           ],
-          "stack": ["AWS", "Active Directory", "IT"]
+          "stack": [
+            "AWS",
+            "Active Directory",
+            "IT"
+          ]
         },
         {
           "title": "Freelance Web Developer",
@@ -572,52 +913,144 @@
           "location": "Remote",
           "period": "2018 — 2019",
           "bullets": [
-            "End-to-end design, development and deployment of applications.",
+            "End-to-end architecture design, development and deployment of applications.",
             "UI in Figma/Photoshop, frontend in React/Vanilla, backend in FastAPI/Express and data in Mongo/SQL on GCP/AWS."
           ],
-          "stack": ["React", "FastAPI", "MongoDB", "GCP"]
+          "stack": [
+            "React",
+            "FastAPI",
+            "MongoDB",
+            "GCP"
+          ]
         }
       ],
       "projects": [
         {
           "name": "iti-moar Platform",
-          "desc": "Internal research platform on FastAPI with Clean Architecture, DDD and CQRS; Kafka messaging and polyglot persistence (Mongo, Redis, Elasticsearch).",
-          "tags": ["FastAPI", "DDD", "Kafka"]
+          "desc": "Internal research platform designed on FastAPI with Clean Architecture, DDD and CQRS; Kafka messaging and polyglot persistence (Mongo, Redis, Elasticsearch).",
+          "tags": [
+            "FastAPI",
+            "DDD",
+            "Kafka"
+          ]
         },
         {
           "name": "Custom Odoo Modules",
           "desc": "CRM, payroll and analytics modules integrated with the institute's internal workflows.",
-          "tags": ["Odoo", "Python", "PostgreSQL"]
+          "tags": [
+            "Odoo",
+            "Python",
+            "PostgreSQL"
+          ]
         },
         {
           "name": "GCloud Internal Tools",
-          "desc": "API integration, scripting and data architecture on Google Cloud and Apigee.",
-          "tags": ["GCP", "Apigee", "Automation"]
+          "desc": "Service architecture, API integration, scripting and data on Google Cloud and Apigee.",
+          "tags": [
+            "GCP",
+            "Apigee",
+            "Automation"
+          ]
         },
         {
           "name": "Personal portfolio — emelcd.github.io",
           "desc": "Site in React + Vite + TypeScript with Tailwind and shadcn/ui; bilingual, with themes and accents. Open source.",
-          "tags": ["React", "Vite", "TypeScript"]
+          "tags": [
+            "React",
+            "Vite",
+            "TypeScript"
+          ]
         }
       ],
       "skills": [
-        { "cat": "Backend", "tags": ["Python", "FastAPI", "Flask", "Node", "Express", "OAuth2"] },
-        { "cat": "Frontend", "tags": ["Vue 3", "Nuxt", "React", "Angular", "Tailwind", "TypeScript"] },
-        { "cat": "Data & Infra", "tags": ["Kafka", "MongoDB", "Redis", "Elasticsearch", "Docker", "SQL"] },
-        { "cat": "Linux & Cloud", "tags": ["Linux", "GCP", "AWS", "Bash", "GitLab CI", "Apigee"] }
+        {
+          "cat": "Backend Architecture",
+          "tags": [
+            "Python",
+            "FastAPI",
+            "Flask",
+            "Node",
+            "Express",
+            "OAuth2"
+          ]
+        },
+        {
+          "cat": "Frontend",
+          "tags": [
+            "Vue 3",
+            "Nuxt",
+            "React",
+            "Angular",
+            "Tailwind",
+            "TypeScript"
+          ]
+        },
+        {
+          "cat": "Data & Infra",
+          "tags": [
+            "Kafka",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch",
+            "Docker",
+            "SQL"
+          ]
+        },
+        {
+          "cat": "Linux & Cloud",
+          "tags": [
+            "Linux",
+            "GCP",
+            "AWS",
+            "Bash",
+            "GitLab CI",
+            "Apigee"
+          ]
+        }
       ],
-      "methods": ["Clean Architecture", "DDD", "CQRS", "REST", "TDD", "CI/CD", "Agile / Scrum", "Code Review"],
+      "methods": [
+        "Clean Architecture",
+        "DDD",
+        "CQRS",
+        "REST",
+        "TDD",
+        "CI/CD",
+        "Agile / Scrum",
+        "Code Review"
+      ],
       "certs": [
-        { "name": "Developing APIs in GCP Apigee", "org": "Google", "year": "2026" },
-        { "name": "Google IT Automation with Python", "org": "Google", "year": "2022" }
+        {
+          "name": "Developing APIs in GCP Apigee",
+          "org": "Google",
+          "year": "2026"
+        },
+        {
+          "name": "Google IT Automation with Python",
+          "org": "Google",
+          "year": "2022"
+        }
       ],
       "education": [
-        { "deg": "Higher Certificate in Systems Administration", "inst": "UNED · Buitrago", "year": "2021" },
-        { "deg": "Bachelor's in Psychology", "inst": "University of Valencia", "year": "2016" }
+        {
+          "deg": "Higher Certificate in Systems Administration",
+          "inst": "UNED · Buitrago",
+          "year": "2021"
+        },
+        {
+          "deg": "Bachelor's in Psychology",
+          "inst": "University of Valencia",
+          "year": "2016"
+        }
       ],
       "languages": [
-        { "name": "Spanish", "level": "Native" },
-        { "name": "English", "level": "Professional" }
+        {
+          "name": "Spanish",
+          "level": "Native"
+        },
+        {
+          "name": "English",
+          "level": "Professional"
+        }
       ],
       "strengths": [
         "Technical communication",
@@ -626,7 +1059,12 @@
         "Teamwork",
         "Continuous learning"
       ],
-      "interests": ["Open source", "Automation", "Self-hosting", "Linux"]
+      "interests": [
+        "Open source",
+        "Automation",
+        "Self-hosting",
+        "Linux"
+      ]
     }
   }
 }

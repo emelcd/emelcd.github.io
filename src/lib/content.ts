@@ -100,15 +100,37 @@ export const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/in/emelcd/",
 }
 
+/** Baked portfolio bundles used to backfill fields missing from stale API payloads. */
+const BAKED: Record<Lang, Content> = {
+  es: contentData.es.portfolio as Content,
+  en: contentData.en.portfolio as Content,
+}
+
+/** Merge a raw portfolio object with baked defaults so new fields never break the UI. */
+function normalizePortfolio(raw: unknown, fallback: Content): Content {
+  const p = (raw ?? {}) as Partial<Content>
+  return {
+    ...fallback,
+    ...p,
+    highlights: p.highlights ?? fallback.highlights ?? [],
+    stackPreview: p.stackPreview ?? fallback.stackPreview ?? [],
+    status: { ...fallback.status, ...p.status },
+    cta: { ...fallback.cta, ...p.cta },
+    nav: { ...fallback.nav, ...p.nav },
+    headings: { ...fallback.headings, ...p.headings },
+    contact: { ...fallback.contact, ...p.contact },
+  }
+}
+
 /** Map the raw `/api/cv` payload into the per-language content bundle. */
 function toContent(data: {
   es: { portfolio: unknown }
   en: { portfolio: unknown }
 }): Record<Lang, Content> {
   return {
-    es: data.es.portfolio,
-    en: data.en.portfolio,
-  } as unknown as Record<Lang, Content>
+    es: normalizePortfolio(data.es.portfolio, BAKED.es),
+    en: normalizePortfolio(data.en.portfolio, BAKED.en),
+  }
 }
 
 /** Content baked into the bundle at build time. Used as the initial render

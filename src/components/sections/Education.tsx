@@ -8,7 +8,7 @@ export function Education() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
       <Reveal>
-        <SectionHeader index="05" eyebrow="learning" title={t.headings.education} />
+        <SectionHeader index="06" eyebrow="learning" title={t.headings.education} />
       </Reveal>
       <div className="mt-10 grid gap-3">
         {t.education.map((entry, i) => (

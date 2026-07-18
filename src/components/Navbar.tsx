@@ -9,6 +9,7 @@ export function Navbar() {
     { href: "#about", label: t.nav.about },
     { href: "#work", label: t.nav.work },
     { href: "#projects", label: t.nav.projects },
+    { href: "#activity", label: t.nav.activity },
     { href: "#contact", label: t.nav.contact },
   ]
 

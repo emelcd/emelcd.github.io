@@ -5,13 +5,13 @@ const LINES = {
   es: [
     "init portfolio shell",
     "fetch /api/cv",
-    "parse es · en bundles",
+    "sync github profile",
     "mount ui",
   ],
   en: [
     "init portfolio shell",
     "fetch /api/cv",
-    "parse es · en bundles",
+    "sync github profile",
     "mount ui",
   ],
 } as const

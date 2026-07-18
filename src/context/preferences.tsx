@@ -11,8 +11,10 @@ import {
   ACCENTS,
   CONTENT,
   fetchContent,
+  fetchGitHub,
   SOCIAL_LINKS,
   type Accent,
+  type GitHubData,
   type Lang,
   type Palette,
 } from "@/lib/content"
@@ -24,6 +26,8 @@ type PreferencesValue = {
   palette: Palette
   /** True while the runtime CV fetch is in flight. */
   contentLoading: boolean
+  /** Live GitHub profile and repo metadata from the backend. */
+  github: GitHubData | null
   /** Localized content bundle for the active language. */
   t: (typeof CONTENT)[Lang]
   /** Résumé PDF for the active language. */
@@ -45,15 +49,18 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
   // Start from the content baked in at build time, then refresh from the
   // backend at runtime so data edits appear without rebuilding the site.
   const [content, setContent] = useState(CONTENT)
+  const [github, setGithub] = useState<GitHubData | null>(null)
   const [contentLoading, setContentLoading] = useState(true)
 
   const palette = ACCENTS[accent]
 
   useEffect(() => {
     let active = true
-    fetchContent()
-      .then((fresh) => {
-        if (active && fresh) setContent(fresh)
+    Promise.all([fetchContent(), fetchGitHub()])
+      .then(([fresh, gh]) => {
+        if (!active) return
+        if (fresh) setContent(fresh)
+        if (gh) setGithub(gh)
       })
       .finally(() => {
         if (active) setContentLoading(false)
@@ -101,6 +108,7 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
       accent,
       palette,
       contentLoading,
+      github,
       t: content[lang],
       resumeHref: lang === "en" ? SOCIAL_LINKS.resumeEn : SOCIAL_LINKS.resume,
       setLang: setLangDirect,
@@ -116,6 +124,7 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
       accent,
       palette,
       contentLoading,
+      github,
       content,
       setLangDirect,
       setDarkDirect,

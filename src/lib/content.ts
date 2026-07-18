@@ -54,6 +54,7 @@ type ProjectEntry = {
   status: string
   link?: string
   linkLabel?: string
+  repo?: string
 }
 
 export type Content = {
@@ -68,7 +69,7 @@ export type Content = {
   stackPreview: string[]
   status: { available: string; location: string; focus: string }
   cta: { primary: string; secondary: string }
-  nav: { about: string; work: string; projects: string; contact: string }
+  nav: { about: string; work: string; projects: string; activity: string; contact: string }
   headings: {
     about: string
     aboutLead: string
@@ -78,6 +79,8 @@ export type Content = {
     skillsLead: string
     projects: string
     projectsLead: string
+    activity: string
+    activityLead: string
     education: string
     contact: string
     contactLead: string
@@ -89,6 +92,36 @@ export type Content = {
   education: EducationEntry[]
   contact: { line: string; button: string }
   footerNote: string
+}
+
+export type GitHubProfile = {
+  login: string
+  name: string | null
+  publicRepos: number
+  followers: number
+  following: number
+  avatarUrl: string
+  htmlUrl: string
+  createdAt: string
+}
+
+export type GitHubRepo = {
+  name: string
+  fullName: string
+  description: string | null
+  stars: number
+  forks: number
+  language: string | null
+  topics: string[]
+  htmlUrl: string
+  homepage: string | null
+  updatedAt: string
+  pushedAt: string
+}
+
+export type GitHubData = {
+  profile: GitHubProfile
+  repos: Record<string, GitHubRepo>
 }
 
 export const SOCIAL_LINKS = {
@@ -169,6 +202,31 @@ export async function fetchCvPayload(): Promise<CvPayload> {
     throw new Error("Malformed payload: missing es/en portfolio")
   }
   return data
+}
+
+export async function fetchGitHub(): Promise<GitHubData | null> {
+  try {
+    const res = await fetch(`${API_URL}/api/github`, {
+      headers: { Accept: "application/json" },
+    })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const data = (await res.json()) as GitHubData
+    if (!data?.profile || !data.repos) throw new Error("Malformed GitHub payload")
+    return data
+  } catch (err) {
+    console.warn("[content] GitHub fetch failed:", err)
+    return null
+  }
+}
+
+/** Resolve an owner/repo slug from project metadata. */
+export function projectRepoSlug(project: Pick<ProjectEntry, "repo" | "link">): string | null {
+  if (project.repo?.includes("/")) return project.repo
+  if (project.link) {
+    const match = project.link.match(/github\.com\/([^/]+\/[^/?#]+)/i)
+    if (match) return match[1]
+  }
+  return null
 }
 
 export async function saveCvPayload(password: string, data: CvPayload) {

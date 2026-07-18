@@ -48,6 +48,7 @@
         "about": "Perfil",
         "work": "Trayectoria",
         "projects": "Proyectos",
+        "activity": "Actividad",
         "contact": "Contacto"
       },
       "headings": {
@@ -59,6 +60,8 @@
         "skillsLead": "Herramientas y criterios para diseñar sistemas robustos, observables y mantenibles.",
         "projects": "Trabajo seleccionado",
         "projectsLead": "Una muestra de plataformas, integraciones y decisiones de arquitectura que he diseñado, construido y mantenido.",
+        "activity": "Actividad en GitHub",
+        "activityLead": "Repos públicos, estadísticas y últimos pushes en tiempo real desde GitHub.",
         "education": "Formación",
         "contact": "Construyamos algo",
         "contactLead": "¿Tienes un backend que diseñar, una integración que resolver o una plataforma que escalar? Escríbeme."
@@ -249,6 +252,7 @@
             "Tailwind"
           ],
           "status": "Open source",
+          "repo": "emelcd/emelcd.github.io",
           "link": "https://github.com/emelcd/emelcd.github.io",
           "linkLabel": "Ver código"
         }
@@ -583,6 +587,7 @@
         "about": "About",
         "work": "Journey",
         "projects": "Projects",
+        "activity": "Activity",
         "contact": "Contact"
       },
       "headings": {
@@ -594,6 +599,8 @@
         "skillsLead": "Tools and principles for designing robust, observable and maintainable systems.",
         "projects": "Selected work",
         "projectsLead": "A sample of platforms, integrations and architecture decisions I've designed, built and maintained.",
+        "activity": "GitHub activity",
+        "activityLead": "Public repos, stats and latest pushes synced live from GitHub.",
         "education": "Education",
         "contact": "Let's build something",
         "contactLead": "Got a backend to design, an integration to solve, or a platform to scale? Drop me a line."
@@ -782,6 +789,7 @@
             "Tailwind"
           ],
           "status": "Open source",
+          "repo": "emelcd/emelcd.github.io",
           "link": "https://github.com/emelcd/emelcd.github.io",
           "linkLabel": "View source"
         }

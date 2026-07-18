@@ -49,6 +49,7 @@ const SECTIONS: Record<string, string> = {
   work: "work",
   experience: "work",
   projects: "projects",
+  activity: "activity",
   contact: "contact",
 }
 
@@ -72,7 +73,7 @@ const COPY = {
       "  games             — minijuegos",
       "  play <juego>      — snake | guess | quiz",
     ],
-    sectionsTitle: "Secciones: top, about, work, projects, contact",
+    sectionsTitle: "Secciones: top, about, work, projects, activity, contact",
     accentsTitle: "Acentos: blue, teal, violet, orange",
     unknown: (cmd: string) =>
       `comando no encontrado: ${cmd}. Prueba 'help'.`,
@@ -85,7 +86,7 @@ const COPY = {
     themeInvalid: (t: string) => `tema inválido: ${t}. Opciones: dark, light`,
     gotoMissing: "uso: goto <sección>",
     gotoUnknown: (s: string) =>
-      `sección desconocida: ${s}. Prueba: top, about, work, projects, contact`,
+      `sección desconocida: ${s}. Prueba: top, about, work, projects, activity, contact`,
     gotoOk: (s: string) => `navegando → #${s}`,
     resumeOpen: "abriendo CV…",
     bootWelcome: "terminal interactiva — escribe 'help' para empezar",
@@ -108,7 +109,7 @@ const COPY = {
       "  games             — mini-games",
       "  play <game>       — snake | guess | quiz",
     ],
-    sectionsTitle: "Sections: top, about, work, projects, contact",
+    sectionsTitle: "Sections: top, about, work, projects, activity, contact",
     accentsTitle: "Accents: blue, teal, violet, orange",
     unknown: (cmd: string) => `command not found: ${cmd}. Try 'help'.`,
     langSet: (l: Lang) => `language → ${l}`,
@@ -120,7 +121,7 @@ const COPY = {
     themeInvalid: (t: string) => `invalid theme: ${t}. Options: dark, light`,
     gotoMissing: "usage: goto <section>",
     gotoUnknown: (s: string) =>
-      `unknown section: ${s}. Try: top, about, work, projects, contact`,
+      `unknown section: ${s}. Try: top, about, work, projects, activity, contact`,
     gotoOk: (s: string) => `navigating → #${s}`,
     resumeOpen: "opening résumé…",
     bootWelcome: "interactive terminal — type 'help' to start",

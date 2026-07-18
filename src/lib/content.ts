@@ -55,6 +55,14 @@ export const CONTENT: Record<Lang, Content> = {
     bio: "Desarrollador web full stack con xperiencia en frontend y backend. Manejo de React, FastAPI, Flask, Express y Python. Despliegue y scripting en Linux-Cloud (GCP/AWS).",
     experience: [
       {
+        title: "Ingeniero de Desarrollo e Investigación",
+        company: "ITI - Instituto Tecnológico de Informática",
+        description:
+          "Desarrollo backend de la plataforma interna iti-moar en Python (FastAPI) con Clean Architecture, DDD y CQRS. Integración de Kafka, MongoDB, Redis y Elasticsearch. Frontends con Vue 3 y Nuxt. Mantenimiento de módulos Odoo a medida (CRM, nóminas, analítica).",
+        location: "Valencia",
+        duration: "32 Mo",
+      },
+      {
         title: "Desarrollador de Software Junior / TSR",
         company: "Webhelp [Proyecto Google]",
         description:
@@ -91,12 +99,17 @@ export const CONTENT: Record<Lang, Content> = {
       {
         category: "Desarrollo Backend",
         description:
-          "Diseño de APIs REST tanto en Python (FastAPI/Flask) como en Node (Express) para interactuar con aplicaciones front o extensiones de navegador. Integración de bases de datos NoSQL y SQL, añadiendo capas de seguridad como JWT u OAuth2.0.",
+          "Diseño de APIs REST y arquitecturas limpias (Clean Architecture, DDD, CQRS) tanto en Python (FastAPI/Flask) como en Node (Express). Integración de bases de datos NoSQL y SQL, añadiendo capas de seguridad como JWT u OAuth2.0.",
       },
       {
         category: "Desarrollo Frontend",
         description:
-          "Diseño y desarrollo de Frontend con React, Angular y Vanilla JS. Estilos: Tailwind, Chakra/MUI/Bootstrap y SCSS. Routing y Context. Integración de APIs seguras.",
+          "Diseño y desarrollo de Frontend con Vue 3, Nuxt, React, Angular y Vanilla JS. Estilos: Tailwind, shadcn, Chakra/MUI/Bootstrap y SCSS. Routing y Context. Integración de APIs seguras.",
+      },
+      {
+        category: "Datos e Infraestructura",
+        description:
+          "Mensajería y persistencia con Kafka, MongoDB, Redis y Elasticsearch. Despliegue con Docker y GitLab CI.",
       },
       {
         category: "Linux y Cloud",
@@ -134,6 +147,14 @@ export const CONTENT: Record<Lang, Content> = {
     bio: "Full stack web developer with xperience in both frontend and backend development. Skilled in React, FastAPI, Flask, Express to (SQL/NoSQL). Deploying and scripting in Linux-Cloud (GCP/AWS).",
     experience: [
       {
+        title: "Research and Development Engineer",
+        company: "ITI - Instituto Tecnológico de Informática",
+        description:
+          "Backend development of the internal iti-moar platform in Python (FastAPI) using Clean Architecture, DDD and CQRS. Integration of Kafka, MongoDB, Redis and Elasticsearch. Frontends with Vue 3 and Nuxt. Maintenance of custom Odoo modules (CRM, payroll, analytics).",
+        location: "Valencia",
+        duration: "32 Mo",
+      },
+      {
         title: "Junior Software Developer / TSR",
         company: "Webhelp [Google Project]",
         description:
@@ -170,12 +191,17 @@ export const CONTENT: Record<Lang, Content> = {
       {
         category: "Backend Development",
         description:
-          "Design of REST APIs both Python(FastAPI/Flask) and Node(Express) for interacting with front applications or navigator extensions. Integration of NoSQL and SQL databases and adding security layers as JWT or OAuth2.0.",
+          "Design of REST APIs and clean architectures (Clean Architecture, DDD, CQRS) both Python(FastAPI/Flask) and Node(Express). Integration of NoSQL and SQL databases and adding security layers as JWT or OAuth2.0.",
       },
       {
         category: "Frontend Development",
         description:
-          "Frontend Design and Depoloment with React, Angular and Vanilla JS. Styling: Tailwind, Chakra/MUI/Bootstrap and SCSS. Routing and Context. Integration of secure APIs.",
+          "Frontend Design and Depoloment with Vue 3, Nuxt, React, Angular and Vanilla JS. Styling: Tailwind, shadcn, Chakra/MUI/Bootstrap and SCSS. Routing and Context. Integration of secure APIs.",
+      },
+      {
+        category: "Data & Infrastructure",
+        description:
+          "Messaging and persistence with Kafka, MongoDB, Redis and Elasticsearch. Deployment with Docker and GitLab CI.",
       },
       {
         category: "Linux and Cloud",

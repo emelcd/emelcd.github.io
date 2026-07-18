@@ -1,4 +1,5 @@
 import { Popover } from "@base-ui/react/popover"
+import { SlidersHorizontal } from "lucide-react"
 import { usePreferences } from "@/context/preferences"
 import {
   ACCENT_ORDER,
@@ -17,7 +18,6 @@ export function ThemeMenu() {
     dark,
     accent,
     font,
-    palette,
     setLang,
     setDark,
     setAccent,
@@ -53,21 +53,10 @@ export function ThemeMenu() {
   return (
     <Popover.Root>
       <Popover.Trigger
-        className="flex items-center gap-1.5 rounded-md px-2 py-1.5 transition hover:bg-muted aria-expanded:bg-muted"
+        className="grid size-9 place-items-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground"
         aria-label={copy.title}
       >
-        <span className="text-sm">{lang === "es" ? "🇪🇸" : "🇬🇧"}</span>
-        <span className="text-sm leading-none">{dark ? "🌙" : "☀️"}</span>
-        <span
-          className="block size-3.5 rounded-full"
-          style={{
-            background: `linear-gradient(135deg, ${palette[400]}, ${palette[800]})`,
-            boxShadow: `0 0 0 1.5px ${palette[400]}`,
-          }}
-        />
-        <span className="font-mono text-[10px] font-semibold text-muted-foreground">
-          Aa
-        </span>
+        <SlidersHorizontal className="size-4" strokeWidth={2} />
       </Popover.Trigger>
 
       <Popover.Portal>

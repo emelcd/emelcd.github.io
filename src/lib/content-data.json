@@ -61,7 +61,7 @@
         "projects": "Trabajo seleccionado",
         "projectsLead": "Una muestra de plataformas, integraciones y decisiones de arquitectura que he diseñado, construido y mantenido.",
         "activity": "Actividad en GitHub",
-        "activityLead": "Repos públicos, estadísticas y últimos pushes en tiempo real desde GitHub.",
+        "activityLead": "Repos públicos y privados, eventos recientes y estadísticas sincronizadas desde GitHub.",
         "education": "Formación",
         "contact": "Construyamos algo",
         "contactLead": "¿Tienes un backend que diseñar, una integración que resolver o una plataforma que escalar? Escríbeme."
@@ -600,7 +600,7 @@
         "projects": "Selected work",
         "projectsLead": "A sample of platforms, integrations and architecture decisions I've designed, built and maintained.",
         "activity": "GitHub activity",
-        "activityLead": "Public repos, stats and latest pushes synced live from GitHub.",
+        "activityLead": "Public and private repos, recent events and stats synced from GitHub.",
         "education": "Education",
         "contact": "Let's build something",
         "contactLead": "Got a backend to design, an integration to solve, or a platform to scale? Drop me a line."

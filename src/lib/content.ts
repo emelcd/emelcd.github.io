@@ -98,6 +98,8 @@ export type GitHubProfile = {
   login: string
   name: string | null
   publicRepos: number
+  privateRepos: number
+  totalRepos: number
   followers: number
   following: number
   avatarUrl: string
@@ -109,6 +111,7 @@ export type GitHubRepo = {
   name: string
   fullName: string
   description: string | null
+  private: boolean
   stars: number
   forks: number
   language: string | null
@@ -119,9 +122,20 @@ export type GitHubRepo = {
   pushedAt: string
 }
 
+export type GitHubEvent = {
+  id: string
+  type: string
+  repo: string
+  repoUrl: string
+  private: boolean
+  createdAt: string
+  summary: string
+}
+
 export type GitHubData = {
   profile: GitHubProfile
   repos: Record<string, GitHubRepo>
+  events: GitHubEvent[]
 }
 
 export const SOCIAL_LINKS = {
@@ -212,7 +226,24 @@ export async function fetchGitHub(): Promise<GitHubData | null> {
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = (await res.json()) as GitHubData
     if (!data?.profile || !data.repos) throw new Error("Malformed GitHub payload")
-    return data
+    return {
+      ...data,
+      events: (Array.isArray(data.events) ? data.events : []).map((event) => ({
+        ...event,
+        private: event.private ?? false,
+      })),
+      profile: {
+        ...data.profile,
+        privateRepos: data.profile.privateRepos ?? 0,
+        totalRepos: data.profile.totalRepos ?? data.profile.publicRepos ?? 0,
+      },
+      repos: Object.fromEntries(
+        Object.entries(data.repos).map(([key, repo]) => [
+          key,
+          { ...repo, private: repo.private ?? false },
+        ]),
+      ),
+    }
   } catch (err) {
     console.warn("[content] GitHub fetch failed:", err)
     return null

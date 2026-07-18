@@ -1,4 +1,5 @@
 import { AdminPage } from "@/components/admin/AdminPage"
+import { LoadingScreen } from "@/components/LoadingScreen"
 import { PreferencesProvider } from "@/context/preferences"
 import { Navbar } from "@/components/Navbar"
 import { Hero } from "@/components/sections/Hero"
@@ -24,6 +25,7 @@ function App() {
           <div className="page-atmosphere__vignette" />
         </div>
         <div className="relative z-10">
+          <LoadingScreen />
           <Navbar />
           <main>
             <Hero />

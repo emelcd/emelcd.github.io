@@ -318,6 +318,17 @@
   animation: boot-line 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+.loader-bar-active {
+  width: 38%;
+  animation: loader-bar 1.4s ease-in-out infinite;
+}
+
+@keyframes loader-bar {
+  0% { width: 18%; transform: translateX(0); }
+  50% { width: 72%; transform: translateX(8%); }
+  100% { width: 38%; transform: translateX(0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
@@ -325,4 +336,5 @@
   .surface:hover { transform: none; }
   .boot-line { opacity: 1; animation: none; }
   .cursor-blink { animation: none; }
+  .loader-bar-active { animation: none; width: 100%; }
 }

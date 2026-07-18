@@ -22,6 +22,8 @@ type PreferencesValue = {
   dark: boolean
   accent: Accent
   palette: Palette
+  /** True while the runtime CV fetch is in flight. */
+  contentLoading: boolean
   /** Localized content bundle for the active language. */
   t: (typeof CONTENT)[Lang]
   /** Résumé PDF for the active language. */
@@ -43,14 +45,19 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
   // Start from the content baked in at build time, then refresh from the
   // backend at runtime so data edits appear without rebuilding the site.
   const [content, setContent] = useState(CONTENT)
+  const [contentLoading, setContentLoading] = useState(true)
 
   const palette = ACCENTS[accent]
 
   useEffect(() => {
     let active = true
-    fetchContent().then((fresh) => {
-      if (active && fresh) setContent(fresh)
-    })
+    fetchContent()
+      .then((fresh) => {
+        if (active && fresh) setContent(fresh)
+      })
+      .finally(() => {
+        if (active) setContentLoading(false)
+      })
     return () => {
       active = false
     }
@@ -93,6 +100,7 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
       dark,
       accent,
       palette,
+      contentLoading,
       t: content[lang],
       resumeHref: lang === "en" ? SOCIAL_LINKS.resumeEn : SOCIAL_LINKS.resume,
       setLang: setLangDirect,
@@ -107,6 +115,7 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
       dark,
       accent,
       palette,
+      contentLoading,
       content,
       setLangDirect,
       setDarkDirect,

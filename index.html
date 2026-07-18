@@ -40,10 +40,7 @@
             serif: "'Source Serif 4 Variable', Georgia, serif",
           }
           var f = fonts[p.font]
-          if (f) {
-            root.style.setProperty("--font-sans", f)
-            root.style.setProperty("--font-heading", f)
-          }
+          if (f) root.style.setProperty("--font-ui", f)
         } catch (_) {}
       })()
     </script>

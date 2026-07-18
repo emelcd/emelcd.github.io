@@ -129,12 +129,9 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
     root.style.setProperty("--accent-800", palette[800])
   }, [palette])
 
-  // Swap the UI font stack via the Tailwind --font-sans token
+  // Swap the UI font stack via --font-ui (Tailwind --font-sans points here)
   useEffect(() => {
-    const family = FONTS[font].family
-    const root = document.documentElement
-    root.style.setProperty("--font-sans", family)
-    root.style.setProperty("--font-heading", family)
+    document.documentElement.style.setProperty("--font-ui", FONTS[font].family)
   }, [font])
 
   const setLangDirect = useCallback((next: Lang) => setLang(next), [])

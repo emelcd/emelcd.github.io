@@ -26,6 +26,9 @@ type PreferencesValue = {
   t: (typeof CONTENT)[Lang]
   /** Résumé PDF for the active language. */
   resumeHref: string
+  setLang: (lang: Lang) => void
+  setDark: (dark: boolean) => void
+  setAccent: (accent: Accent) => void
   toggleLang: () => void
   toggleTheme: () => void
   cycleAccent: () => void
@@ -66,6 +69,10 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
     root.style.setProperty("--accent-800", palette[800])
   }, [palette])
 
+  const setLangDirect = useCallback((next: Lang) => setLang(next), [])
+  const setDarkDirect = useCallback((next: boolean) => setDark(next), [])
+  const setAccentDirect = useCallback((next: Accent) => setAccent(next), [])
+
   const toggleLang = useCallback(
     () => setLang((prev) => (prev === "es" ? "en" : "es")),
     [],
@@ -88,11 +95,26 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
       palette,
       t: content[lang],
       resumeHref: lang === "en" ? SOCIAL_LINKS.resumeEn : SOCIAL_LINKS.resume,
+      setLang: setLangDirect,
+      setDark: setDarkDirect,
+      setAccent: setAccentDirect,
       toggleLang,
       toggleTheme,
       cycleAccent,
     }),
-    [lang, dark, accent, palette, content, toggleLang, toggleTheme, cycleAccent],
+    [
+      lang,
+      dark,
+      accent,
+      palette,
+      content,
+      setLangDirect,
+      setDarkDirect,
+      setAccentDirect,
+      toggleLang,
+      toggleTheme,
+      cycleAccent,
+    ],
   )
 
   return <PreferencesContext value={value}>{children}</PreferencesContext>

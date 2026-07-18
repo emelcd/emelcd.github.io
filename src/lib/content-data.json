@@ -13,6 +13,12 @@
         "automatizo Linux y la nube"
       ],
       "bio": "Desarrollador full stack centrado en backend. Construyo servicios en Python (FastAPI/Flask) y Node con Clean Architecture, DDD y CQRS, integro sistemas de mensajería y datos, y despliego sobre Linux y nube (GCP/AWS).",
+      "highlights": [
+        { "value": "7+", "label": "años de experiencia" },
+        { "value": "Backend", "label": "arquitectura & APIs" },
+        { "value": "Cloud", "label": "GCP · AWS · Linux" }
+      ],
+      "stackPreview": ["Python", "FastAPI", "Node", "Kafka", "GCP", "Docker"],
       "status": {
         "available": "Abierto a proyectos",
         "location": "Valencia, ES",
@@ -323,6 +329,12 @@
         "automate Linux and the cloud"
       ],
       "bio": "Backend-focused full stack developer. I build services in Python (FastAPI/Flask) and Node with Clean Architecture, DDD and CQRS, integrate messaging and data systems, and ship them on Linux and cloud (GCP/AWS).",
+      "highlights": [
+        { "value": "7+", "label": "years of experience" },
+        { "value": "Backend", "label": "architecture & APIs" },
+        { "value": "Cloud", "label": "GCP · AWS · Linux" }
+      ],
+      "stackPreview": ["Python", "FastAPI", "Node", "Kafka", "GCP", "Docker"],
       "status": {
         "available": "Open to work",
         "location": "Valencia, ES",

@@ -53,6 +53,10 @@ export function Hero() {
             </span>
           </h1>
 
+          <p className="text-base font-medium text-muted-foreground sm:text-lg">
+            {t.role}
+          </p>
+
           <p className="font-mono text-lg text-muted-foreground sm:text-xl">
             <span className="text-foreground">I </span>
             <span style={{ color: "var(--accent-400)" }}>{typed}</span>
@@ -62,6 +66,22 @@ export function Hero() {
           <p className="max-w-lg text-base leading-relaxed text-muted-foreground">
             {t.bio}
           </p>
+
+          <div className="flex flex-wrap divide-x divide-border/60 border-y border-border/60 py-4">
+            {t.highlights.map((item) => (
+              <div key={item.label} className="px-5 first:pl-0 last:pr-0">
+                <p
+                  className="text-lg font-semibold tracking-tight"
+                  style={{ color: palette[400] }}
+                >
+                  {item.value}
+                </p>
+                <p className="font-mono text-xs text-muted-foreground">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
 
           <div className="flex flex-wrap items-center gap-3 pt-1">
             <a
@@ -114,6 +134,17 @@ export function Hero() {
                 )
               })}
             </span>
+          </div>
+
+          <div className="flex flex-wrap gap-2 pt-1">
+            {t.stackPreview.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-md border border-border/80 bg-card/50 px-2.5 py-1 font-mono text-xs text-muted-foreground transition hover:border-(--accent-400) hover:text-(--accent-400)"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
 

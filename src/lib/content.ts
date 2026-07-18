@@ -64,6 +64,8 @@ export type Content = {
   role: string
   roles: string[]
   bio: string
+  highlights: { value: string; label: string }[]
+  stackPreview: string[]
   status: { available: string; location: string; focus: string }
   cta: { primary: string; secondary: string }
   nav: { about: string; work: string; projects: string; contact: string }

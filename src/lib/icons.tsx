@@ -66,3 +66,83 @@ export function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
     />
   )
 }
+
+// --- Line icons (stroke-based, 24x24) ---
+
+function LineIcon({
+  d,
+  ...props
+}: { d: string } & SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      {d.split("|").map((seg) => (
+        <path key={seg} d={seg} />
+      ))}
+    </svg>
+  )
+}
+
+export function ServerIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <LineIcon
+      d="M3 4.5h18v6H3z|M3 13.5h18v6H3z|M7 7.5h.01|M7 16.5h.01|M11 7.5h6|M11 16.5h6"
+      {...props}
+    />
+  )
+}
+
+export function LayoutIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <LineIcon
+      d="M3 4h18v16H3z|M3 9h18|M9 9v11"
+      {...props}
+    />
+  )
+}
+
+export function DatabaseIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <LineIcon
+      d="M12 3c4.4 0 8 1.34 8 3s-3.6 3-8 3-8-1.34-8-3 3.6-3 8-3z|M4 6v6c0 1.66 3.6 3 8 3s8-1.34 8-3V6|M4 12v6c0 1.66 3.6 3 8 3s8-1.34 8-3v-6"
+      {...props}
+    />
+  )
+}
+
+export function TerminalIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <LineIcon
+      d="M3 4.5h18v15H3z|M6.5 9l3 3-3 3|M12.5 15h5"
+      {...props}
+    />
+  )
+}
+
+export function ArrowUpRightIcon(props: SVGProps<SVGSVGElement>) {
+  return <LineIcon d="M7 17L17 7|M8 7h9v9" {...props} />
+}
+
+export function MapPinIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <LineIcon
+      d="M20 10c0 5-8 11-8 11s-8-6-8-11a8 8 0 0116 0z|M12 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
+      {...props}
+    />
+  )
+}
+
+export const SERVICE_ICONS = {
+  server: ServerIcon,
+  layout: LayoutIcon,
+  database: DatabaseIcon,
+  terminal: TerminalIcon,
+} as const

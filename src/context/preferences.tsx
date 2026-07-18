@@ -10,6 +10,7 @@ import {
   ACCENT_ORDER,
   ACCENTS,
   CONTENT,
+  fetchContent,
   SOCIAL_LINKS,
   type Accent,
   type Lang,
@@ -36,8 +37,21 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
   const [lang, setLang] = useState<Lang>("es")
   const [dark, setDark] = useState(true)
   const [accent, setAccent] = useState<Accent>("blue")
+  // Start from the content baked in at build time, then refresh from the
+  // backend at runtime so data edits appear without rebuilding the site.
+  const [content, setContent] = useState(CONTENT)
 
   const palette = ACCENTS[accent]
+
+  useEffect(() => {
+    let active = true
+    fetchContent().then((fresh) => {
+      if (active && fresh) setContent(fresh)
+    })
+    return () => {
+      active = false
+    }
+  }, [])
 
   // Sync theme class on <html>
   useEffect(() => {
@@ -72,13 +86,13 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
       dark,
       accent,
       palette,
-      t: CONTENT[lang],
+      t: content[lang],
       resumeHref: lang === "en" ? SOCIAL_LINKS.resumeEn : SOCIAL_LINKS.resume,
       toggleLang,
       toggleTheme,
       cycleAccent,
     }),
-    [lang, dark, accent, palette, toggleLang, toggleTheme, cycleAccent],
+    [lang, dark, accent, palette, content, toggleLang, toggleTheme, cycleAccent],
   )
 
   return <PreferencesContext value={value}>{children}</PreferencesContext>

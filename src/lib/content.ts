@@ -51,7 +51,7 @@ type ProjectEntry = {
   linkLabel?: string
 }
 
-type Content = {
+export type Content = {
   flag: string
   langLabel: string
   name: string
@@ -93,7 +93,41 @@ export const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/in/emelcd/",
 }
 
-export const CONTENT = {
-  es: contentData.es.portfolio,
-  en: contentData.en.portfolio,
-} as unknown as Record<Lang, Content>
+/** Map the raw `/api/cv` payload into the per-language content bundle. */
+function toContent(data: {
+  es: { portfolio: unknown }
+  en: { portfolio: unknown }
+}): Record<Lang, Content> {
+  return {
+    es: data.es.portfolio,
+    en: data.en.portfolio,
+  } as unknown as Record<Lang, Content>
+}
+
+/** Content baked into the bundle at build time. Used as the initial render
+ *  and as a fallback if the runtime fetch fails. */
+export const CONTENT = toContent(contentData)
+
+const API_URL = import.meta.env.VITE_API_URL || "https://emelcdbackend.vercel.app"
+
+/**
+ * Fetch the latest content from the backend at runtime so edits to the
+ * backend show up without rebuilding the site. Returns `null` (and keeps the
+ * baked fallback) if the request fails or the payload is malformed.
+ */
+export async function fetchContent(): Promise<Record<Lang, Content> | null> {
+  try {
+    const res = await fetch(`${API_URL}/api/cv`, {
+      headers: { Accept: "application/json" },
+    })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const data = await res.json()
+    if (!data?.es?.portfolio || !data?.en?.portfolio) {
+      throw new Error("Malformed payload: missing es/en portfolio")
+    }
+    return toContent(data)
+  } catch (err) {
+    console.warn("[content] runtime fetch failed, using baked data:", err)
+    return null
+  }
+}

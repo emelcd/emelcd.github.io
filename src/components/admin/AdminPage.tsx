@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
 
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import {
   Card,
   CardAction,
@@ -411,6 +411,12 @@ export function AdminPage() {
           <span className="size-2.5 rounded-full bg-(--accent-400)" />
           <h1 className="font-mono text-sm font-semibold">cv.json form editor</h1>
           <span className="font-mono text-xs text-muted-foreground">emelcd.github.io/admin</span>
+          <a
+            href="/"
+            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "ml-auto")}
+          >
+            ← Volver al sitio
+          </a>
         </div>
       </header>
 

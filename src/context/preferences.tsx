@@ -10,6 +10,7 @@ import {
   ACCENT_ORDER,
   ACCENTS,
   CONTENT,
+  SOCIAL_LINKS,
   type Accent,
   type Lang,
   type Palette,
@@ -22,6 +23,8 @@ type PreferencesValue = {
   palette: Palette
   /** Localized content bundle for the active language. */
   t: (typeof CONTENT)[Lang]
+  /** Résumé PDF for the active language. */
+  resumeHref: string
   toggleLang: () => void
   toggleTheme: () => void
   cycleAccent: () => void
@@ -70,6 +73,7 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
       accent,
       palette,
       t: CONTENT[lang],
+      resumeHref: lang === "en" ? SOCIAL_LINKS.resumeEn : SOCIAL_LINKS.resume,
       toggleLang,
       toggleTheme,
       cycleAccent,

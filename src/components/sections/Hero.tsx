@@ -1,12 +1,11 @@
 import { usePreferences } from "@/context/preferences"
 import { useTypewriter } from "@/hooks/useTypewriter"
 import { SOCIALS, isExternal } from "@/lib/socials"
-import { SOCIAL_LINKS } from "@/lib/content"
 import { ArrowUpRightIcon, MapPinIcon, ResumeIcon } from "@/lib/icons"
 import { TerminalCard } from "@/components/TerminalCard"
 
 export function Hero() {
-  const { t, palette } = usePreferences()
+  const { t, palette, resumeHref } = usePreferences()
   const typed = useTypewriter(t.roles)
 
   return (
@@ -64,7 +63,7 @@ export function Hero() {
               <ArrowUpRightIcon className="h-4 w-4" />
             </a>
             <a
-              href={SOCIAL_LINKS.resume}
+              href={resumeHref}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-muted"
@@ -87,18 +86,21 @@ export function Hero() {
               {t.status.focus}
             </span>
             <span className="flex items-center gap-3">
-              {SOCIALS.map(({ href, icon: Icon, label }) => (
+              {SOCIALS.map(({ href, icon: Icon, label }) => {
+                const url = label === "Resume" ? resumeHref : href
+                return (
                 <a
                   key={label}
-                  href={href}
-                  target={isExternal(href) ? "_blank" : undefined}
-                  rel={isExternal(href) ? "noreferrer" : undefined}
+                  href={url}
+                  target={isExternal(url) ? "_blank" : undefined}
+                  rel={isExternal(url) ? "noreferrer" : undefined}
                   aria-label={label}
                   className="transition hover:text-foreground"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
-              ))}
+                )
+              })}
             </span>
           </div>
         </div>

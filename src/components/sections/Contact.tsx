@@ -5,7 +5,7 @@ import { SOCIAL_LINKS } from "@/lib/content"
 import { EnvelopeIcon } from "@/lib/icons"
 
 export function Contact() {
-  const { t, palette } = usePreferences()
+  const { t, palette, resumeHref } = usePreferences()
 
   return (
     <section
@@ -38,18 +38,21 @@ export function Contact() {
             {t.contact.button}
           </a>
           <div className="flex items-center gap-4 pt-2">
-            {SOCIALS.map(({ href, icon: Icon, label }) => (
+            {SOCIALS.map(({ href, icon: Icon, label }) => {
+              const url = label === "Resume" ? resumeHref : href
+              return (
               <a
                 key={label}
-                href={href}
-                target={isExternal(href) ? "_blank" : undefined}
-                rel={isExternal(href) ? "noreferrer" : undefined}
+                href={url}
+                target={isExternal(url) ? "_blank" : undefined}
+                rel={isExternal(url) ? "noreferrer" : undefined}
                 aria-label={label}
                 className="rounded-lg border border-border bg-card p-2.5 text-muted-foreground transition hover:-translate-y-0.5 hover:text-foreground"
               >
                 <Icon className="h-4 w-4" />
               </a>
-            ))}
+              )
+            })}
           </div>
         </Reveal>
       </div>

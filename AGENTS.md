@@ -22,6 +22,7 @@ Respond to the user in **Spanish** unless they ask otherwise.
 bun install
 bun run dev
 bun run fetch-content
+bun run resume   # regenerates public/resume.pdf + resume-en.pdf (needs Chrome)
 bun run build
 bun run lint
 ```
@@ -53,6 +54,7 @@ bun run lint
 | Page sections | `src/components/sections/*` in `App.tsx` |
 | Terminal | `src/lib/terminal.ts` + `TerminalCard.tsx` |
 | Admin CV editor | `src/components/admin/AdminPage.tsx` (`/admin`) |
+| Résumé PDFs | `bun run resume` → `scripts/build-resume.mjs` → `public/resume.pdf` / `resume-en.pdf` |
 
 ### Current sections (order)
 

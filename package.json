@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "fetch-content": "node scripts/fetch-content.mjs",
+    "resume": "node scripts/build-resume.mjs",
     "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
     "lint": "oxlint",
     "preview": "vite preview"

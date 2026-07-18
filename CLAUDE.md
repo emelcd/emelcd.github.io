@@ -30,6 +30,7 @@ repo/service:
 bun install
 bun run dev            # Vite dev server
 bun run fetch-content  # pull latest CV from backend into src/lib/content-data.json
+bun run resume         # HTML→PDF via Chrome headless → public/resume.pdf + resume-en.pdf
 bun run build          # tsc -b && vite build → dist/
 bun run preview        # serve dist/ locally (port 4173)
 bun run lint           # oxlint
@@ -70,8 +71,10 @@ edits to it get overwritten by `fetch-content`).
   (Exception that exists today: the terminal card `out` strings in
   `src/components/TerminalCard.tsx` are hardcoded decoration, not `t`.)
 - The résumé PDFs in `public/` (`resume.pdf`, `resume-en.pdf`) are generated
-  **manually** by `scripts/build-resume.mjs` (renders `*.resume` from the
-  content JSON to printable HTML → print to PDF). Not part of CI.
+  by `bun run resume` (`scripts/build-resume.mjs`: renders `*.resume` from the
+  content JSON to HTML, then Chrome headless `--print-to-pdf`). Requires
+  Chrome/Chromium locally (`CHROME_PATH` override optional). Not part of CI.
+  After editing resume data in the backend: `bun run fetch-content && bun run resume`.
 - Match the existing component style: functional components, `@/` imports,
   Tailwind classes, base-ui primitives.
 

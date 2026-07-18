@@ -11,11 +11,23 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="grid-backdrop pointer-events-none absolute inset-0" />
-      <div className="accent-glow pointer-events-none absolute top-[-10%] left-1/2 h-[520px] w-[820px] -translate-x-1/2" />
+      <div className="accent-glow pointer-events-none absolute top-[-18%] left-1/2 h-[560px] w-[900px] -translate-x-1/2 blur-sm" />
+      <div
+        className="pointer-events-none absolute top-[35%] right-[-8%] h-[320px] w-[320px] rounded-full opacity-50 blur-3xl"
+        style={{
+          background: `radial-gradient(circle, ${palette[600]}33, transparent 70%)`,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute bottom-[5%] left-[-6%] h-[260px] w-[260px] rounded-full opacity-40 blur-3xl"
+        style={{
+          background: `radial-gradient(circle, ${palette[400]}22, transparent 70%)`,
+        }}
+      />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="flex flex-col gap-6">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 font-mono text-xs text-muted-foreground backdrop-blur">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border/80 bg-card/70 px-3 py-1 font-mono text-xs text-muted-foreground shadow-sm backdrop-blur-md">
             <span className="relative flex h-2 w-2">
               <span
                 className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-70"

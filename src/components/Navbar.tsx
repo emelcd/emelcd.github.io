@@ -13,7 +13,7 @@ export function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/65 shadow-[0_1px_0_color-mix(in_oklch,var(--foreground)_4%,transparent),0_8px_24px_-16px_color-mix(in_oklch,var(--foreground)_18%,transparent)] backdrop-blur-xl">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
         <a href="#top" className="group flex items-center gap-2.5">
           <span

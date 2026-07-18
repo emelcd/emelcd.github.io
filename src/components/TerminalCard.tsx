@@ -335,15 +335,21 @@ export function TerminalCard() {
   return (
     <div className="relative">
       <div
-        className="absolute -inset-3 rounded-3xl opacity-40 blur-2xl"
+        className="absolute -inset-4 rounded-3xl opacity-50 blur-3xl"
         style={{
-          background: `linear-gradient(135deg, ${palette[400]}, transparent 70%)`,
+          background: `linear-gradient(135deg, ${palette[400]}99, ${palette[600]}40 40%, transparent 72%)`,
+        }}
+      />
+      <div
+        className="absolute -inset-1 rounded-2xl opacity-60 blur-xl"
+        style={{
+          background: `linear-gradient(160deg, ${palette[400]}33, transparent 60%)`,
         }}
       />
       <div
         role="region"
         aria-label="Terminal interactiva"
-        className="relative overflow-hidden rounded-xl border border-border bg-[oklch(0.16_0_0)] shadow-2xl"
+        className="relative overflow-hidden rounded-xl border border-white/10 bg-[oklch(0.16_0_0)] shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_24px_48px_-12px_rgba(0,0,0,0.55),0_12px_24px_-8px_rgba(0,0,0,0.4)]"
         onClick={focusInput}
       >
         <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">

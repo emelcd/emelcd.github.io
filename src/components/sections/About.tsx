@@ -23,7 +23,7 @@ export function About() {
             <Reveal
               key={s.title}
               delay={i * 70}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-transparent hover:shadow-xl"
+              className="surface group relative overflow-hidden rounded-2xl border border-border/80 p-6 hover:border-transparent"
             >
               <span
                 className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"

@@ -15,7 +15,7 @@ export function Education() {
           <Reveal
             key={entry.degree}
             delay={i * 50}
-            className="flex items-center justify-between gap-4 rounded-xl border border-border bg-card px-5 py-4 transition hover:border-transparent hover:shadow-md"
+            className="surface flex items-center justify-between gap-4 rounded-xl border border-border/80 px-5 py-4 hover:border-transparent"
           >
             <div className="flex items-center gap-4">
               <span className="font-mono text-sm font-semibold text-muted-foreground">

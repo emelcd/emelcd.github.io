@@ -7,7 +7,7 @@ export function Projects() {
   const { t, palette } = usePreferences()
 
   return (
-    <section id="projects" className="border-y border-border/60 bg-card/30">
+    <section id="projects" className="section-band border-y">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <Reveal>
           <SectionHeader
@@ -22,7 +22,7 @@ export function Projects() {
             <Reveal
               key={p.name}
               delay={i * 70}
-              className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-xl"
+              className="surface group flex flex-col rounded-2xl border border-border/80 p-6"
             >
               <div className="mb-3 flex items-start justify-between gap-4">
                 <h3 className="text-lg font-semibold">{p.name}</h3>

@@ -10,9 +10,15 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border-t border-border/60"
+      className="relative overflow-hidden border-t border-border/50"
     >
-      <div className="accent-glow pointer-events-none absolute bottom-[-30%] left-1/2 h-[440px] w-[720px] -translate-x-1/2" />
+      <div className="accent-glow pointer-events-none absolute bottom-[-35%] left-1/2 h-[520px] w-[820px] -translate-x-1/2 blur-sm" />
+      <div
+        className="pointer-events-none absolute top-[10%] left-[15%] h-[200px] w-[200px] rounded-full opacity-30 blur-3xl"
+        style={{
+          background: `radial-gradient(circle, ${palette[400]}28, transparent 70%)`,
+        }}
+      />
       <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-5 py-20 text-center md:py-28">
         <Reveal className="flex flex-col items-center gap-6">
           <span className="font-mono text-xs tracking-[0.25em] text-muted-foreground uppercase">

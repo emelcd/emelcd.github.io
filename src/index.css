@@ -143,34 +143,155 @@
   --accent-800: #2c5282;
 }
 
+/* Page atmosphere — fixed layers behind content */
+.page-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.page-atmosphere__wash {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 70% 45% at 50% -5%,
+      color-mix(in oklch, var(--accent-400) 14%, transparent) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 100% 35%,
+      color-mix(in oklch, var(--accent-600) 8%, transparent) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 45% 35% at 0% 70%,
+      color-mix(in oklch, var(--accent-400) 7%, transparent) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 50% 100%,
+      color-mix(in oklch, var(--foreground) 4%, transparent) 0%,
+      transparent 55%
+    );
+}
+
+.page-atmosphere__noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+.dark .page-atmosphere__noise {
+  opacity: 0.055;
+}
+
+.page-atmosphere__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 85% 70% at 50% 40%,
+    transparent 40%,
+    color-mix(in oklch, var(--background) 55%, transparent) 100%
+  );
+}
+
 /* Subtle engineered grid backdrop */
 .grid-backdrop {
   background-image:
-    linear-gradient(to right, color-mix(in oklch, var(--foreground) 5%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 5%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in oklch, var(--foreground) 5.5%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 5.5%, transparent) 1px, transparent 1px);
   background-size: 56px 56px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 65% at 50% 0%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 65% at 50% 0%, #000 35%, transparent 100%);
 }
 
 .accent-glow {
   background: radial-gradient(
     circle at center,
-    color-mix(in oklch, var(--accent-400) 22%, transparent) 0%,
-    transparent 68%
+    color-mix(in oklch, var(--accent-400) 28%, transparent) 0%,
+    color-mix(in oklch, var(--accent-600) 12%, transparent) 42%,
+    transparent 70%
   );
+}
+
+/* Recessed alternating section band */
+.section-band {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklch, var(--foreground) 5%, var(--background)) 0%,
+      color-mix(in oklch, var(--foreground) 2.5%, var(--background)) 100%
+    );
+  border-color: color-mix(in oklch, var(--foreground) 10%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklch, var(--foreground) 8%, transparent),
+    inset 0 -1px 0 color-mix(in oklch, var(--foreground) 5%, transparent),
+    inset 0 28px 48px -28px color-mix(in oklch, var(--foreground) 6%, transparent);
+}
+
+.section-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse 70% 80% at 50% 0%,
+    color-mix(in oklch, var(--accent-400) 9%, transparent) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+/* Elevated interactive surfaces */
+.surface {
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in oklch, var(--foreground) 5%, var(--card)) 0%,
+      var(--card) 42%,
+      color-mix(in oklch, var(--background) 35%, var(--card)) 100%
+    );
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklch, var(--foreground) 8%, transparent),
+    0 1px 0 color-mix(in oklch, var(--foreground) 3%, transparent),
+    0 2px 4px color-mix(in oklch, var(--foreground) 4%, transparent),
+    0 12px 28px -14px color-mix(in oklch, var(--foreground) 18%, transparent);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease;
+}
+
+.surface:hover,
+.reveal.is-visible.surface:hover {
+  transform: translateY(-4px) scale(1);
+  border-color: color-mix(in oklch, var(--accent-400) 35%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklch, var(--foreground) 10%, transparent),
+    0 1px 0 color-mix(in oklch, var(--foreground) 4%, transparent),
+    0 6px 12px color-mix(in oklch, var(--foreground) 6%, transparent),
+    0 22px 44px -14px color-mix(in oklch, var(--accent-400) 32%, transparent),
+    0 14px 32px -12px color-mix(in oklch, var(--foreground) 22%, transparent);
 }
 
 /* Scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(22px) scale(0.985);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* Terminal cursor */
@@ -200,6 +321,8 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .surface { transition: none; }
+  .surface:hover { transform: none; }
   .boot-line { opacity: 1; animation: none; }
   .cursor-blink { animation: none; }
 }

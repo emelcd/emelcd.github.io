@@ -20,7 +20,7 @@ export function Skills() {
           <Reveal
             key={entry.category}
             delay={i * 70}
-            className="rounded-2xl border border-border bg-card p-6"
+            className="surface rounded-2xl border border-border/80 p-6"
           >
             <div className="mb-3 flex items-center gap-2">
               <span

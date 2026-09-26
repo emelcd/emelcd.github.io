@@ -5,18 +5,14 @@ import { SectionDots } from "@/components/SectionDots"
 import { ThemeMenu } from "@/components/ThemeMenu"
 import { usePreferences } from "@/context/preferences"
 import { useActiveSection } from "@/hooks/useActiveSection"
-import { useMediaQuery } from "@/hooks/useMediaQuery"
 import { cn } from "@/lib/utils"
 
-const AtomScene = lazy(() => import("@/components/AtomScene"))
+const ChipScene = lazy(() => import("@/components/ChipScene"))
 
 export function Navbar() {
-  const { t, palette, lang } = usePreferences()
+  const { t, lang } = usePreferences()
   const [menuOpen, setMenuOpen] = useState(false)
-  // on desktop the atom is in the hero; here it's a small mobile companion
-  const wide = useMediaQuery("(min-width: 1024px)")
 
-  const initials = `${t.name[0]}${t.surname[0]}`
   const links = [
     { href: "#about", id: "about", label: t.nav.about },
     { href: "#work", id: "work", label: t.nav.work },
@@ -35,42 +31,15 @@ export function Navbar() {
     <>
       <header className="sticky top-0 z-50 border-b border-border/50 bg-background/65 shadow-[0_1px_0_color-mix(in_oklch,var(--foreground)_4%,transparent),0_8px_24px_-16px_color-mix(in_oklch,var(--foreground)_18%,transparent)] backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3.5">
-          <a href="#top" className="group flex items-center gap-2.5">
-            <span
-              className="relative grid size-9 place-items-center overflow-hidden rounded-xl font-mono text-[13px] font-bold tracking-tight text-white transition duration-300 group-hover:scale-[1.04] group-hover:shadow-[0_0_0_1px_color-mix(in_oklch,var(--accent-400)_55%,transparent),0_8px_20px_-8px_var(--accent-600)]"
-              style={{
-                background: `linear-gradient(145deg, ${palette[400]} 0%, ${palette[600]} 52%, ${palette[800]} 100%)`,
-                boxShadow: `inset 0 1px 0 color-mix(in oklch, white 28%, transparent), 0 1px 2px color-mix(in oklch, ${palette[800]} 35%, transparent)`,
-              }}
-            >
-              <span
-                className="pointer-events-none absolute inset-0 opacity-70 transition duration-300 group-hover:opacity-100"
-                style={{
-                  background:
-                    "linear-gradient(180deg, color-mix(in oklch, white 22%, transparent), transparent 48%)",
-                }}
-              />
-              <span
-                className="pointer-events-none absolute -top-3 -right-3 size-7 rounded-full blur-md transition duration-300 group-hover:scale-125"
-                style={{
-                  background: `color-mix(in oklch, ${palette[400]} 55%, transparent)`,
-                }}
-              />
-              <span className="relative z-10 drop-shadow-[0_1px_1px_rgb(0_0_0_/_28%)]">
-                {initials}
-              </span>
-            </span>
-            <span className="hidden font-mono text-sm font-semibold tracking-tight sm:block">
-              {t.name.toLowerCase()}
-              <span style={{ color: "var(--accent-400)" }}>.dev</span>
-            </span>
-          </a>
-
-          {!wide && (
-            <Suspense fallback={null}>
-              <AtomScene className="-my-2 mr-auto -ml-1 size-13 shrink-0" />
+          <a
+            href="#top"
+            aria-label={`${t.name} ${t.surname}`}
+            className="-my-2 -ml-2 shrink-0"
+          >
+            <Suspense fallback={<span className="block size-13" />}>
+              <ChipScene className="size-13" />
             </Suspense>
-          )}
+          </a>
 
           <div className="hidden items-center gap-1 font-mono text-sm text-muted-foreground lg:flex">
             {links.map((item) => {

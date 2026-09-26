@@ -6,12 +6,12 @@ import { SOCIALS, isExternal } from "@/lib/socials"
 import { ArrowUpRightIcon, MapPinIcon, ResumeIcon } from "@/lib/icons"
 
 // three.js is heavy: load the scene in its own chunk after first paint
-const AtomScene = lazy(() => import("@/components/AtomScene"))
+const ChipScene = lazy(() => import("@/components/ChipScene"))
 
 export function Hero() {
   const { t, palette, resumeHref } = usePreferences()
   const typed = useTypewriter(t.roles)
-  // below lg the atom lives in the navbar instead
+  // below lg the chip lives in the navbar instead
   const wide = useMediaQuery("(min-width: 1024px)")
 
   return (
@@ -152,7 +152,7 @@ export function Hero() {
 
         {wide && (
           <Suspense fallback={<div className="mx-auto aspect-square w-full max-w-[520px]" />}>
-            <AtomScene className="relative mx-auto aspect-square w-full max-w-[520px] touch-pan-y" />
+            <ChipScene className="relative mx-auto aspect-square w-full max-w-[520px] touch-pan-y" />
           </Suspense>
         )}
       </div>

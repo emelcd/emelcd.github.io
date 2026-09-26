@@ -1,8 +1,11 @@
+import { lazy, Suspense } from "react"
 import { usePreferences } from "@/context/preferences"
 import { useTypewriter } from "@/hooks/useTypewriter"
 import { SOCIALS, isExternal } from "@/lib/socials"
 import { ArrowUpRightIcon, MapPinIcon, ResumeIcon } from "@/lib/icons"
-import { TerminalCard } from "@/components/TerminalCard"
+
+// three.js is heavy: load the scene in its own chunk after first paint
+const AtomScene = lazy(() => import("@/components/AtomScene"))
 
 export function Hero() {
   const { t, palette, resumeHref } = usePreferences()
@@ -144,7 +147,9 @@ export function Hero() {
           )}
         </div>
 
-        <TerminalCard />
+        <Suspense fallback={<div className="mx-auto hidden aspect-square w-full max-w-[520px] lg:block" />}>
+          <AtomScene />
+        </Suspense>
       </div>
     </section>
   )

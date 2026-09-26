@@ -55,8 +55,8 @@
         "contact": "Contacto"
       },
       "headings": {
-        "about": "Lo que hago",
-        "aboutLead": "De la estrategia técnica al despliegue: diseño arquitecturas backend, modelo dominios, conecto datos y mensajería, y dejo plataformas sostenibles en producción.",
+        "about": "Mi rol",
+        "aboutLead": "Arquitecto de software en un equipo de plataforma interna: decido cómo se estructuran los sistemas, construyo las piezas críticas de extremo a extremo y cuido que sigan siendo mantenibles en producción.",
         "experience": "Trayectoria",
         "experienceLead": "Siete años entre backend, cloud y sistemas — pasando del desarrollo de producto a la arquitectura de plataformas.",
         "skills": "Stack técnico",
@@ -72,23 +72,23 @@
       "services": [
         {
           "icon": "server",
-          "title": "Arquitectura backend",
-          "description": "Diseño de APIs REST y servicios mantenibles con Clean Architecture, DDD y CQRS en Python (FastAPI/Flask) y TypeScript (NestJS/Express). Autenticación OIDC/OAuth2 y autorización por políticas."
+          "title": "Arquitectura de plataforma",
+          "description": "Defino límites de dominio, contratos entre servicios y los patrones de una plataforma modular (Clean Architecture, DDD, CQRS), y los aterrizo en el equipo con revisión de código y documentación técnica."
         },
         {
           "icon": "layout",
-          "title": "Frontend orientado a producto",
-          "description": "Aplicaciones Vue 3 y Nuxt en monorepo, con design system reutilizable, contratos de API claros y testing E2E con Playwright."
+          "title": "Desarrollo full stack end-to-end",
+          "description": "Llevo funcionalidades de la especificación a producción: servicios en FastAPI y Flask, frontends en Vue/Nuxt y pruebas unitarias, de integración y E2E."
         },
         {
           "icon": "database",
-          "title": "Datos & mensajería",
-          "description": "Arquitecturas orientadas a eventos con Kafka, outbox y CDC (Debezium). Modelado en PostgreSQL y MongoDB, caché con Redis y búsqueda con Elasticsearch."
+          "title": "Integración de sistemas",
+          "description": "Conecto la plataforma con el resto del ecosistema mediante eventos (Kafka, outbox, CDC), el ERP Odoo, Microsoft 365 y Azure DevOps, y evoluciono aplicaciones heredadas."
         },
         {
           "icon": "terminal",
-          "title": "Cloud, Linux & DevOps",
-          "description": "Contenedores y pipelines con Docker y GitLab CI sobre Linux y nube (GCP/AWS). Observabilidad con Sentry, OpenTelemetry y Grafana. Scripting en Bash, ZX y Python."
+          "title": "Entrega, operación e IA",
+          "description": "Pipelines en GitLab CI, contenedores Docker y observabilidad con Sentry y OpenTelemetry. Impulso el desarrollo guiado por especificaciones y los asistentes IA conectados mediante MCP."
         }
       ],
       "experience": [
@@ -395,7 +395,7 @@
         "interests": "Intereses",
         "present": "actualidad"
       },
-      "summary": "Arquitecto de software con más de 7 años de experiencia entre backend, cloud y sistemas. Diseño plataformas modulares y orientadas a eventos, defino límites de dominio y modelo APIs REST con Clean Architecture, DDD y CQRS en Python y TypeScript. Integro mensajería (Kafka, CDC), datos y seguridad (OIDC, autorización por políticas), construyo frontends en Vue/Nuxt y llevo las decisiones a producción con Docker, GitLab CI y observabilidad. Combino criterio de arquitectura, visión de producto y capacidad hands-on.",
+      "summary": "Arquitecto de software con más de 7 años de experiencia entre backend, cloud y sistemas. En un equipo de plataforma interna defino límites de dominio, contratos entre servicios y patrones (Clean Architecture, DDD, CQRS), y construyo de extremo a extremo las piezas críticas: servicios en Python y TypeScript, integración por eventos (Kafka, CDC), seguridad (OIDC, autorización por políticas) y frontends en Vue/Nuxt. Llevo las decisiones a producción con Docker, GitLab CI y observabilidad, e impulso el desarrollo guiado por especificaciones con IA.",
       "experience": [
         {
           "title": "Ingeniero de Desarrollo e Investigación",
@@ -744,8 +744,8 @@
         "contact": "Contact"
       },
       "headings": {
-        "about": "What I do",
-        "aboutLead": "From technical strategy to deployment: I design backend architectures, model domains, wire data and messaging, and keep sustainable platforms running in production.",
+        "about": "My role",
+        "aboutLead": "Software architect on an internal platform team: I decide how systems are structured, build the critical pieces end to end, and keep them maintainable in production.",
         "experience": "Journey",
         "experienceLead": "Seven years across backend, cloud and systems — from product development to platform architecture.",
         "skills": "Tech stack",
@@ -761,23 +761,23 @@
       "services": [
         {
           "icon": "server",
-          "title": "Backend architecture",
-          "description": "REST API design and maintainable services with Clean Architecture, DDD and CQRS in Python (FastAPI/Flask) and TypeScript (NestJS/Express). OIDC/OAuth2 authentication and policy-based authorization."
+          "title": "Platform architecture",
+          "description": "I define domain boundaries, service contracts and the patterns of a modular platform (Clean Architecture, DDD, CQRS), and bring them to the team through code review and technical documentation."
         },
         {
           "icon": "layout",
-          "title": "Product-oriented frontend",
-          "description": "Vue 3 and Nuxt applications in a monorepo, with a reusable design system, clear API contracts and E2E testing with Playwright."
+          "title": "End-to-end full stack delivery",
+          "description": "I take features from spec to production: FastAPI and Flask services, Vue/Nuxt frontends, and unit, integration and E2E tests."
         },
         {
           "icon": "database",
-          "title": "Data & messaging",
-          "description": "Event-driven architectures with Kafka, outbox and CDC (Debezium). Data modeling in PostgreSQL and MongoDB, Redis caching and Elasticsearch search."
+          "title": "Systems integration",
+          "description": "I connect the platform to the rest of the ecosystem through events (Kafka, outbox, CDC), the Odoo ERP, Microsoft 365 and Azure DevOps, and evolve legacy applications."
         },
         {
           "icon": "terminal",
-          "title": "Cloud, Linux & DevOps",
-          "description": "Containers and pipelines with Docker and GitLab CI on Linux and cloud (GCP/AWS). Observability with Sentry, OpenTelemetry and Grafana. Scripting in Bash, ZX and Python."
+          "title": "Delivery, operations & AI",
+          "description": "GitLab CI pipelines, Docker containers and observability with Sentry and OpenTelemetry. I drive spec-driven development and AI assistants wired in through MCP."
         }
       ],
       "experience": [
@@ -1082,7 +1082,7 @@
         "interests": "Interests",
         "present": "present"
       },
-      "summary": "Software architect with 7+ years of experience across backend, cloud and systems. I design modular, event-driven platforms, define domain boundaries and model REST APIs with Clean Architecture, DDD and CQRS in Python and TypeScript. I integrate messaging (Kafka, CDC), data and security (OIDC, policy-based authorization), build Vue/Nuxt frontends, and carry decisions into production with Docker, GitLab CI and observability. I combine architectural judgement, product thinking and hands-on delivery.",
+      "summary": "Software architect with 7+ years of experience across backend, cloud and systems. On an internal platform team I define domain boundaries, service contracts and patterns (Clean Architecture, DDD, CQRS), and build the critical pieces end to end: Python and TypeScript services, event-driven integration (Kafka, CDC), security (OIDC, policy-based authorization) and Vue/Nuxt frontends. I carry decisions into production with Docker, GitLab CI and observability, and drive AI-assisted, spec-driven development.",
       "experience": [
         {
           "title": "Research & Development Engineer",

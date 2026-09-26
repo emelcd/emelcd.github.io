@@ -7,7 +7,7 @@ import { usePreferences } from "@/context/preferences"
 import { useActiveSection } from "@/hooks/useActiveSection"
 import { cn } from "@/lib/utils"
 
-const ChipScene = lazy(() => import("@/components/ChipScene"))
+const LogoScene = lazy(() => import("@/components/LogoScene"))
 
 export function Navbar() {
   const { t, lang } = usePreferences()
@@ -37,7 +37,7 @@ export function Navbar() {
             className="-my-2 -ml-2 shrink-0"
           >
             <Suspense fallback={<span className="block size-13" />}>
-              <ChipScene className="size-13" />
+              <LogoScene className="size-13" />
             </Suspense>
           </a>
 

@@ -92,7 +92,7 @@
         {
           "title": "Ingeniero de Desarrollo e Investigación",
           "company": "ITI — Instituto Tecnológico de Informática",
-          "description": "Diseño y evolución del backend de la plataforma interna iti-moar en Python (FastAPI), aplicando Clean Architecture, DDD y CQRS. Integración de Kafka, MongoDB, Redis y Elasticsearch. Frontends con Vue 3 y Nuxt. Mantenimiento de módulos Odoo a medida (CRM, nóminas, analítica).",
+          "description": "Diseño y evolución del backend de una plataforma interna de I+D en Python (FastAPI), aplicando Clean Architecture, DDD y CQRS. Integración de Kafka, MongoDB, Redis y Elasticsearch. Frontends con Vue 3 y Nuxt. Mantenimiento de módulos Odoo a medida (CRM, nóminas, analítica).",
           "location": "Valencia",
           "duration": "32 meses",
           "period": "2023 — actualidad",
@@ -212,7 +212,7 @@
       ],
       "projects": [
         {
-          "name": "Plataforma iti-moar",
+          "name": "Plataforma interna de I+D",
           "blurb": "Plataforma interna de investigación diseñada sobre FastAPI con Clean Architecture, DDD y CQRS. Mensajería con Kafka y persistencia poliglota (Mongo, Redis, Elasticsearch).",
           "tags": [
             "FastAPI",
@@ -259,24 +259,44 @@
       ],
       "education": [
         {
-          "degree": "Desarrollo de APIs en GCP Apigee",
-          "institution": "Google",
+          "degree": "Desarrollo guiado por especificaciones con IA (OpenSpec)",
+          "institution": "ITI",
           "year": "2026"
         },
         {
-          "degree": "Google IT Automation with Python",
+          "degree": "Desarrollo de módulos a medida con Odoo",
+          "institution": "ITI · impartido por PUNT",
+          "year": "2025"
+        },
+        {
+          "degree": "Kubernetes: despliegue y operación de aplicaciones en contenedores",
+          "institution": "ITI",
+          "year": "2025"
+        },
+        {
+          "degree": "Arquitectura hexagonal y CQRS en sistemas backend",
+          "institution": "ITI",
+          "year": "2024"
+        },
+        {
+          "degree": "Desarrollo de APIs con Google Cloud Apigee API Platform",
+          "institution": "Google",
+          "year": "2023"
+        },
+        {
+          "degree": "Google IT Automation with Python — Certificado Profesional",
           "institution": "Google",
           "year": "2022"
         },
         {
-          "degree": "Ciclo Superior en Administración de Sistemas",
+          "degree": "Técnico Superior en Administración de Sistemas Informáticos en Red (ASIR)",
           "institution": "UNED · Buitrago",
           "year": "2021"
         },
         {
-          "degree": "Grado en Psicología",
-          "institution": "Universidad de Valencia",
-          "year": "2016"
+          "degree": "Aprendizaje autodidacta continuo",
+          "institution": "Documentación oficial, open source y proyectos propios",
+          "year": "Continuo"
         }
       ],
       "contact": {
@@ -317,7 +337,7 @@
           "location": "Valencia",
           "period": "2023 — actualidad",
           "bullets": [
-            "Diseño y evolución del backend de la plataforma interna iti-moar en Python (FastAPI), aplicando Clean Architecture, DDD y CQRS.",
+            "Diseño y evolución del backend de una plataforma interna de I+D en Python (FastAPI), aplicando Clean Architecture, DDD y CQRS.",
             "Integración de mensajería y persistencia poliglota con Kafka, MongoDB, Redis y Elasticsearch.",
             "Diseño de contratos entre frontend y backend; frontends con Vue 3 y Nuxt consumiendo APIs seguras con JWT/OAuth2.0.",
             "Mantenimiento y evolución de módulos Odoo a medida (CRM, nóminas y analítica)."
@@ -397,7 +417,7 @@
       ],
       "projects": [
         {
-          "name": "Plataforma iti-moar",
+          "name": "Plataforma interna de I+D",
           "desc": "Plataforma interna de investigación diseñada sobre FastAPI con Clean Architecture, DDD y CQRS; mensajería con Kafka y persistencia poliglota (Mongo, Redis, Elasticsearch).",
           "tags": [
             "FastAPI",
@@ -491,26 +511,46 @@
       ],
       "certs": [
         {
-          "name": "Desarrollo de APIs en GCP Apigee",
+          "name": "Desarrollo guiado por especificaciones con IA (OpenSpec)",
+          "org": "ITI",
+          "year": "2026"
+        },
+        {
+          "name": "Desarrollo de módulos a medida con Odoo",
+          "org": "ITI · impartido por PUNT",
+          "year": "2025"
+        },
+        {
+          "name": "Kubernetes: despliegue y operación de aplicaciones en contenedores",
+          "org": "ITI",
+          "year": "2025"
+        },
+        {
+          "name": "Arquitectura hexagonal y CQRS en sistemas backend",
+          "org": "ITI",
+          "year": "2024"
+        },
+        {
+          "name": "Desarrollo de APIs con Google Cloud Apigee API Platform",
           "org": "Google",
           "year": "2026"
         },
         {
-          "name": "Google IT Automation with Python",
+          "name": "Google IT Automation with Python — Certificado Profesional",
           "org": "Google",
           "year": "2022"
         }
       ],
       "education": [
         {
-          "deg": "Ciclo Superior en Administración de Sistemas",
+          "deg": "Técnico Superior en Administración de Sistemas Informáticos en Red (ASIR)",
           "inst": "UNED · Buitrago",
           "year": "2021"
         },
         {
-          "deg": "Grado en Psicología",
-          "inst": "Universidad de Valencia",
-          "year": "2016"
+          "deg": "Aprendizaje autodidacta continuo",
+          "inst": "Documentación oficial, open source y proyectos propios",
+          "year": "Continuo"
         }
       ],
       "languages": [
@@ -631,7 +671,7 @@
         {
           "title": "Research & Development Engineer",
           "company": "ITI — Instituto Tecnológico de Informática",
-          "description": "Design and evolution of the internal iti-moar backend in Python (FastAPI), using Clean Architecture, DDD and CQRS. Integration of Kafka, MongoDB, Redis and Elasticsearch. Frontends with Vue 3 and Nuxt. Maintenance of custom Odoo modules (CRM, payroll, analytics).",
+          "description": "Design and evolution of the backend of an internal R&D platform in Python (FastAPI), using Clean Architecture, DDD and CQRS. Integration of Kafka, MongoDB, Redis and Elasticsearch. Frontends with Vue 3 and Nuxt. Maintenance of custom Odoo modules (CRM, payroll, analytics).",
           "location": "Valencia",
           "duration": "32 mo",
           "period": "2023 — present",
@@ -749,7 +789,7 @@
       ],
       "projects": [
         {
-          "name": "iti-moar Platform",
+          "name": "Internal R&D Platform",
           "blurb": "Internal research platform designed on FastAPI with Clean Architecture, DDD and CQRS. Kafka messaging and polyglot persistence (Mongo, Redis, Elasticsearch).",
           "tags": [
             "FastAPI",
@@ -796,24 +836,44 @@
       ],
       "education": [
         {
-          "degree": "Developing APIs in GCP Apigee",
+          "degree": "Spec-Driven Development with AI (OpenSpec)",
+          "institution": "ITI",
+          "year": "2026"
+        },
+        {
+          "degree": "Custom Module Development with Odoo",
+          "institution": "ITI · taught by PUNT",
+          "year": "2025"
+        },
+        {
+          "degree": "Kubernetes: Deploying and Operating Containerized Applications",
+          "institution": "ITI",
+          "year": "2025"
+        },
+        {
+          "degree": "Hexagonal Architecture and CQRS for Backend Systems",
+          "institution": "ITI",
+          "year": "2024"
+        },
+        {
+          "degree": "Developing APIs with Google Cloud Apigee API Platform",
           "institution": "Google",
           "year": "2026"
         },
         {
-          "degree": "Google IT Automation with Python",
+          "degree": "Google IT Automation with Python Professional Certificate",
           "institution": "Google",
           "year": "2022"
         },
         {
-          "degree": "Higher Certificate in Systems Administration",
+          "degree": "Higher Technician in Network Computer Systems Administration (ASIR)",
           "institution": "UNED · Buitrago",
           "year": "2021"
         },
         {
-          "degree": "Bachelor's in Psychology",
-          "institution": "University of Valencia",
-          "year": "2016"
+          "degree": "Continuous self-directed learning",
+          "institution": "Official docs, open source and side projects",
+          "year": "Ongoing"
         }
       ],
       "contact": {
@@ -854,7 +914,7 @@
           "location": "Valencia",
           "period": "2023 — present",
           "bullets": [
-            "Design and evolution of the internal iti-moar backend in Python (FastAPI), applying Clean Architecture, DDD and CQRS.",
+            "Design and evolution of the backend of an internal R&D platform in Python (FastAPI), applying Clean Architecture, DDD and CQRS.",
             "Integration of messaging and polyglot persistence with Kafka, MongoDB, Redis and Elasticsearch.",
             "Design of frontend/backend contracts; frontends with Vue 3 and Nuxt consuming secure APIs with JWT/OAuth2.0.",
             "Maintenance and evolution of custom Odoo modules (CRM, payroll and analytics)."
@@ -934,7 +994,7 @@
       ],
       "projects": [
         {
-          "name": "iti-moar Platform",
+          "name": "Internal R&D Platform",
           "desc": "Internal research platform designed on FastAPI with Clean Architecture, DDD and CQRS; Kafka messaging and polyglot persistence (Mongo, Redis, Elasticsearch).",
           "tags": [
             "FastAPI",
@@ -1028,26 +1088,46 @@
       ],
       "certs": [
         {
-          "name": "Developing APIs in GCP Apigee",
+          "name": "Spec-Driven Development with AI (OpenSpec)",
+          "org": "ITI",
+          "year": "2026"
+        },
+        {
+          "name": "Custom Module Development with Odoo",
+          "org": "ITI · taught by PUNT",
+          "year": "2025"
+        },
+        {
+          "name": "Kubernetes: Deploying and Operating Containerized Applications",
+          "org": "ITI",
+          "year": "2025"
+        },
+        {
+          "name": "Hexagonal Architecture and CQRS for Backend Systems",
+          "org": "ITI",
+          "year": "2024"
+        },
+        {
+          "name": "Developing APIs with Google Cloud Apigee API Platform",
           "org": "Google",
           "year": "2026"
         },
         {
-          "name": "Google IT Automation with Python",
+          "name": "Google IT Automation with Python Professional Certificate",
           "org": "Google",
           "year": "2022"
         }
       ],
       "education": [
         {
-          "deg": "Higher Certificate in Systems Administration",
+          "deg": "Higher Technician in Network Computer Systems Administration (ASIR)",
           "inst": "UNED · Buitrago",
           "year": "2021"
         },
         {
-          "deg": "Bachelor's in Psychology",
-          "inst": "University of Valencia",
-          "year": "2016"
+          "deg": "Continuous self-directed learning",
+          "inst": "Official docs, open source and side projects",
+          "year": "Ongoing"
         }
       ],
       "languages": [

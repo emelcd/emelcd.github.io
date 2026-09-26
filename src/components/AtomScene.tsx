@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import * as THREE from "three"
 import { usePreferences } from "@/context/preferences"
 import type { Palette } from "@/lib/content"
+import { cn } from "@/lib/utils"
 
 const TRAIL = 90
 const ORBITS = [
@@ -68,7 +69,7 @@ const trailFragment = /* glsl */ `
   }
 `
 
-export default function AtomScene() {
+export default function AtomScene({ className }: { className?: string }) {
   const { palette, dark } = usePreferences()
   const mountRef = useRef<HTMLDivElement>(null)
   const apiRef = useRef<SceneApi | null>(null)
@@ -234,7 +235,9 @@ export default function AtomScene() {
       renderer.setSize(width, height, false)
       camera.aspect = width / height
       // trail points are sized in pixels, so shrink them with the canvas
-      trailMat.uniforms.uScale.value = Math.min(1.2, Math.max(0.35, height / 480))
+      trailMat.uniforms.uScale.value = Math.min(1.2, Math.max(0.12, height / 480))
+      // at icon size the dust is just noise
+      dust.visible = height > 160
       const fit = camera.aspect < 1 ? 9.4 / camera.aspect : 9.4
       camera.position.set(0, 0, fit)
       camera.updateProjectionMatrix()
@@ -358,12 +361,11 @@ export default function AtomScene() {
     }
   }, [])
 
-  // Below lg the atom floats as a small widget in the bottom-left corner
   return (
     <div
       ref={mountRef}
       aria-hidden="true"
-      className="fixed bottom-3 left-3 z-40 size-24 cursor-grab touch-none select-none active:cursor-grabbing sm:size-28 lg:relative lg:bottom-auto lg:left-auto lg:z-auto lg:mx-auto lg:aspect-square lg:size-auto lg:w-full lg:max-w-[520px] lg:touch-pan-y"
+      className={cn("cursor-grab touch-none select-none active:cursor-grabbing", className)}
     />
   )
 }

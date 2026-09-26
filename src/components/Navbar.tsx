@@ -1,15 +1,20 @@
-import { useState } from "react"
+import { lazy, Suspense, useState } from "react"
 import { Dialog } from "@base-ui/react/dialog"
 import { Menu, X } from "lucide-react"
 import { SectionDots } from "@/components/SectionDots"
 import { ThemeMenu } from "@/components/ThemeMenu"
 import { usePreferences } from "@/context/preferences"
 import { useActiveSection } from "@/hooks/useActiveSection"
+import { useMediaQuery } from "@/hooks/useMediaQuery"
 import { cn } from "@/lib/utils"
+
+const AtomScene = lazy(() => import("@/components/AtomScene"))
 
 export function Navbar() {
   const { t, palette, lang } = usePreferences()
   const [menuOpen, setMenuOpen] = useState(false)
+  // on desktop the atom is in the hero; here it's a small mobile companion
+  const wide = useMediaQuery("(min-width: 1024px)")
 
   const initials = `${t.name[0]}${t.surname[0]}`
   const links = [
@@ -60,6 +65,12 @@ export function Navbar() {
               <span style={{ color: "var(--accent-400)" }}>.dev</span>
             </span>
           </a>
+
+          {!wide && (
+            <Suspense fallback={null}>
+              <AtomScene className="-my-2 mr-auto -ml-1 size-13 shrink-0" />
+            </Suspense>
+          )}
 
           <div className="hidden items-center gap-1 font-mono text-sm text-muted-foreground lg:flex">
             {links.map((item) => {

@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react"
 import { usePreferences } from "@/context/preferences"
+import { useMediaQuery } from "@/hooks/useMediaQuery"
 import { useTypewriter } from "@/hooks/useTypewriter"
 import { SOCIALS, isExternal } from "@/lib/socials"
 import { ArrowUpRightIcon, MapPinIcon, ResumeIcon } from "@/lib/icons"
@@ -10,6 +11,8 @@ const AtomScene = lazy(() => import("@/components/AtomScene"))
 export function Hero() {
   const { t, palette, resumeHref } = usePreferences()
   const typed = useTypewriter(t.roles)
+  // below lg the atom lives in the navbar instead
+  const wide = useMediaQuery("(min-width: 1024px)")
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -147,9 +150,11 @@ export function Hero() {
           )}
         </div>
 
-        <Suspense fallback={<div className="mx-auto hidden aspect-square w-full max-w-[520px] lg:block" />}>
-          <AtomScene />
-        </Suspense>
+        {wide && (
+          <Suspense fallback={<div className="mx-auto aspect-square w-full max-w-[520px]" />}>
+            <AtomScene className="relative mx-auto aspect-square w-full max-w-[520px] touch-pan-y" />
+          </Suspense>
+        )}
       </div>
     </section>
   )

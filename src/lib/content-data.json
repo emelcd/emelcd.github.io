@@ -12,7 +12,7 @@
         "orquesto sistemas distribuidos",
         "automatizo Linux y la nube"
       ],
-      "bio": "Arquitecto de software con base full stack y foco en backend. Diseño plataformas mantenibles en Python (FastAPI/Flask) y Node aplicando Clean Architecture, DDD y CQRS, integro mensajería y datos, y llevo las decisiones técnicas hasta producción sobre Linux y nube (GCP/AWS).",
+      "bio": "Arquitecto de software con base full stack y foco en backend. Diseño plataformas modulares y orientadas a eventos en Python (FastAPI/Flask) y TypeScript aplicando Clean Architecture, DDD y CQRS, integro mensajería (Kafka, CDC) y datos, construyo frontends en Vue/Nuxt y llevo las decisiones técnicas hasta producción con Docker, CI/CD y observabilidad.",
       "highlights": [
         {
           "value": "7+",
@@ -30,9 +30,11 @@
       "stackPreview": [
         "Python",
         "FastAPI",
-        "Node",
+        "TypeScript",
+        "Vue",
+        "Nuxt",
         "Kafka",
-        "GCP",
+        "PostgreSQL",
         "Docker",
         "Kubernetes"
       ],
@@ -71,29 +73,29 @@
         {
           "icon": "server",
           "title": "Arquitectura backend",
-          "description": "Diseño de APIs REST, límites de dominios y servicios mantenibles con Clean Architecture, DDD y CQRS en Python (FastAPI/Flask) y Node (Express). Seguridad con JWT y OAuth2.0."
+          "description": "Diseño de APIs REST y servicios mantenibles con Clean Architecture, DDD y CQRS en Python (FastAPI/Flask) y TypeScript (NestJS/Express). Autenticación OIDC/OAuth2 y autorización por políticas."
         },
         {
           "icon": "layout",
           "title": "Frontend orientado a producto",
-          "description": "Interfaces con Vue 3, Nuxt, React y Angular, integradas con contratos de API claros y flujos seguros."
+          "description": "Aplicaciones Vue 3 y Nuxt en monorepo, con design system reutilizable, contratos de API claros y testing E2E con Playwright."
         },
         {
           "icon": "database",
           "title": "Datos & mensajería",
-          "description": "Arquitecturas de persistencia, streaming e integración con Kafka, MongoDB, Redis y Elasticsearch. Modelado SQL y NoSQL."
+          "description": "Arquitecturas orientadas a eventos con Kafka, outbox y CDC (Debezium). Modelado en PostgreSQL y MongoDB, caché con Redis y búsqueda con Elasticsearch."
         },
         {
           "icon": "terminal",
           "title": "Cloud, Linux & DevOps",
-          "description": "Diseño operativo, despliegue y automatización con Docker y GitLab CI sobre GCP/AWS. Scripting en Bash, ZX y Python."
+          "description": "Contenedores y pipelines con Docker y GitLab CI sobre Linux y nube (GCP/AWS). Observabilidad con Sentry, OpenTelemetry y Grafana. Scripting en Bash, ZX y Python."
         }
       ],
       "experience": [
         {
           "title": "Ingeniero de Desarrollo e Investigación",
           "company": "ITI — Instituto Tecnológico de Informática",
-          "description": "Diseño y evolución del backend de una plataforma interna de I+D en Python (FastAPI), aplicando Clean Architecture, DDD y CQRS. Integración de Kafka, MongoDB, Redis y Elasticsearch. Frontends con Vue 3 y Nuxt. Mantenimiento de módulos Odoo a medida (CRM, nóminas, analítica).",
+          "description": "Diseño y evolución de una plataforma interna modular en Python (FastAPI) con Clean Architecture, DDD y CQRS: eventos con Kafka, outbox y CDC con Debezium, persistencia en PostgreSQL, MongoDB, Redis y Elasticsearch, y autorización por políticas. Frontends Vue 3/Nuxt en monorepo con design system propio. Mantenimiento de APIs Flask y aplicaciones heredadas (Symfony, NestJS), módulos Odoo e integraciones con Microsoft 365 y Azure DevOps.",
           "location": "Valencia",
           "duration": "32 meses",
           "period": "2023 — actualidad",
@@ -102,7 +104,9 @@
             "DDD",
             "CQRS",
             "Kafka",
+            "PostgreSQL",
             "Vue 3",
+            "Nuxt",
             "Odoo"
           ]
         },
@@ -164,68 +168,128 @@
       "skills": [
         {
           "category": "Arquitectura Backend",
-          "description": "Diseño de APIs REST, límites de dominio y arquitecturas limpias (Clean Architecture, DDD, CQRS) en Python y Node. Seguridad con JWT y OAuth2.0.",
+          "description": "Plataformas modulares con Clean Architecture, DDD y CQRS, inyección de dependencias y APIs REST documentadas con OpenAPI. Python como base, con Node/TypeScript y PHP cuando el sistema lo pide.",
           "tags": [
             "Python",
             "FastAPI",
             "Flask",
-            "Node",
+            "SQLAlchemy",
+            "Pydantic",
+            "NestJS",
             "Express",
-            "OAuth2"
+            "Symfony"
           ]
         },
         {
           "category": "Frontend",
-          "description": "Diseño de interfaces con Vue 3, Nuxt, React, Angular y Vanilla JS, conectadas a APIs seguras y contratos claros.",
+          "description": "Aplicaciones Vue 3 y Nuxt en monorepos (Turborepo, pnpm), con design system propio en módulos Nuxt, estado con Pinia y tipado estricto.",
           "tags": [
             "Vue 3",
             "Nuxt",
-            "React",
-            "Angular",
+            "TypeScript",
+            "Pinia",
+            "Vuetify",
             "Tailwind",
-            "TypeScript"
+            "DevExtreme",
+            "Storybook"
           ]
         },
         {
-          "category": "Datos e Infraestructura",
-          "description": "Arquitectura de mensajería y persistencia con Kafka, MongoDB, Redis y Elasticsearch. Despliegue con Docker y GitLab CI.",
+          "category": "Datos & Mensajería",
+          "description": "Arquitecturas orientadas a eventos con Kafka, patrón outbox y CDC con Debezium. Persistencia relacional y NoSQL, búsqueda, colas de trabajos y SQL en streaming.",
           "tags": [
             "Kafka",
+            "Debezium",
+            "PostgreSQL",
             "MongoDB",
+            "MySQL",
             "Redis",
             "Elasticsearch",
-            "Docker",
-            "SQL"
+            "RisingWave"
           ]
         },
         {
-          "category": "Linux & Cloud",
-          "description": "Diseño operativo en Linux local y cloud (GCP/AWS). Scripting en Bash, ZX y Python. Automatización y mantenimiento.",
+          "category": "Seguridad & Integraciones",
+          "description": "Autenticación OIDC/OAuth2, autorización basada en políticas e integración con ERP y servicios corporativos (Microsoft 365, Azure DevOps).",
+          "tags": [
+            "OAuth2 / OIDC",
+            "JWT",
+            "Cerbos",
+            "LDAP",
+            "Microsoft Graph",
+            "Azure DevOps",
+            "Odoo"
+          ]
+        },
+        {
+          "category": "Cloud, DevOps & Observabilidad",
+          "description": "Contenedores multi-stage, pipelines de GitLab CI, despliegue sobre Linux y nube (GCP/AWS) y trazabilidad de errores y métricas.",
           "tags": [
             "Linux",
+            "Docker",
+            "GitLab CI",
+            "Nginx",
+            "Ansible",
             "GCP",
             "AWS",
-            "Bash",
-            "GitLab CI",
-            "Apigee"
+            "Sentry",
+            "OpenTelemetry",
+            "Grafana"
+          ]
+        },
+        {
+          "category": "Calidad & Desarrollo con IA",
+          "description": "Testing unitario, de integración y E2E. Desarrollo guiado por especificaciones y asistentes IA conectados a herramientas mediante servidores MCP.",
+          "tags": [
+            "Pytest",
+            "Vitest",
+            "Playwright",
+            "Jest",
+            "SonarQube",
+            "OpenSpec",
+            "MCP",
+            "Claude Code"
           ]
         }
       ],
       "projects": [
         {
-          "name": "Plataforma interna de I+D",
-          "blurb": "Plataforma interna de investigación diseñada sobre FastAPI con Clean Architecture, DDD y CQRS. Mensajería con Kafka y persistencia poliglota (Mongo, Redis, Elasticsearch).",
+          "name": "Plataforma modular orientada a eventos",
+          "blurb": "Servicios en FastAPI con Clean Architecture, DDD y CQRS. Eventos con Kafka, outbox y CDC con Debezium, autorización por políticas y persistencia poliglota (PostgreSQL, Mongo, Redis, Elasticsearch).",
           "tags": [
             "FastAPI",
             "DDD",
             "CQRS",
-            "Kafka"
+            "Kafka",
+            "Debezium"
           ],
           "status": "En producción"
         },
         {
+          "name": "Monorepo de aplicaciones Nuxt",
+          "blurb": "Suite de aplicaciones Nuxt en un monorepo Turborepo + pnpm con paquetes compartidos de UI y testing, design system en módulos Nuxt y E2E con Playwright. Cambios guiados por especificaciones con OpenSpec.",
+          "tags": [
+            "Nuxt",
+            "TypeScript",
+            "Turborepo",
+            "Playwright"
+          ],
+          "status": "En producción"
+        },
+        {
+          "name": "Servidores MCP para asistentes IA",
+          "blurb": "Servidores Model Context Protocol en TypeScript sobre un kernel común, que conectan asistentes IA con herramientas de gestión de proyectos y de soporte.",
+          "tags": [
+            "MCP",
+            "TypeScript",
+            "Zod",
+            "IA"
+          ],
+          "status": "En uso"
+        },
+        {
           "name": "Módulos Odoo a medida",
-          "blurb": "Módulos personalizados de CRM, nóminas y analítica para ERP Odoo, integrados con los flujos internos del instituto.",
+          "blurb": "Módulos personalizados de CRM, nóminas y analítica para Odoo, integrados con el resto de sistemas internos.",
           "tags": [
             "Odoo",
             "Python",
@@ -234,14 +298,15 @@
           "status": "Mantenimiento"
         },
         {
-          "name": "Herramientas internas GCloud",
-          "blurb": "Aplicaciones y automatizaciones sobre Google Cloud y Apigee: arquitectura de servicios, integración de APIs, scripting y datos para el proyecto Google.",
+          "name": "Analítica en tiempo real",
+          "blurb": "Vistas materializadas sobre SQL en streaming con RisingWave, alimentadas desde PostgreSQL y visualizadas en Grafana, con pruebas automatizadas de las consultas.",
           "tags": [
-            "GCP",
-            "Apigee",
-            "Automatización"
+            "RisingWave",
+            "PostgreSQL",
+            "Grafana",
+            "SQL"
           ],
-          "status": "Entregado"
+          "status": "Piloto"
         },
         {
           "name": "Este portfolio",
@@ -280,7 +345,7 @@
           "year": "2024"
         },
         {
-          "degree": "Desarrollo de APIs con Google Cloud Apigee API Platform",
+          "degree": "Desarrollo de APIs con Google Cloud Apigee",
           "institution": "Google",
           "year": "2023"
         },
@@ -296,7 +361,7 @@
         },
         {
           "degree": "Aprendizaje autodidacta continuo",
-          "institution": "Documentación oficial, open source y proyectos propios",
+          "institution": "Docs oficiales, open source y proyectos propios",
           "year": "Continuo"
         }
       ],
@@ -330,7 +395,7 @@
         "interests": "Intereses",
         "present": "actualidad"
       },
-      "summary": "Arquitecto de software con más de 7 años de experiencia entre backend, cloud y sistemas. Diseño plataformas robustas y mantenibles, defino límites de dominio, modelo APIs REST con Clean Architecture, DDD y CQRS, e integro mensajería, datos y automatización sobre Linux y nube (GCP/AWS). Combino criterio de arquitectura, visión de producto y capacidad hands-on para llevar decisiones técnicas a producción.",
+      "summary": "Arquitecto de software con más de 7 años de experiencia entre backend, cloud y sistemas. Diseño plataformas modulares y orientadas a eventos, defino límites de dominio y modelo APIs REST con Clean Architecture, DDD y CQRS en Python y TypeScript. Integro mensajería (Kafka, CDC), datos y seguridad (OIDC, autorización por políticas), construyo frontends en Vue/Nuxt y llevo las decisiones a producción con Docker, GitLab CI y observabilidad. Combino criterio de arquitectura, visión de producto y capacidad hands-on.",
       "experience": [
         {
           "title": "Ingeniero de Desarrollo e Investigación",
@@ -338,17 +403,20 @@
           "location": "Valencia",
           "period": "2023 — actualidad",
           "bullets": [
-            "Diseño y evolución del backend de una plataforma interna de I+D en Python (FastAPI), aplicando Clean Architecture, DDD y CQRS.",
-            "Integración de mensajería y persistencia poliglota con Kafka, MongoDB, Redis y Elasticsearch.",
-            "Diseño de contratos entre frontend y backend; frontends con Vue 3 y Nuxt consumiendo APIs seguras con JWT/OAuth2.0.",
-            "Mantenimiento y evolución de módulos Odoo a medida (CRM, nóminas y analítica)."
+            "Diseño y evolución de una plataforma interna modular en Python (FastAPI), aplicando Clean Architecture, DDD y CQRS con inyección de dependencias.",
+            "Arquitectura orientada a eventos con Kafka, patrón outbox y CDC con Debezium; persistencia en PostgreSQL, MongoDB, Redis y Elasticsearch.",
+            "Seguridad con OIDC/OAuth2 y autorización basada en políticas (Cerbos); integraciones con Microsoft 365, Azure DevOps y módulos Odoo a medida (CRM, nóminas, analítica).",
+            "Frontends Vue 3 y Nuxt en monorepo (Turborepo, pnpm) con design system propio; testing con Vitest y Playwright.",
+            "Mantenimiento de APIs Flask y aplicaciones heredadas (Symfony, NestJS); CI/CD con GitLab y Docker, observabilidad con Sentry y OpenTelemetry, y servidores MCP para asistentes IA."
           ],
           "stack": [
             "FastAPI",
             "DDD",
             "CQRS",
             "Kafka",
+            "PostgreSQL",
             "Vue 3",
+            "Nuxt",
             "Odoo"
           ]
         },
@@ -418,30 +486,33 @@
       ],
       "projects": [
         {
-          "name": "Plataforma interna de I+D",
-          "desc": "Plataforma interna de investigación diseñada sobre FastAPI con Clean Architecture, DDD y CQRS; mensajería con Kafka y persistencia poliglota (Mongo, Redis, Elasticsearch).",
+          "name": "Plataforma modular orientada a eventos",
+          "desc": "Servicios en FastAPI con Clean Architecture, DDD y CQRS. Eventos con Kafka, outbox y CDC con Debezium, autorización por políticas y persistencia poliglota (PostgreSQL, Mongo, Redis, Elasticsearch).",
           "tags": [
             "FastAPI",
             "DDD",
+            "CQRS",
             "Kafka"
           ]
         },
         {
-          "name": "Módulos Odoo a medida",
-          "desc": "Módulos de CRM, nóminas y analítica integrados con los flujos internos del instituto.",
+          "name": "Monorepo de aplicaciones Nuxt",
+          "desc": "Suite de aplicaciones Nuxt en un monorepo Turborepo + pnpm con paquetes compartidos de UI y testing, design system en módulos Nuxt y E2E con Playwright. Cambios guiados por especificaciones con OpenSpec.",
           "tags": [
-            "Odoo",
-            "Python",
-            "PostgreSQL"
+            "Nuxt",
+            "TypeScript",
+            "Turborepo",
+            "Playwright"
           ]
         },
         {
-          "name": "Herramientas internas GCloud",
-          "desc": "Arquitectura de servicios, integración de APIs, scripting y datos sobre Google Cloud y Apigee.",
+          "name": "Servidores MCP para asistentes IA",
+          "desc": "Servidores Model Context Protocol en TypeScript sobre un kernel común, que conectan asistentes IA con herramientas de gestión de proyectos y de soporte.",
           "tags": [
-            "GCP",
-            "Apigee",
-            "Automatización"
+            "MCP",
+            "TypeScript",
+            "Zod",
+            "IA"
           ]
         },
         {
@@ -461,9 +532,11 @@
             "Python",
             "FastAPI",
             "Flask",
-            "Node",
+            "SQLAlchemy",
+            "Pydantic",
+            "NestJS",
             "Express",
-            "OAuth2"
+            "Symfony"
           ]
         },
         {
@@ -471,32 +544,65 @@
           "tags": [
             "Vue 3",
             "Nuxt",
-            "React",
-            "Angular",
+            "TypeScript",
+            "Pinia",
+            "Vuetify",
             "Tailwind",
-            "TypeScript"
+            "DevExtreme",
+            "Storybook"
           ]
         },
         {
-          "cat": "Datos e Infra",
+          "cat": "Datos & Mensajería",
           "tags": [
             "Kafka",
+            "Debezium",
+            "PostgreSQL",
             "MongoDB",
+            "MySQL",
             "Redis",
             "Elasticsearch",
-            "Docker",
-            "SQL"
+            "RisingWave"
           ]
         },
         {
-          "cat": "Linux & Cloud",
+          "cat": "Seguridad & Integraciones",
+          "tags": [
+            "OAuth2 / OIDC",
+            "JWT",
+            "Cerbos",
+            "LDAP",
+            "Microsoft Graph",
+            "Azure DevOps",
+            "Odoo"
+          ]
+        },
+        {
+          "cat": "Cloud, DevOps & Observabilidad",
           "tags": [
             "Linux",
+            "Docker",
+            "GitLab CI",
+            "Nginx",
+            "Ansible",
             "GCP",
             "AWS",
-            "Bash",
-            "GitLab CI",
-            "Apigee"
+            "Sentry",
+            "OpenTelemetry",
+            "Grafana"
+          ]
+        },
+        {
+          "cat": "Calidad & Desarrollo con IA",
+          "tags": [
+            "Pytest",
+            "Vitest",
+            "Playwright",
+            "Jest",
+            "SonarQube",
+            "OpenSpec",
+            "MCP",
+            "Claude Code"
           ]
         }
       ],
@@ -504,9 +610,12 @@
         "Clean Architecture",
         "DDD",
         "CQRS",
-        "REST",
+        "Event-Driven",
+        "Outbox + CDC",
+        "REST / OpenAPI",
         "TDD",
         "CI/CD",
+        "Spec-Driven Development",
         "Agile / Scrum",
         "Code Review"
       ],
@@ -532,7 +641,7 @@
           "year": "2024"
         },
         {
-          "name": "Desarrollo de APIs con Google Cloud Apigee API Platform",
+          "name": "Desarrollo de APIs con Google Cloud Apigee",
           "org": "Google",
           "year": "2026"
         },
@@ -550,7 +659,7 @@
         },
         {
           "deg": "Aprendizaje autodidacta continuo",
-          "inst": "Documentación oficial, open source y proyectos propios",
+          "inst": "Docs oficiales, open source y proyectos propios",
           "year": "Continuo"
         }
       ],
@@ -592,7 +701,7 @@
         "orchestrate distributed systems",
         "automate Linux and cloud"
       ],
-      "bio": "Software architect with a full stack background and a backend focus. I design maintainable platforms in Python (FastAPI/Flask) and Node using Clean Architecture, DDD and CQRS, integrate messaging and data systems, and carry technical decisions into production on Linux and cloud (GCP/AWS).",
+      "bio": "Software architect with a full stack background and a backend focus. I design modular, event-driven platforms in Python (FastAPI/Flask) and TypeScript using Clean Architecture, DDD and CQRS, integrate messaging (Kafka, CDC) and data, build Vue/Nuxt frontends, and carry technical decisions into production with Docker, CI/CD and observability.",
       "highlights": [
         {
           "value": "7+",
@@ -610,10 +719,13 @@
       "stackPreview": [
         "Python",
         "FastAPI",
-        "Node",
+        "TypeScript",
+        "Vue",
+        "Nuxt",
         "Kafka",
-        "GCP",
-        "Docker"
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes"
       ],
       "status": {
         "available": "Open to work",
@@ -650,29 +762,29 @@
         {
           "icon": "server",
           "title": "Backend architecture",
-          "description": "REST API design, domain boundaries and maintainable services with Clean Architecture, DDD and CQRS in Python (FastAPI/Flask) and Node (Express). Security with JWT and OAuth2.0."
+          "description": "REST API design and maintainable services with Clean Architecture, DDD and CQRS in Python (FastAPI/Flask) and TypeScript (NestJS/Express). OIDC/OAuth2 authentication and policy-based authorization."
         },
         {
           "icon": "layout",
           "title": "Product-oriented frontend",
-          "description": "Interfaces with Vue 3, Nuxt, React and Angular, integrated through clear API contracts and secure flows."
+          "description": "Vue 3 and Nuxt applications in a monorepo, with a reusable design system, clear API contracts and E2E testing with Playwright."
         },
         {
           "icon": "database",
           "title": "Data & messaging",
-          "description": "Persistence, streaming and integration architectures with Kafka, MongoDB, Redis and Elasticsearch. SQL and NoSQL data modeling."
+          "description": "Event-driven architectures with Kafka, outbox and CDC (Debezium). Data modeling in PostgreSQL and MongoDB, Redis caching and Elasticsearch search."
         },
         {
           "icon": "terminal",
           "title": "Cloud, Linux & DevOps",
-          "description": "Operational design, deployment and automation with Docker and GitLab CI on GCP/AWS. Scripting in Bash, ZX and Python."
+          "description": "Containers and pipelines with Docker and GitLab CI on Linux and cloud (GCP/AWS). Observability with Sentry, OpenTelemetry and Grafana. Scripting in Bash, ZX and Python."
         }
       ],
       "experience": [
         {
           "title": "Research & Development Engineer",
           "company": "ITI — Instituto Tecnológico de Informática",
-          "description": "Design and evolution of the backend of an internal R&D platform in Python (FastAPI), using Clean Architecture, DDD and CQRS. Integration of Kafka, MongoDB, Redis and Elasticsearch. Frontends with Vue 3 and Nuxt. Maintenance of custom Odoo modules (CRM, payroll, analytics).",
+          "description": "Design and evolution of a modular internal platform in Python (FastAPI) with Clean Architecture, DDD and CQRS: Kafka events, outbox and CDC with Debezium, persistence in PostgreSQL, MongoDB, Redis and Elasticsearch, and policy-based authorization. Vue 3/Nuxt frontends in a monorepo with an in-house design system. Maintenance of Flask APIs and legacy applications (Symfony, NestJS), Odoo modules and integrations with Microsoft 365 and Azure DevOps.",
           "location": "Valencia",
           "duration": "32 mo",
           "period": "2023 — present",
@@ -681,7 +793,9 @@
             "DDD",
             "CQRS",
             "Kafka",
+            "PostgreSQL",
             "Vue 3",
+            "Nuxt",
             "Odoo"
           ]
         },
@@ -741,68 +855,128 @@
       "skills": [
         {
           "category": "Backend Architecture",
-          "description": "REST API design, domain boundaries and clean architectures (Clean Architecture, DDD, CQRS) in Python and Node. Security with JWT and OAuth2.0.",
+          "description": "Modular platforms with Clean Architecture, DDD and CQRS, dependency injection and REST APIs documented with OpenAPI. Python first, with Node/TypeScript and PHP when the system calls for it.",
           "tags": [
             "Python",
             "FastAPI",
             "Flask",
-            "Node",
+            "SQLAlchemy",
+            "Pydantic",
+            "NestJS",
             "Express",
-            "OAuth2"
+            "Symfony"
           ]
         },
         {
           "category": "Frontend",
-          "description": "Interface design with Vue 3, Nuxt, React, Angular and Vanilla JS, connected to secure APIs and clear contracts.",
+          "description": "Vue 3 and Nuxt applications in monorepos (Turborepo, pnpm), with an in-house design system shipped as Nuxt modules, Pinia state and strict typing.",
           "tags": [
             "Vue 3",
             "Nuxt",
-            "React",
-            "Angular",
+            "TypeScript",
+            "Pinia",
+            "Vuetify",
             "Tailwind",
-            "TypeScript"
+            "DevExtreme",
+            "Storybook"
           ]
         },
         {
-          "category": "Data & Infrastructure",
-          "description": "Messaging and persistence architecture with Kafka, MongoDB, Redis and Elasticsearch. Deployment with Docker and GitLab CI.",
+          "category": "Data & Messaging",
+          "description": "Event-driven architectures with Kafka, the outbox pattern and CDC with Debezium. Relational and NoSQL persistence, search, job queues and streaming SQL.",
           "tags": [
             "Kafka",
+            "Debezium",
+            "PostgreSQL",
             "MongoDB",
+            "MySQL",
             "Redis",
             "Elasticsearch",
-            "Docker",
-            "SQL"
+            "RisingWave"
           ]
         },
         {
-          "category": "Linux & Cloud",
-          "description": "Operational design on local and cloud Linux (GCP/AWS). Scripting in Bash, ZX and Python. Automation and maintenance.",
+          "category": "Security & Integrations",
+          "description": "OIDC/OAuth2 authentication, policy-based authorization and integration with ERP and enterprise services (Microsoft 365, Azure DevOps).",
+          "tags": [
+            "OAuth2 / OIDC",
+            "JWT",
+            "Cerbos",
+            "LDAP",
+            "Microsoft Graph",
+            "Azure DevOps",
+            "Odoo"
+          ]
+        },
+        {
+          "category": "Cloud, DevOps & Observability",
+          "description": "Multi-stage containers, GitLab CI pipelines, deployment on Linux and cloud (GCP/AWS), plus error tracking and metrics.",
           "tags": [
             "Linux",
+            "Docker",
+            "GitLab CI",
+            "Nginx",
+            "Ansible",
             "GCP",
             "AWS",
-            "Bash",
-            "GitLab CI",
-            "Apigee"
+            "Sentry",
+            "OpenTelemetry",
+            "Grafana"
+          ]
+        },
+        {
+          "category": "Quality & AI-assisted Development",
+          "description": "Unit, integration and E2E testing. Spec-driven development and AI assistants wired to tools through MCP servers.",
+          "tags": [
+            "Pytest",
+            "Vitest",
+            "Playwright",
+            "Jest",
+            "SonarQube",
+            "OpenSpec",
+            "MCP",
+            "Claude Code"
           ]
         }
       ],
       "projects": [
         {
-          "name": "Internal R&D Platform",
-          "blurb": "Internal research platform designed on FastAPI with Clean Architecture, DDD and CQRS. Kafka messaging and polyglot persistence (Mongo, Redis, Elasticsearch).",
+          "name": "Modular event-driven platform",
+          "blurb": "FastAPI services with Clean Architecture, DDD and CQRS. Kafka events, outbox and CDC with Debezium, policy-based authorization and polyglot persistence (PostgreSQL, Mongo, Redis, Elasticsearch).",
           "tags": [
             "FastAPI",
             "DDD",
             "CQRS",
-            "Kafka"
+            "Kafka",
+            "Debezium"
           ],
           "status": "In production"
         },
         {
+          "name": "Nuxt application monorepo",
+          "blurb": "A suite of Nuxt apps in a Turborepo + pnpm monorepo with shared UI and testing packages, a design system shipped as Nuxt modules and Playwright E2E. Changes driven by specs with OpenSpec.",
+          "tags": [
+            "Nuxt",
+            "TypeScript",
+            "Turborepo",
+            "Playwright"
+          ],
+          "status": "In production"
+        },
+        {
+          "name": "MCP servers for AI assistants",
+          "blurb": "Model Context Protocol servers in TypeScript on a shared kernel, connecting AI assistants to project-management and support tools.",
+          "tags": [
+            "MCP",
+            "TypeScript",
+            "Zod",
+            "AI"
+          ],
+          "status": "In use"
+        },
+        {
           "name": "Custom Odoo Modules",
-          "blurb": "Custom CRM, payroll and analytics modules for the Odoo ERP, integrated with the institute's internal workflows.",
+          "blurb": "Custom CRM, payroll and analytics modules for Odoo, integrated with the rest of the internal systems.",
           "tags": [
             "Odoo",
             "Python",
@@ -811,14 +985,15 @@
           "status": "Maintained"
         },
         {
-          "name": "GCloud Internal Tools",
-          "blurb": "Applications and automations on Google Cloud and Apigee: service architecture, API integration, scripting and data for the Google project.",
+          "name": "Real-time analytics",
+          "blurb": "Materialized views on streaming SQL with RisingWave, fed from PostgreSQL and visualized in Grafana, with automated tests for the queries.",
           "tags": [
-            "GCP",
-            "Apigee",
-            "Automation"
+            "RisingWave",
+            "PostgreSQL",
+            "Grafana",
+            "SQL"
           ],
-          "status": "Delivered"
+          "status": "Pilot"
         },
         {
           "name": "This portfolio",
@@ -907,7 +1082,7 @@
         "interests": "Interests",
         "present": "present"
       },
-      "summary": "Software architect with 7+ years of experience across backend, cloud and systems. I design robust, maintainable platforms, define domain boundaries, model REST APIs with Clean Architecture, DDD and CQRS, and integrate messaging, data and automation on Linux and cloud (GCP/AWS). I combine architectural judgement, product thinking and hands-on delivery to carry technical decisions into production.",
+      "summary": "Software architect with 7+ years of experience across backend, cloud and systems. I design modular, event-driven platforms, define domain boundaries and model REST APIs with Clean Architecture, DDD and CQRS in Python and TypeScript. I integrate messaging (Kafka, CDC), data and security (OIDC, policy-based authorization), build Vue/Nuxt frontends, and carry decisions into production with Docker, GitLab CI and observability. I combine architectural judgement, product thinking and hands-on delivery.",
       "experience": [
         {
           "title": "Research & Development Engineer",
@@ -915,17 +1090,20 @@
           "location": "Valencia",
           "period": "2023 — present",
           "bullets": [
-            "Design and evolution of the backend of an internal R&D platform in Python (FastAPI), applying Clean Architecture, DDD and CQRS.",
-            "Integration of messaging and polyglot persistence with Kafka, MongoDB, Redis and Elasticsearch.",
-            "Design of frontend/backend contracts; frontends with Vue 3 and Nuxt consuming secure APIs with JWT/OAuth2.0.",
-            "Maintenance and evolution of custom Odoo modules (CRM, payroll and analytics)."
+            "Design and evolution of a modular internal platform in Python (FastAPI), applying Clean Architecture, DDD and CQRS with dependency injection.",
+            "Event-driven architecture with Kafka, the outbox pattern and CDC with Debezium; persistence in PostgreSQL, MongoDB, Redis and Elasticsearch.",
+            "Security with OIDC/OAuth2 and policy-based authorization (Cerbos); integrations with Microsoft 365, Azure DevOps and custom Odoo modules (CRM, payroll, analytics).",
+            "Vue 3 and Nuxt frontends in a monorepo (Turborepo, pnpm) with an in-house design system; testing with Vitest and Playwright.",
+            "Maintenance of Flask APIs and legacy applications (Symfony, NestJS); CI/CD with GitLab and Docker, observability with Sentry and OpenTelemetry, and MCP servers for AI assistants."
           ],
           "stack": [
             "FastAPI",
             "DDD",
             "CQRS",
             "Kafka",
+            "PostgreSQL",
             "Vue 3",
+            "Nuxt",
             "Odoo"
           ]
         },
@@ -995,30 +1173,33 @@
       ],
       "projects": [
         {
-          "name": "Internal R&D Platform",
-          "desc": "Internal research platform designed on FastAPI with Clean Architecture, DDD and CQRS; Kafka messaging and polyglot persistence (Mongo, Redis, Elasticsearch).",
+          "name": "Modular event-driven platform",
+          "desc": "FastAPI services with Clean Architecture, DDD and CQRS. Kafka events, outbox and CDC with Debezium, policy-based authorization and polyglot persistence (PostgreSQL, Mongo, Redis, Elasticsearch).",
           "tags": [
             "FastAPI",
             "DDD",
+            "CQRS",
             "Kafka"
           ]
         },
         {
-          "name": "Custom Odoo Modules",
-          "desc": "CRM, payroll and analytics modules integrated with the institute's internal workflows.",
+          "name": "Nuxt application monorepo",
+          "desc": "A suite of Nuxt apps in a Turborepo + pnpm monorepo with shared UI and testing packages, a design system shipped as Nuxt modules and Playwright E2E. Changes driven by specs with OpenSpec.",
           "tags": [
-            "Odoo",
-            "Python",
-            "PostgreSQL"
+            "Nuxt",
+            "TypeScript",
+            "Turborepo",
+            "Playwright"
           ]
         },
         {
-          "name": "GCloud Internal Tools",
-          "desc": "Service architecture, API integration, scripting and data on Google Cloud and Apigee.",
+          "name": "MCP servers for AI assistants",
+          "desc": "Model Context Protocol servers in TypeScript on a shared kernel, connecting AI assistants to project-management and support tools.",
           "tags": [
-            "GCP",
-            "Apigee",
-            "Automation"
+            "MCP",
+            "TypeScript",
+            "Zod",
+            "AI"
           ]
         },
         {
@@ -1038,9 +1219,11 @@
             "Python",
             "FastAPI",
             "Flask",
-            "Node",
+            "SQLAlchemy",
+            "Pydantic",
+            "NestJS",
             "Express",
-            "OAuth2"
+            "Symfony"
           ]
         },
         {
@@ -1048,32 +1231,65 @@
           "tags": [
             "Vue 3",
             "Nuxt",
-            "React",
-            "Angular",
+            "TypeScript",
+            "Pinia",
+            "Vuetify",
             "Tailwind",
-            "TypeScript"
+            "DevExtreme",
+            "Storybook"
           ]
         },
         {
-          "cat": "Data & Infra",
+          "cat": "Data & Messaging",
           "tags": [
             "Kafka",
+            "Debezium",
+            "PostgreSQL",
             "MongoDB",
+            "MySQL",
             "Redis",
             "Elasticsearch",
-            "Docker",
-            "SQL"
+            "RisingWave"
           ]
         },
         {
-          "cat": "Linux & Cloud",
+          "cat": "Security & Integrations",
+          "tags": [
+            "OAuth2 / OIDC",
+            "JWT",
+            "Cerbos",
+            "LDAP",
+            "Microsoft Graph",
+            "Azure DevOps",
+            "Odoo"
+          ]
+        },
+        {
+          "cat": "Cloud, DevOps & Observability",
           "tags": [
             "Linux",
+            "Docker",
+            "GitLab CI",
+            "Nginx",
+            "Ansible",
             "GCP",
             "AWS",
-            "Bash",
-            "GitLab CI",
-            "Apigee"
+            "Sentry",
+            "OpenTelemetry",
+            "Grafana"
+          ]
+        },
+        {
+          "cat": "Quality & AI-assisted Development",
+          "tags": [
+            "Pytest",
+            "Vitest",
+            "Playwright",
+            "Jest",
+            "SonarQube",
+            "OpenSpec",
+            "MCP",
+            "Claude Code"
           ]
         }
       ],
@@ -1081,9 +1297,12 @@
         "Clean Architecture",
         "DDD",
         "CQRS",
-        "REST",
+        "Event-Driven",
+        "Outbox + CDC",
+        "REST / OpenAPI",
         "TDD",
         "CI/CD",
+        "Spec-Driven Development",
         "Agile / Scrum",
         "Code Review"
       ],

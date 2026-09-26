@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react"
+import { ArrowLeft } from "lucide-react"
 
 import { BilingualSection } from "@/components/admin/BilingualSection"
 import { clone, setAt, type FormPath, type JsonValue } from "@/components/admin/json-form"
@@ -216,7 +217,8 @@ export function AdminPage() {
             href="/"
             className={cn(buttonVariants({ variant: "outline", size: "sm" }), "ml-auto")}
           >
-            ← Volver al sitio
+            <ArrowLeft className="size-3.5" aria-hidden />
+            Volver al sitio
           </a>
         </div>
       </header>

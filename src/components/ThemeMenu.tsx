@@ -1,5 +1,5 @@
 import { Popover } from "@base-ui/react/popover"
-import { SlidersHorizontal } from "lucide-react"
+import { Moon, SlidersHorizontal, Sun } from "lucide-react"
 import { usePreferences } from "@/context/preferences"
 import {
   ACCENT_ORDER,
@@ -45,9 +45,9 @@ export function ThemeMenu() {
           light: "Light",
         }
 
-  const langs: { id: Lang; flag: string; label: string }[] = [
-    { id: "es", flag: "🇪🇸", label: "ES" },
-    { id: "en", flag: "🇬🇧", label: "EN" },
+  const langs: { id: Lang; label: string }[] = [
+    { id: "es", label: "ES" },
+    { id: "en", label: "EN" },
   ]
 
   return (
@@ -92,7 +92,6 @@ export function ThemeMenu() {
                         )}
                         aria-pressed={selected}
                       >
-                        <span>{item.flag}</span>
                         {item.label}
                       </button>
                     )
@@ -107,8 +106,8 @@ export function ThemeMenu() {
                 <div className="grid grid-cols-2 gap-1.5">
                   {(
                     [
-                      { dark: true, icon: "🌙", label: copy.dark },
-                      { dark: false, icon: "☀️", label: copy.light },
+                      { dark: true, Icon: Moon, label: copy.dark },
+                      { dark: false, Icon: Sun, label: copy.light },
                     ] as const
                   ).map((item) => {
                     const selected = item.dark === dark
@@ -125,7 +124,7 @@ export function ThemeMenu() {
                         )}
                         aria-pressed={selected}
                       >
-                        <span>{item.icon}</span>
+                        <item.Icon className="size-3.5" aria-hidden />
                         {item.label}
                       </button>
                     )

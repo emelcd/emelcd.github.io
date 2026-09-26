@@ -1,3 +1,5 @@
+import { Fragment, type ReactNode } from "react"
+import { Lock, Star } from "lucide-react"
 import type { GitHubEvent, GitHubRepo, Lang } from "@/lib/content"
 import { usePreferences } from "@/context/preferences"
 import { Reveal } from "@/components/Reveal"
@@ -6,6 +8,15 @@ import { ArrowUpRightIcon } from "@/lib/icons"
 
 const MAX_EVENTS = 5
 const MAX_REPOS = 5
+
+function StarCount({ n }: { n: number }) {
+  return (
+    <span className="inline-flex items-center gap-0.5 align-[-1px]">
+      <Star className="size-2.5" aria-hidden />
+      {formatStars(n)}
+    </span>
+  )
+}
 
 function formatStars(n: number) {
   if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, "")}k`
@@ -84,14 +95,12 @@ function EventRow({
 }
 
 function RepoRow({ repo, lang }: { repo: GitHubRepo; lang: Lang }) {
-  const meta = [
-    repo.private ? "🔒" : null,
+  const meta: ReactNode[] = [
+    repo.private ? <Lock key="lock" className="size-2.5" aria-hidden /> : null,
     repo.language,
-    !repo.private && repo.stars > 0 ? `★${formatStars(repo.stars)}` : null,
+    !repo.private && repo.stars > 0 ? <StarCount key="stars" n={repo.stars} /> : null,
     formatDate(repo.pushedAt, lang),
-  ]
-    .filter(Boolean)
-    .join(" · ")
+  ].filter(Boolean)
 
   return (
     <li className="flex items-center gap-2 border-b border-border/50 py-1.5 last:border-0">
@@ -107,8 +116,13 @@ function RepoRow({ repo, lang }: { repo: GitHubRepo; lang: Lang }) {
       ) : (
         <span className="min-w-0 flex-1 truncate font-mono text-xs font-medium">{repo.name}</span>
       )}
-      <span className="hidden shrink-0 font-mono text-[10px] text-muted-foreground sm:inline">
-        {meta}
+      <span className="hidden shrink-0 items-center gap-1 font-mono text-[10px] text-muted-foreground sm:inline-flex">
+        {meta.map((part, i) => (
+          <Fragment key={i}>
+            {i > 0 && <span>·</span>}
+            {part}
+          </Fragment>
+        ))}
       </span>
       {!repo.private && (
         <a
@@ -189,7 +203,12 @@ export function Activity() {
                   {github.profile.totalRepos} repos · {github.profile.privateRepos}{" "}
                   {lang === "es" ? "priv" : "priv"} · {github.profile.publicRepos}{" "}
                   {lang === "es" ? "publ" : "pub"}
-                  {totalStars > 0 ? ` · ★${formatStars(totalStars)}` : ""}
+                  {totalStars > 0 && (
+                    <>
+                      {" · "}
+                      <StarCount n={totalStars} />
+                    </>
+                  )}
                 </span>
                 <a
                   href={github.profile.htmlUrl}

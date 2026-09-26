@@ -30,6 +30,7 @@ repo/service:
 bun install
 bun run dev            # Vite dev server
 bun run fetch-content  # pull latest CV from backend into src/lib/content-data.json
+bun run push-content   # dry run: diff content-data.json vs live /api/cv (--yes to push)
 bun run resume         # HTML→PDF via Chrome headless → public/resume.pdf + resume-en.pdf
 bun run build          # tsc -b && vite build → dist/
 bun run preview        # serve dist/ locally (port 4173)
@@ -49,9 +50,13 @@ Content flows from the backend into the UI **two ways**, by design:
    renders the baked JSON first (instant paint), then swaps in fresh data from
    the API. So **editing the backend updates the live site without a rebuild**.
 
-Consequence: to change site copy, edit `data/cv.json` in the **backend** repo —
-not `src/lib/content-data.json` here (that file is a regenerated fallback; local
-edits to it get overwritten by `fetch-content`).
+Consequence: site copy lives in the backend (`data/cv.json`). To change it from
+here: `bun run fetch-content` (start from live data, so edits made in `/admin`
+aren't lost) → edit `src/lib/content-data.json` → `bun run push-content` (dry
+run lists changed paths) → `bun run push-content --yes`. That POSTs to
+`/api/admin`, which commits `data/cv.json` in the backend repo; the live site
+updates after the Vercel redeploy (~1 min). Password: `CV_ADMIN_PASSWORD` env var
+or `.env.local` (gitignored — never commit it).
 
 ### Data → UI wiring
 

@@ -33,7 +33,8 @@
         "Node",
         "Kafka",
         "GCP",
-        "Docker"
+        "Docker",
+        "Kubernetes"
       ],
       "status": {
         "available": "Abierto a proyectos",
@@ -70,7 +71,7 @@
         {
           "icon": "server",
           "title": "Arquitectura backend",
-          "description": "Diseño de APIs REST, límites de dominio y servicioss mantenibles con Clean Architecture, DDD y CQRS en Python (FastAPI/Flask) y Node (Express). Seguridad con JWT y OAuth2.0."
+          "description": "Diseño de APIs REST, límites de dominios y servicios mantenibles con Clean Architecture, DDD y CQRS en Python (FastAPI/Flask) y Node (Express). Seguridad con JWT y OAuth2.0."
         },
         {
           "icon": "layout",

@@ -358,12 +358,12 @@ export default function AtomScene() {
     }
   }, [])
 
-  // Below lg the atom becomes a small floating widget in the bottom-right corner
+  // Below lg the atom floats as a small widget in the bottom-left corner
   return (
     <div
       ref={mountRef}
       aria-hidden="true"
-      className="fixed right-3 bottom-3 z-40 size-24 cursor-grab touch-none overflow-hidden rounded-full border border-border/60 bg-background/70 shadow-lg backdrop-blur-md select-none active:cursor-grabbing sm:size-28 lg:relative lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:shadow-none lg:backdrop-blur-none lg:right-auto lg:bottom-auto lg:z-auto lg:mx-auto lg:aspect-square lg:size-auto lg:w-full lg:max-w-[520px] lg:touch-pan-y"
+      className="fixed bottom-3 left-3 z-40 size-24 cursor-grab touch-none select-none active:cursor-grabbing sm:size-28 lg:relative lg:bottom-auto lg:left-auto lg:z-auto lg:mx-auto lg:aspect-square lg:size-auto lg:w-full lg:max-w-[520px] lg:touch-pan-y"
     />
   )
 }

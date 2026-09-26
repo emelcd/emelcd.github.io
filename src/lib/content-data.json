@@ -5,12 +5,12 @@
       "langLabel": "ES",
       "name": "Miguel",
       "surname": "López",
-      "role": "Arquitecto de Software · Backend & Cloud",
+      "role": "Arquitecto de Software · Plataforma & Full Stack",
       "roles": [
-        "diseño arquitecturas backend",
+        "diseño plataformas modulares",
         "modelo dominios DDD + CQRS",
-        "orquesto sistemas distribuidos",
-        "automatizo Linux y la nube"
+        "integro sistemas por eventos",
+        "llevo specs a producción"
       ],
       "bio": "Arquitecto de software con base full stack y foco en backend. Diseño plataformas modulares y orientadas a eventos en Python (FastAPI/Flask) y TypeScript aplicando Clean Architecture, DDD y CQRS, integro mensajería (Kafka, CDC) y datos, construyo frontends en Vue/Nuxt y llevo las decisiones técnicas hasta producción con Docker, CI/CD y observabilidad.",
       "highlights": [
@@ -41,7 +41,7 @@
       "status": {
         "available": "Abierto a proyectos",
         "location": "Valencia, ES",
-        "focus": "Architect"
+        "focus": "Arquitectura de plataforma"
       },
       "cta": {
         "primary": "Hablemos",
@@ -375,7 +375,7 @@
       "lang": "es",
       "name": "Miguel",
       "surname": "López",
-      "role": "Arquitecto de Software · Backend & Cloud",
+      "role": "Arquitecto de Software · Plataforma & Full Stack",
       "contact": {
         "email": "mick.altura@gmail.com",
         "github": "github.com/emelcd",
@@ -694,12 +694,12 @@
       "langLabel": "EN",
       "name": "Miguel",
       "surname": "López",
-      "role": "Software Architect · Backend & Cloud",
+      "role": "Software Architect · Platform & Full Stack",
       "roles": [
-        "design backend architectures",
+        "design modular platforms",
         "model DDD + CQRS domains",
-        "orchestrate distributed systems",
-        "automate Linux and cloud"
+        "integrate systems via events",
+        "ship specs to production"
       ],
       "bio": "Software architect with a full stack background and a backend focus. I design modular, event-driven platforms in Python (FastAPI/Flask) and TypeScript using Clean Architecture, DDD and CQRS, integrate messaging (Kafka, CDC) and data, build Vue/Nuxt frontends, and carry technical decisions into production with Docker, CI/CD and observability.",
       "highlights": [
@@ -730,7 +730,7 @@
       "status": {
         "available": "Open to work",
         "location": "Valencia, ES",
-        "focus": "Architecture"
+        "focus": "Platform architecture"
       },
       "cta": {
         "primary": "Get in touch",
@@ -1062,7 +1062,7 @@
       "lang": "en",
       "name": "Miguel",
       "surname": "López",
-      "role": "Software Architect · Backend & Cloud",
+      "role": "Software Architect · Platform & Full Stack",
       "contact": {
         "email": "mick.altura@gmail.com",
         "github": "github.com/emelcd",

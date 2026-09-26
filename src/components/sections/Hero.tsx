@@ -25,22 +25,8 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 sm:gap-12 sm:py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pt-8 pb-12 sm:gap-12 sm:pt-10 sm:pb-16 md:pt-14 md:pb-24 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="flex min-w-0 flex-col gap-5 sm:gap-6">
-          <span className="inline-flex w-fit max-w-full items-center gap-2 rounded-full border border-border/80 bg-card/70 px-3 py-1 font-mono text-xs text-muted-foreground shadow-sm backdrop-blur-md">
-            <span className="relative flex h-2 w-2 shrink-0">
-              <span
-                className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-70"
-                style={{ backgroundColor: palette[400] }}
-              />
-              <span
-                className="relative inline-flex h-2 w-2 rounded-full"
-                style={{ backgroundColor: palette[400] }}
-              />
-            </span>
-            <span className="truncate">{t.status.available}</span>
-          </span>
-
           <h1 className="text-4xl font-bold tracking-tight break-words sm:text-5xl md:text-6xl lg:text-7xl">
             {t.name}{" "}
             <span
@@ -53,7 +39,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="text-base font-medium text-muted-foreground sm:text-lg">
+          <p className="text-base font-medium text-balance text-muted-foreground sm:text-lg">
             {t.role}
           </p>
 
@@ -112,12 +98,18 @@ export function Hero() {
               <MapPinIcon className="h-3.5 w-3.5" />
               {t.status.location}
             </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span
-                className="h-1.5 w-1.5 rounded-full"
-                style={{ backgroundColor: palette[400] }}
-              />
-              {t.status.focus}
+            <span className="inline-flex items-center gap-2">
+              <span className="relative flex h-2 w-2 shrink-0">
+                <span
+                  className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-70"
+                  style={{ backgroundColor: palette[400] }}
+                />
+                <span
+                  className="relative inline-flex h-2 w-2 rounded-full"
+                  style={{ backgroundColor: palette[400] }}
+                />
+              </span>
+              {t.status.available}
             </span>
             <span className="flex items-center gap-3">
               {SOCIALS.map(({ href, icon: Icon, label }) => {

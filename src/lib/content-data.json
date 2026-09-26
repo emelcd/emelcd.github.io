@@ -28,15 +28,55 @@
         }
       ],
       "stackPreview": [
-        "Clean Architecture",
-        "DDD · CQRS",
-        "Event-Driven",
         "Python",
+        "TypeScript",
+        "JavaScript",
+        "PHP",
+        "SQL",
+        "Bash",
         "FastAPI",
-        "Vue · Nuxt",
-        "Kafka",
+        "Flask",
+        "SQLAlchemy",
+        "Node.js",
+        "NestJS",
+        "Express",
+        "Symfony",
+        "Vue",
+        "Nuxt",
+        "React",
+        "Angular",
+        "Pinia",
+        "Vuetify",
+        "Tailwind",
         "PostgreSQL",
-        "Kubernetes"
+        "MongoDB",
+        "MySQL",
+        "Redis",
+        "Elasticsearch",
+        "Kafka",
+        "Debezium",
+        "Docker",
+        "Kubernetes",
+        "GitLab CI",
+        "Nginx",
+        "Ansible",
+        "Linux",
+        "GCP",
+        "AWS",
+        "Apigee",
+        "Google Apps Script",
+        "Google Workspace APIs",
+        "Odoo",
+        "Microsoft Graph",
+        "OAuth2 / OIDC",
+        "Cerbos",
+        "Sentry",
+        "OpenTelemetry",
+        "Grafana",
+        "Pytest",
+        "Vitest",
+        "Playwright",
+        "MCP"
       ],
       "status": {
         "available": "Abierto a proyectos",
@@ -113,15 +153,16 @@
         {
           "title": "Desarrollador de Software Junior / TSR",
           "company": "Webhelp · Proyecto Google",
-          "description": "Diseño y soporte de aplicaciones y herramientas internas. Soporte de Google Cloud y Google Workspace. Especialista en arquitectura GCloud, integración de datos y APIs de Google. Scripting, análisis de código e informes de errores.",
+          "description": "Desarrollo de extensiones y herramientas internas para el equipo con Google Apps Script y JavaScript. Mayor parte del tiempo dedicada a resolver dudas de desarrolladores en Stack Overflow sobre Apps Script y APIs de Google Workspace (Sheets, Gmail, Drive, Calendar): 148 respuestas y ~186k personas alcanzadas. Soporte de Google Cloud y Workspace, integración de datos y APIs sobre GCloud y Apigee.",
           "location": "Barcelona",
           "duration": "27 meses",
           "period": "2020 — 2023",
           "stack": [
+            "Apps Script",
+            "Workspace APIs",
             "GCP",
             "Apigee",
-            "APIs",
-            "Scripting"
+            "JavaScript"
           ]
         },
         {
@@ -234,7 +275,9 @@
             "AWS",
             "Sentry",
             "OpenTelemetry",
-            "Grafana"
+            "Grafana",
+            "Apps Script",
+            "Workspace APIs"
           ]
         },
         {
@@ -426,16 +469,17 @@
           "location": "Barcelona",
           "period": "2020 — 2023",
           "bullets": [
-            "Diseño y soporte de aplicaciones y herramientas internas sobre Google Cloud y Google Workspace.",
-            "Arquitectura de servicios, integración de datos y APIs de Google sobre GCloud y Apigee.",
-            "Scripting de automatización, análisis de código e informes de errores.",
-            "Comunicación técnica directa con el cliente."
+            "Desarrollo de extensiones y herramientas internas para el equipo con Google Apps Script y JavaScript.",
+            "Resolución de dudas de desarrolladores en Stack Overflow sobre Apps Script y APIs de Google Workspace (Sheets, Gmail, Drive, Calendar): 148 respuestas, ~186k personas alcanzadas.",
+            "Soporte de Google Cloud y Workspace; integración de datos y APIs sobre GCloud y Apigee.",
+            "Scripting de automatización, análisis de código e informes de errores."
           ],
           "stack": [
+            "Apps Script",
+            "Workspace APIs",
             "GCP",
             "Apigee",
-            "APIs",
-            "Bash"
+            "JavaScript"
           ]
         },
         {
@@ -589,7 +633,7 @@
             "AWS",
             "Sentry",
             "OpenTelemetry",
-            "Grafana"
+            "Apps Script"
           ]
         },
         {
@@ -717,15 +761,55 @@
         }
       ],
       "stackPreview": [
-        "Clean Architecture",
-        "DDD · CQRS",
-        "Event-Driven",
         "Python",
+        "TypeScript",
+        "JavaScript",
+        "PHP",
+        "SQL",
+        "Bash",
         "FastAPI",
-        "Vue · Nuxt",
-        "Kafka",
+        "Flask",
+        "SQLAlchemy",
+        "Node.js",
+        "NestJS",
+        "Express",
+        "Symfony",
+        "Vue",
+        "Nuxt",
+        "React",
+        "Angular",
+        "Pinia",
+        "Vuetify",
+        "Tailwind",
         "PostgreSQL",
-        "Kubernetes"
+        "MongoDB",
+        "MySQL",
+        "Redis",
+        "Elasticsearch",
+        "Kafka",
+        "Debezium",
+        "Docker",
+        "Kubernetes",
+        "GitLab CI",
+        "Nginx",
+        "Ansible",
+        "Linux",
+        "GCP",
+        "AWS",
+        "Apigee",
+        "Google Apps Script",
+        "Google Workspace APIs",
+        "Odoo",
+        "Microsoft Graph",
+        "OAuth2 / OIDC",
+        "Cerbos",
+        "Sentry",
+        "OpenTelemetry",
+        "Grafana",
+        "Pytest",
+        "Vitest",
+        "Playwright",
+        "MCP"
       ],
       "status": {
         "available": "Open to work",
@@ -802,15 +886,16 @@
         {
           "title": "Junior Software Developer / TSR",
           "company": "Webhelp · Google Project",
-          "description": "Design and support of internal applications and tools. Google Cloud and Google Workspace support. Specialist in GCloud architecture, data integration and Google APIs. Scripting, code analysis and bug reporting.",
+          "description": "Built extensions and internal tools for the team with Google Apps Script and JavaScript. Spent most of the time answering developer questions on Stack Overflow about Apps Script and the Google Workspace APIs (Sheets, Gmail, Drive, Calendar): 148 answers and ~186k people reached. Google Cloud and Workspace support, data integration and APIs on GCloud and Apigee.",
           "location": "Barcelona",
           "duration": "27 mo",
           "period": "2020 — 2023",
           "stack": [
+            "Apps Script",
+            "Workspace APIs",
             "GCP",
             "Apigee",
-            "APIs",
-            "Scripting"
+            "JavaScript"
           ]
         },
         {
@@ -921,7 +1006,9 @@
             "AWS",
             "Sentry",
             "OpenTelemetry",
-            "Grafana"
+            "Grafana",
+            "Apps Script",
+            "Workspace APIs"
           ]
         },
         {
@@ -1113,16 +1200,17 @@
           "location": "Barcelona",
           "period": "2020 — 2023",
           "bullets": [
-            "Design and support of internal applications and tools on Google Cloud and Google Workspace.",
-            "Service architecture, data integration and Google APIs on GCloud and Apigee.",
-            "Automation scripting, code analysis and bug reporting.",
-            "Direct technical communication with the client."
+            "Built extensions and internal tools for the team with Google Apps Script and JavaScript.",
+            "Answered developer questions on Stack Overflow about Apps Script and the Google Workspace APIs (Sheets, Gmail, Drive, Calendar): 148 answers, ~186k people reached.",
+            "Google Cloud and Workspace support; data integration and APIs on GCloud and Apigee.",
+            "Automation scripting, code analysis and bug reporting."
           ],
           "stack": [
+            "Apps Script",
+            "Workspace APIs",
             "GCP",
             "Apigee",
-            "APIs",
-            "Bash"
+            "JavaScript"
           ]
         },
         {
@@ -1276,7 +1364,7 @@
             "AWS",
             "Sentry",
             "OpenTelemetry",
-            "Grafana"
+            "Apps Script"
           ]
         },
         {

@@ -19,23 +19,23 @@
           "label": "años de experiencia"
         },
         {
-          "value": "Backend",
-          "label": "arquitectura & APIs"
+          "value": "Plataforma",
+          "label": "arquitectura · DDD · CQRS"
         },
         {
-          "value": "Cloud",
-          "label": "GCP · AWS · Linux"
+          "value": "E2E",
+          "label": "de la spec a producción"
         }
       ],
       "stackPreview": [
+        "Clean Architecture",
+        "DDD · CQRS",
+        "Event-Driven",
         "Python",
         "FastAPI",
-        "TypeScript",
-        "Vue",
-        "Nuxt",
+        "Vue · Nuxt",
         "Kafka",
         "PostgreSQL",
-        "Docker",
         "Kubernetes"
       ],
       "status": {
@@ -708,23 +708,23 @@
           "label": "years of experience"
         },
         {
-          "value": "Backend",
-          "label": "architecture & APIs"
+          "value": "Platform",
+          "label": "architecture · DDD · CQRS"
         },
         {
-          "value": "Cloud",
-          "label": "GCP · AWS · Linux"
+          "value": "E2E",
+          "label": "from spec to production"
         }
       ],
       "stackPreview": [
+        "Clean Architecture",
+        "DDD · CQRS",
+        "Event-Driven",
         "Python",
         "FastAPI",
-        "TypeScript",
-        "Vue",
-        "Nuxt",
+        "Vue · Nuxt",
         "Kafka",
         "PostgreSQL",
-        "Docker",
         "Kubernetes"
       ],
       "status": {
